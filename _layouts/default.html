@@ -5,15 +5,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{{ page.title }} | {{ site.title }}</title>
     <link rel="stylesheet" href="{{ site.baseurl }}/assets/style.css" />
+    <script>
+      // Dark mode script
+      function toggleDarkMode() {
+        document.body.classList.toggle("dark");
+        localStorage.setItem("theme", document.body.classList.contains("dark") ? "dark" : "light");
+      }
+
+      window.onload = () => {
+        if (localStorage.getItem("theme") === "dark") {
+          document.body.classList.add("dark");
+        }
+      };
+    </script>
     {% seo %}
   </head>
   <body>
     <header class="site-header">
-      <div class="container">
-        <h1 class="site-title"><a href="{{ site.baseurl }}/">{{ site.title }}</a></h1>
+      <div class="container header-flex">
+        <div class="branding">
+          <img src="{{ site.baseurl }}/assets/images/bio-photo.jpeg" alt="Rahul" class="profile-pic">
+          <h1 class="site-title"><a href="{{ site.baseurl }}/">{{ site.title }}</a></h1>
+        </div>
         <nav class="nav">
           <a href="{{ site.baseurl }}/">Home</a>
           <a href="{{ site.baseurl }}/about">About</a>
+          <button onclick="toggleDarkMode()">🌓</button>
         </nav>
       </div>
     </header>
