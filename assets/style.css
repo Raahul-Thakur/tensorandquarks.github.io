@@ -1,6 +1,7 @@
-/* Base styles */
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap');
+
 body {
-  font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  font-family: 'JetBrains Mono', monospace;
   margin: 0;
   background: #f9f9fb;
   color: #222;
@@ -18,6 +19,30 @@ body.dark {
   max-width: 720px;
   margin: auto;
   padding: 2rem;
+}
+
+/* Hero Section */
+.hero {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  color: #8892b0;
+}
+
+.topics {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 1rem;
+  font-size: 1.5rem;
 }
 
 /* Header */
