@@ -1,0 +1,37 @@
+name: Build and Deploy Jekyll Site
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  jekyll:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout 🛎️
+        uses: actions/checkout@v3
+
+      - name: Setup Ruby 💎
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.1'
+
+      - name: Install Dependencies 📦
+        run: |
+          gem install bundler
+          bundle init
+          echo 'gem "jekyll"' >> Gemfile
+          echo 'gem "jekyll-paginate"' >> Gemfile
+          echo 'gem "jekyll-seo-tag"' >> Gemfile
+          bundle install
+
+      - name: Build Jekyll 🔧
+        run: bundle exec jekyll build
+
+      - name: Deploy 🚀
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./_site

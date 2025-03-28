@@ -13,8 +13,5 @@ paginate_path: "/page:num"
 plugins:
   - jekyll-paginate
   - jekyll-seo-tag
-  - jekyll-remote-theme
-
-remote_theme: ""
 
 markdown: kramdown
