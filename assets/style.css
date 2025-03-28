@@ -1,0 +1,14 @@
+body {
+  font-family: sans-serif;
+  margin: 2rem;
+  line-height: 1.6;
+  background: #fcfcfc;
+}
+header, footer {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+a {
+  color: #2a5db0;
+  text-decoration: none;
+}

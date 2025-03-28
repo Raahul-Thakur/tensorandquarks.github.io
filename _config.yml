@@ -1,0 +1,7 @@
+title: "Tensors & Quarks"
+url: "https://tensorandquarks.github.io"
+baseurl: ""
+author: "Rahul Thakur"
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
