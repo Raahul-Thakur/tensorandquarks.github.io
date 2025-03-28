@@ -1,7 +1,24 @@
 title: "Tensors & Quarks"
-url: "https://tensorandquarks.github.io"
-baseurl: ""
-author: "Rahul Thakur"
+name: "Rahul Thakur"
+email: "raahul.thakurr01@gmail.com"
+description: >- 
+  Exploring the intersection of physics and machine learning.
+
+url: "https://raahul-thakur.github.io"
+baseurl: "/tensorandquarks.github.io"
+
+author: "Rahul"
+
+remote_theme: ""
+
 plugins:
-  - jekyll-feed
-  - jekyll-seo-tag
+  - jekyll-remote-theme
+  - jekyll-paginate
+
+paginate: 5
+paginate_path: "/page:num"
+
+collections:
+  pages:
+    output: true
+    permalink: /:path/
