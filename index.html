@@ -62,9 +62,182 @@
 <ul class="post-list">
   
     <li>
-      <h3><a href="/tensorandquarks.github.io/2025/04/08/2024-10-17-fine-tuning-llms.html"></a></h3>
-      <p>April 8, 2025</p>
-      <p></p>
+      <h3><a href="/tensorandquarks.github.io/2024/10/17/fine-tuning-llms.html">Fine-Tuning Language Models: Welcome to the Nerdy Playground of LLMs</a></h3>
+      <p>October 17, 2024</p>
+      <p><h1 id="fine-tuning-language-models-welcome-to-the-nerdy-playground-of-llms">Fine-Tuning Language Models: Welcome to the Nerdy Playground of LLMs</h1>
+<p><em>From LoRA to RLHF — and all the acronyms in between</em></p>
+
+<p>So, you’ve got your hands on a fancy pre-trained language model. Great. It’s read more text than any human ever will, speaks in Shakespearean iambic pentameter <em>and</em> Python, and can tell you the capital of Burkina Faso at 3 AM.</p>
+
+<p>But here’s the catch: it still doesn’t quite “get” <em>you</em>.</p>
+
+<p>Maybe it talks like a robot from the 1800s. Or maybe it knows a bit too much about Reddit but not enough about your customer support tone. Whatever the case, you need it to learn your specific vibe — fast.</p>
+
+<p><strong>Enter fine-tuning.</strong></p>
+
+<hr />
+
+<h2 id="wait-what-even-is-fine-tuning">Wait… What Even <em>Is</em> Fine-Tuning?</h2>
+
+<p>Fine-tuning is basically the part where you tell the model, <em>“Hey buddy, I love your general knowledge — but now I need you to focus.”</em> You take that massive, pre-trained, know-it-all and nudge it into becoming an expert on your thing.</p>
+
+<p>That “thing” could be:</p>
+<ul>
+  <li>Writing legal contracts</li>
+  <li>Translating Sanskrit to Klingon (don’t judge)</li>
+  <li>Summarizing biotech research</li>
+  <li>Chatting like your brand’s customer rep who had too much coffee</li>
+</ul>
+
+<p>Think of fine-tuning as a crash course in personalization for models. Pretraining gives them their intelligence — fine-tuning gives them personality (and hopefully fewer hallucinations).</p>
+
+<hr />
+
+<h2 id="so-why-do-we-need-fine-tuning">So… Why Do We Need Fine-Tuning?</h2>
+
+<p>Good question. Because out-of-the-box LLMs are like really smart interns. They <em>can</em> do the job, but they’ll probably say something weird in a meeting if you don’t train them a bit.</p>
+
+<p>Without fine-tuning, models:</p>
+<ul>
+  <li>Hallucinate more often than college students at a Pink Floyd concert</li>
+  <li>Struggle with domain-specific language (e.g. legalese, medical jargon, startup buzzwords)</li>
+  <li>Sometimes ignore prompts like an emotionally unavailable ex</li>
+</ul>
+
+<p>Fine-tuning helps fix that. It teaches models to:</p>
+<ul>
+  <li>Be accurate (less BS)</li>
+  <li>Sound like <em>you</em></li>
+  <li>Perform specific tasks better</li>
+  <li>Respond faster, more consistently</li>
+</ul>
+
+<p>Cool? Cool.</p>
+
+<hr />
+
+<h2 id="the-fine-tuning-taxonomy-aka-choose-your-fighter">The Fine-Tuning Taxonomy (AKA: Choose Your Fighter)</h2>
+
+<p>Fine-tuning isn’t just one thing. Oh no. It’s a buffet of methods — some smart, some elegant, and some so complicated they make your brain sweat. Let’s walk through the big names in the lineup.</p>
+
+<hr />
+
+<h3 id="1-full-fine-tuning">1. Full Fine-Tuning</h3>
+<p><em>“Screw it, let’s change everything.”</em></p>
+
+<p>You retrain all the model’s weights. That’s billions of parameters, all shifting like tectonic plates. It’s powerful but also brutally expensive. Think: GPU farms, late nights, and watching your cloud bill with tears in your eyes.</p>
+
+<p><strong>When to use it:</strong><br />
+When you’ve got deep pockets and a very specific goal. Or when you’re a research lab and this <em>is</em> your job.</p>
+
+<hr />
+
+<h3 id="2-sft-supervised-fine-tuning">2. SFT (Supervised Fine-Tuning)</h3>
+<p><em>“Learn from examples, my young padawan.”</em></p>
+
+<p>You give the model input-output pairs and say, <em>“Look, this is how it’s done.”</em> Supervised fine-tuning is basically the most wholesome way to teach an LLM.</p>
+
+<p>Great for training models to:</p>
+<ul>
+  <li>Follow instructions</li>
+  <li>Do task-specific stuff like summarizing, translating, or playing therapist</li>
+</ul>
+
+<p>It’s also the base of many other techniques. Kind of like toast. Plain on its own, but essential when things get fancy.</p>
+
+<hr />
+
+<h3 id="3-peft-parameter-efficient-fine-tuning">3. PEFT (Parameter-Efficient Fine-Tuning)</h3>
+<p><em>“Why update 100B weights when you can just tweak 0.1% and still look smart?”</em></p>
+
+<p>This one’s genius. Instead of rewriting the whole model, you just update a tiny portion. It’s like teaching someone a new skill without giving them a full brain transplant.</p>
+
+<p>Includes fan favorites like:</p>
+<ul>
+  <li><strong>LoRA</strong> (Low-Rank Adaptation)</li>
+  <li><strong>QLoRA</strong> (LoRA on memory steroids)</li>
+  <li><strong>Adapter Tuning</strong></li>
+  <li><strong>Prefix Tuning</strong></li>
+  <li><strong>IA3</strong>, <strong>BitFit</strong>, and other cool acronym-laden techniques</li>
+</ul>
+
+<p>PEFT is perfect if you don’t want your laptop to catch fire during training.</p>
+
+<hr />
+
+<h3 id="4-rlhf-reinforcement-learning-from-human-feedback">4. RLHF (Reinforcement Learning from Human Feedback)</h3>
+<p><em>“Let the humans decide what’s good. What could possibly go wrong?”</em></p>
+
+<p>This is what powers ChatGPT’s polite, non-chaotic responses. After initial training, the model gets judged by humans, and a reward model is built around what people <em>like</em>. Then the LLM learns to optimize for that.</p>
+
+<p>Sounds awesome, but… it’s complicated. Requires humans, reward models, reinforcement learning algorithms, a prayer to the compute gods — the whole shebang.</p>
+
+<hr />
+
+<h3 id="5-dpo-direct-preference-optimization">5. DPO (Direct Preference Optimization)</h3>
+<p><em>“Like RLHF, but with fewer breakdowns.”</em></p>
+
+<p>Instead of all that reinforcement learning jazz, DPO just looks at pairs of responses — “A is better than B” — and learns from that directly. It’s cleaner, faster, and less drama. Think of it as the chill cousin of RLHF who actually has their life together.</p>
+
+<hr />
+
+<h3 id="6-instruction-tuning">6. Instruction Tuning</h3>
+<p><em>“Just tell the model what you want, nicely.”</em></p>
+
+<p>Instruction tuning is what makes models <em>actually</em> follow prompts like, “Explain this to me like I’m five.” You fine-tune on datasets full of natural instructions and desired responses.</p>
+
+<p>Often paired with PEFT or SFT. Models trained this way are much less likely to respond with “As an AI language model, I…” — which, let’s be honest, we’re all tired of.</p>
+
+<hr />
+
+<h3 id="7-multi-task-fine-tuning">7. Multi-Task Fine-Tuning</h3>
+<p><em>“Summarize this. Translate that. Now solve a riddle.”</em></p>
+
+<p>Here, you throw all sorts of tasks at the model and let it learn to juggle. It’s chaotic but surprisingly effective. This kind of training helps models generalize better and makes them solid all-rounders.</p>
+
+<hr />
+
+<h3 id="8-continual-learning--incremental-fine-tuning">8. Continual Learning / Incremental Fine-Tuning</h3>
+<p><em>“Just one more thing…”</em></p>
+
+<p>Fine-tune the model a little more, again and again, without making it forget everything it already learned. Sounds simple, right? It’s not. Welcome to the world of <strong>catastrophic forgetting</strong> — where models suddenly forget how to count after learning to write poetry.</p>
+
+<hr />
+
+<h3 id="9-adapter-tuning">9. Adapter Tuning</h3>
+<p><em>“Plug in, tune up, unplug. Repeat.”</em></p>
+
+<p>Instead of changing the model itself, you add tiny trainable “adapters” between layers. They’re swappable, reusable, and way more efficient. Think of them like modular power-ups.</p>
+
+<p>Perfect for multi-domain setups — swap one adapter for legal stuff, another for memes. Beautiful.</p>
+
+<hr />
+
+<h3 id="10-prompt-tuning--prefix-tuning">10. Prompt Tuning / Prefix Tuning</h3>
+<p><em>“Hack the prompt. Profit.”</em></p>
+
+<p>Why change the model when you can just <em>influence</em> it? These methods train a custom prompt or prefix that guides the model’s behavior. Minimal training, maximum effect. Also works great when you want to do quick experiments without going full Frankenstein.</p>
+
+<hr />
+
+<h2 id="final-thoughts-aka-which-one-should-you-pick">Final Thoughts (aka: Which One Should You Pick?)</h2>
+
+<p>Picking a fine-tuning method is like choosing a weapon in a video game — depends on your level, your resources, and what kind of monster you’re trying to slay.</p>
+
+<ul>
+  <li>Got an RTX 3060 and dreams of training a multilingual poet? Use <strong>QLoRA + SFT + Instruction Tuning</strong>.</li>
+  <li>Building a lean offline assistant for your startup? Grab a <strong>GGUF model</strong> for inference and slap on a <strong>LoRA adapter</strong>.</li>
+  <li>Want ChatGPT but with your tone and dataset? Start with <strong>SFTT</strong>, then move into <strong>DPO</strong>.</li>
+</ul>
+
+<p>In the end, fine-tuning is equal parts science and sorcery. It’s how we teach these giant models to speak our language — and sometimes even our vibe.</p>
+
+<p>So go on. Tinker. Break things. Fine-tune.<br />
+The LLM multiverse is just getting started.</p>
+
+<p><strong>– Rahul @ Tensors &amp; Quarks</strong><br />
+<em>Still sipping quantized gradients like espresso.</em></p>
+</p>
     </li>
   
     <li>
