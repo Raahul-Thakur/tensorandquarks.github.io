@@ -9,6 +9,8 @@ date: 2024-10-17
 
 So, you've got your hands on a fancy pre-trained language model. Great. It's read more text than any human ever will, speaks in Shakespearean iambic pentameter *and* Python, and can tell you the capital of Burkina Faso at 3 AM.
 
+<!--more-->
+
 But here's the catch: it still doesn't quite "get" *you*.
 
 Maybe it talks like a robot from the 1800s. Or maybe it knows a bit too much about Reddit but not enough about your customer support tone. Whatever the case, you need it to learn your specific vibe — fast.
