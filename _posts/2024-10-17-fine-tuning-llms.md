@@ -2,6 +2,7 @@
 layout: default
 title: "Fine-Tuning Language Models: Welcome to the Nerdy Playground of LLMs"
 date: 2024-10-17
+tags: [ML]
 ---
 
 # Fine-Tuning Language Models: Welcome to the Nerdy Playground of LLMs  
