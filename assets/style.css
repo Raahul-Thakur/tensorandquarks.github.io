@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap');
 
 body {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   margin: 0;
   background: #f9f9fb;
   color: #222;
@@ -16,15 +16,24 @@ body.dark {
 
 /* Layout */
 .container {
-  max-width: 720px;
+  width: 90%;
+  max-width: 1200px;
   margin: auto;
-  padding: 2rem;
+  padding: 2rem 1rem;
 }
 
 /* Hero Section */
 .hero {
+  width: 100%;
   text-align: center;
   margin-bottom: 3rem;
+  padding: 2rem;
+  background: #edf2f7;
+  border-bottom: 1px solid #ccc;
+}
+body.dark .hero {
+  background: #0a192f;
+  border-color: #1f2937;
 }
 
 .hero h1 {
@@ -35,22 +44,6 @@ body.dark {
 .hero p {
   font-size: 1.2rem;
   color: #8892b0;
-}
-
-.topics {
-  display: flex;
-  justify-content: center;
-  gap: 2rem;
-  margin-top: 1rem;
-  font-size: 1.5rem;
-}
-
-/* Section Title */
-.section-title {
-  font-size: 1.75rem;
-  margin-bottom: 1.5rem;
-  border-bottom: 2px solid #64ffda;
-  padding-bottom: 0.5rem;
 }
 
 /* Header */
@@ -143,11 +136,42 @@ body.dark main {
   margin: 0;
 }
 
-.post-list li {
+.post-card {
+  background: #ffffff;
+  padding: 1.5rem;
   margin-bottom: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  transition: transform 0.2s ease;
 }
 
-/* Post Card */
+.post-card:hover {
+  transform: translateY(-5px);
+}
+
+body.dark .post-card {
+  background: #112240;
+}
+
+/* Inline tag next to title */
+.inline-tag {
+  background: #e0e0e0;
+  color: #444;
+  font-size: 0.75rem;
+  padding: 0.2rem 0.5rem;
+  margin-left: 0.5rem;
+  border-radius: 4px;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-family: 'JetBrains Mono', monospace;
+}
+
+body.dark .inline-tag {
+  background: #1f2937;
+  color: #64ffda;
+}
+
+/* Tags (for other places if needed) */
 .tags {
   margin-top: 0.5rem;
   font-size: 0.9rem;
@@ -164,23 +188,6 @@ body.dark main {
 }
 
 body.dark .tag {
-  background: #1f2937;
-  color: #64ffda;
-}
-
-.inline-tag {
-  background: #e0e0e0;
-  color: #444;
-  font-size: 0.75rem;
-  padding: 0.2rem 0.5rem;
-  margin-left: 0.5rem;
-  border-radius: 4px;
-  text-transform: uppercase;
-  font-weight: bold;
-  font-family: 'JetBrains Mono', monospace;
-}
-
-body.dark .inline-tag {
   background: #1f2937;
   color: #64ffda;
 }
