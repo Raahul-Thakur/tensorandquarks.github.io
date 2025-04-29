@@ -13,9 +13,9 @@ This blog serves as a space to document what I’m learning, building, and think
 
 Whether you're an ML researcher, a physicist, a student, or just a fellow curious soul, I hope you find something here that sparks your imagination.
 
-Let’s decode the fabric of reality, one post at a time 🚀
+Let’s decode the fabric of reality, one post at a time
 
-📍 Currently working on:  
+Currently working on:  
 - Building ML-powered simulations  
 - Reading about Cutting Edge Researchin both Astrophysics and AI  
 - Blogging weekly on ML, space, and scientific creativity
