@@ -8,20 +8,23 @@ title: Home
   <p>Exploring the cosmos of Physics & the depths of Machine Learning.</p>
 </div>
 
-<h2 class="section-title">Latest Posts</h2>
+<h2>Latest Posts</h2>
 
 <ul class="post-list">
   {% for post in site.posts %}
     <li class="post-card">
-      <h3>
-        <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
-        {% if post.tags %}
-          <span class="inline-tag">{{ post.tags[0] }}</span>
+      <h2>{{ post.title }}</h2>
+
+      <p class="post-meta">
+        {{ post.date | date: "%B %-d, %Y" }}
+        {% if post.tag %}
+          <span class="inline-tag">{{ post.tag }}</span>
         {% endif %}
-      </h3>
-      <p>{{ post.date | date: "%B %-d, %Y" }}</p>
+      </p>
+
       <p>{{ post.excerpt }}</p>
-      <a href="{{ post.url | relative_url }}">Read more →</a>
+
+      <a href="{{ post.url | relative_url }}" class="read-more">Read more →</a>
     </li>
   {% endfor %}
 </ul>
