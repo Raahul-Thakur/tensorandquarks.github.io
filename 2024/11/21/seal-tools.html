@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Seal-Tools: Teaching AI Agents to Use Tools Like Developers | Tensors & Quarks</title>
+    <link rel="stylesheet" href="/tensorandquarks.github.io/assets/style.css" />
+    <script>
+      // Dark mode script
+      function toggleDarkMode() {
+        document.body.classList.toggle("dark");
+        localStorage.setItem("theme", document.body.classList.contains("dark") ? "dark" : "light");
+      }
+
+      window.onload = () => {
+        if (localStorage.getItem("theme") === "dark") {
+          document.body.classList.add("dark");
+        }
+      };
+    </script>
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Seal-Tools: Teaching AI Agents to Use Tools Like Developers | Tensors &amp; Quarks</title>
+<meta name="generator" content="Jekyll v4.4.1" />
+<meta property="og:title" content="Seal-Tools: Teaching AI Agents to Use Tools Like Developers" />
+<meta name="author" content="Rahul Thakur" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Teaching AI to Use Tools — The Right Way A Deep Dive into Seal-Tools: The Dataset That Makes LLMs Smarter Agents Imagine asking your AI assistant to “book a flight to Paris, then schedule a taxi to the airport and convert the final bill to Euros.” Sounds simple, right? In reality, for most AI models, this isn’t just hard — it’s nearly impossible to get right without human babysitting. That’s because tool use, chaining functions, and executing multi-step operations requires structured reasoning, parameter handling, and format control — things even the smartest LLMs struggle with today. This is the exact problem that the new research paper Seal-Tools: Self-Instruct Tool Learning Dataset for Agent Tuning and Detailed Benchmark seeks to solve. If you’re interested in building reliable AI agents, this paper is a must-read — and this post will walk you through why. Why Tool Use Is the Future of AI Large Language Models like GPT-4 and Claude have sparked a revolution in natural language understanding. But the next frontier is not just understanding — it’s action. Tools are the hands of the AI. Without them, a model can speak, but it cannot do. An AI that writes a travel plan is helpful. But one that calls an API to book the trip, checks the weather, converts currencies, and sends you a summary — now that’s a true agent. This kind of reasoning requires a model to: Choose the right tool for the job Fill in the correct parameters Follow strict output formats (e.g., JSON or function calls) Chain tools across multiple steps Unfortunately, even the most powerful models today fall short. That’s where Seal-Tools steps in. What Is Seal-Tools? Seal-Tools is a large-scale, structured dataset built to train and evaluate LLMs in tool-use scenarios. The core idea is to teach AI how to call tools just like developers use APIs — only in natural language. It includes: 1,042 unique tools across diverse domains Over 100,000 tool-use instances generated using Self-Instruct Examples of multi-tool, nested, and chained operations Strict JSON-format outputs for consistency and automation Each tool is described just like a real-world API: { &quot;name&quot;: &quot;currency_converter&quot;, &quot;description&quot;: &quot;Convert a value between currencies.&quot;, &quot;parameters&quot;: { &quot;from_currency&quot;: &quot;USD&quot;, &quot;to_currency&quot;: &quot;EUR&quot;, &quot;amount&quot;: &quot;100.0&quot; }, &quot;required&quot;: [&quot;from_currency&quot;, &quot;to_currency&quot;, &quot;amount&quot;] } And each task instance simulates a realistic scenario: “Convert 100 USD to EUR, and then use the result to calculate VAT in France.” How It Was Built — The Self-Instruct Pipeline What’s genius about Seal-Tools is that it uses LLMs to generate the dataset themselves — but with checks, balances, and curation. Here’s the step-by-step pipeline: Field Generation – Domains like finance, health, or travel are first generated. Tool Design – Each field includes several tool descriptions. Instance Generation – Each tool gets basic and complex tool-usage tasks. Validation – JSON output is validated for structure and semantic consistency. This lets researchers generate massive datasets quickly while maintaining realism and structure. Evaluation: Metrics That Actually Matter Seal-Tools introduces three targeted evaluation metrics: Format Accuracy – Can the model generate valid JSON or function calls? Tool Selection Accuracy – Did it choose the correct tools for the task? Parameter Filling Accuracy – Did it supply correct and complete values? These are objective and automatable, unlike vague scores used in standard NLP evaluations. What Did the Experiments Reveal? Models tested in the paper include: GPT-3.5 and GPT-4 Claude 2 LLaMA2-7B, Vicuna, Mistral-7B A fine-tuned LLaMA2 trained on Seal-Tools Key takeaways: GPT-4 leads the pack, but still struggles with nested or chained tool usage. Open-source models have significant limitations out-of-the-box. Fine-tuning on Seal-Tools improves tool performance by 15–20%. Even top models are not great tool users… yet. How Seal-Tools Stands Out Feature ToolBench API-Bank ToolAlpaca Seal-Tools Number of Tools ~300 ~100 ~50 1,042 Multi-Tool Support ❌ ❌ Partial ✅ Nested Calls ❌ ❌ ❌ ✅ Format Consistency YAML Loose JSON-ish Strict JSON Auto-Evaluation ❌ ❌ ❌ ✅ Seal-Tools is bigger, more complex, and better structured than any other tool-using dataset available. Why This Matters for Agentic AI We’re entering an era of agentic computing, where LLMs are expected to plan, decide, and act on our behalf. For this to work, models must: Understand tool specifications Format structured calls Handle edge cases and data dependencies Chain multiple tools together intelligently Seal-Tools is the training ground for this future. It’s more than a dataset — it’s a curriculum for teaching LLMs real-world behavior. Links &amp; Resources Read the paper: arXiv:2405.08355 Explore the GitHub repo: github.com/fairyshine/Seal-Tools View evaluation &amp; fine-tuning: evaluation scripts Final Thoughts Seal-Tools offers a major step forward in developing LLMs that go beyond chatting and start executing real tasks. It’s built on the idea that agents must not just talk, but do — and gives us the tools to train them accordingly. Whether you’re building autonomous agents, developing smart assistants, or researching LLM capabilities, Seal-Tools should be part of your stack. With this dataset, we’re not just teaching AI how to use tools — we’re teaching it how to think in actions." />
+<meta property="og:description" content="Teaching AI to Use Tools — The Right Way A Deep Dive into Seal-Tools: The Dataset That Makes LLMs Smarter Agents Imagine asking your AI assistant to “book a flight to Paris, then schedule a taxi to the airport and convert the final bill to Euros.” Sounds simple, right? In reality, for most AI models, this isn’t just hard — it’s nearly impossible to get right without human babysitting. That’s because tool use, chaining functions, and executing multi-step operations requires structured reasoning, parameter handling, and format control — things even the smartest LLMs struggle with today. This is the exact problem that the new research paper Seal-Tools: Self-Instruct Tool Learning Dataset for Agent Tuning and Detailed Benchmark seeks to solve. If you’re interested in building reliable AI agents, this paper is a must-read — and this post will walk you through why. Why Tool Use Is the Future of AI Large Language Models like GPT-4 and Claude have sparked a revolution in natural language understanding. But the next frontier is not just understanding — it’s action. Tools are the hands of the AI. Without them, a model can speak, but it cannot do. An AI that writes a travel plan is helpful. But one that calls an API to book the trip, checks the weather, converts currencies, and sends you a summary — now that’s a true agent. This kind of reasoning requires a model to: Choose the right tool for the job Fill in the correct parameters Follow strict output formats (e.g., JSON or function calls) Chain tools across multiple steps Unfortunately, even the most powerful models today fall short. That’s where Seal-Tools steps in. What Is Seal-Tools? Seal-Tools is a large-scale, structured dataset built to train and evaluate LLMs in tool-use scenarios. The core idea is to teach AI how to call tools just like developers use APIs — only in natural language. It includes: 1,042 unique tools across diverse domains Over 100,000 tool-use instances generated using Self-Instruct Examples of multi-tool, nested, and chained operations Strict JSON-format outputs for consistency and automation Each tool is described just like a real-world API: { &quot;name&quot;: &quot;currency_converter&quot;, &quot;description&quot;: &quot;Convert a value between currencies.&quot;, &quot;parameters&quot;: { &quot;from_currency&quot;: &quot;USD&quot;, &quot;to_currency&quot;: &quot;EUR&quot;, &quot;amount&quot;: &quot;100.0&quot; }, &quot;required&quot;: [&quot;from_currency&quot;, &quot;to_currency&quot;, &quot;amount&quot;] } And each task instance simulates a realistic scenario: “Convert 100 USD to EUR, and then use the result to calculate VAT in France.” How It Was Built — The Self-Instruct Pipeline What’s genius about Seal-Tools is that it uses LLMs to generate the dataset themselves — but with checks, balances, and curation. Here’s the step-by-step pipeline: Field Generation – Domains like finance, health, or travel are first generated. Tool Design – Each field includes several tool descriptions. Instance Generation – Each tool gets basic and complex tool-usage tasks. Validation – JSON output is validated for structure and semantic consistency. This lets researchers generate massive datasets quickly while maintaining realism and structure. Evaluation: Metrics That Actually Matter Seal-Tools introduces three targeted evaluation metrics: Format Accuracy – Can the model generate valid JSON or function calls? Tool Selection Accuracy – Did it choose the correct tools for the task? Parameter Filling Accuracy – Did it supply correct and complete values? These are objective and automatable, unlike vague scores used in standard NLP evaluations. What Did the Experiments Reveal? Models tested in the paper include: GPT-3.5 and GPT-4 Claude 2 LLaMA2-7B, Vicuna, Mistral-7B A fine-tuned LLaMA2 trained on Seal-Tools Key takeaways: GPT-4 leads the pack, but still struggles with nested or chained tool usage. Open-source models have significant limitations out-of-the-box. Fine-tuning on Seal-Tools improves tool performance by 15–20%. Even top models are not great tool users… yet. How Seal-Tools Stands Out Feature ToolBench API-Bank ToolAlpaca Seal-Tools Number of Tools ~300 ~100 ~50 1,042 Multi-Tool Support ❌ ❌ Partial ✅ Nested Calls ❌ ❌ ❌ ✅ Format Consistency YAML Loose JSON-ish Strict JSON Auto-Evaluation ❌ ❌ ❌ ✅ Seal-Tools is bigger, more complex, and better structured than any other tool-using dataset available. Why This Matters for Agentic AI We’re entering an era of agentic computing, where LLMs are expected to plan, decide, and act on our behalf. For this to work, models must: Understand tool specifications Format structured calls Handle edge cases and data dependencies Chain multiple tools together intelligently Seal-Tools is the training ground for this future. It’s more than a dataset — it’s a curriculum for teaching LLMs real-world behavior. Links &amp; Resources Read the paper: arXiv:2405.08355 Explore the GitHub repo: github.com/fairyshine/Seal-Tools View evaluation &amp; fine-tuning: evaluation scripts Final Thoughts Seal-Tools offers a major step forward in developing LLMs that go beyond chatting and start executing real tasks. It’s built on the idea that agents must not just talk, but do — and gives us the tools to train them accordingly. Whether you’re building autonomous agents, developing smart assistants, or researching LLM capabilities, Seal-Tools should be part of your stack. With this dataset, we’re not just teaching AI how to use tools — we’re teaching it how to think in actions." />
+<link rel="canonical" href="https://raahul-thakur.github.io/tensorandquarks.github.io/2024/11/21/seal-tools.html" />
+<meta property="og:url" content="https://raahul-thakur.github.io/tensorandquarks.github.io/2024/11/21/seal-tools.html" />
+<meta property="og:site_name" content="Tensors &amp; Quarks" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2024-11-21T00:00:00+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Seal-Tools: Teaching AI Agents to Use Tools Like Developers" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Rahul Thakur"},"dateModified":"2024-11-21T00:00:00+00:00","datePublished":"2024-11-21T00:00:00+00:00","description":"Teaching AI to Use Tools — The Right Way A Deep Dive into Seal-Tools: The Dataset That Makes LLMs Smarter Agents Imagine asking your AI assistant to “book a flight to Paris, then schedule a taxi to the airport and convert the final bill to Euros.” Sounds simple, right? In reality, for most AI models, this isn’t just hard — it’s nearly impossible to get right without human babysitting. That’s because tool use, chaining functions, and executing multi-step operations requires structured reasoning, parameter handling, and format control — things even the smartest LLMs struggle with today. This is the exact problem that the new research paper Seal-Tools: Self-Instruct Tool Learning Dataset for Agent Tuning and Detailed Benchmark seeks to solve. If you’re interested in building reliable AI agents, this paper is a must-read — and this post will walk you through why. Why Tool Use Is the Future of AI Large Language Models like GPT-4 and Claude have sparked a revolution in natural language understanding. But the next frontier is not just understanding — it’s action. Tools are the hands of the AI. Without them, a model can speak, but it cannot do. An AI that writes a travel plan is helpful. But one that calls an API to book the trip, checks the weather, converts currencies, and sends you a summary — now that’s a true agent. This kind of reasoning requires a model to: Choose the right tool for the job Fill in the correct parameters Follow strict output formats (e.g., JSON or function calls) Chain tools across multiple steps Unfortunately, even the most powerful models today fall short. That’s where Seal-Tools steps in. What Is Seal-Tools? Seal-Tools is a large-scale, structured dataset built to train and evaluate LLMs in tool-use scenarios. The core idea is to teach AI how to call tools just like developers use APIs — only in natural language. It includes: 1,042 unique tools across diverse domains Over 100,000 tool-use instances generated using Self-Instruct Examples of multi-tool, nested, and chained operations Strict JSON-format outputs for consistency and automation Each tool is described just like a real-world API: { &quot;name&quot;: &quot;currency_converter&quot;, &quot;description&quot;: &quot;Convert a value between currencies.&quot;, &quot;parameters&quot;: { &quot;from_currency&quot;: &quot;USD&quot;, &quot;to_currency&quot;: &quot;EUR&quot;, &quot;amount&quot;: &quot;100.0&quot; }, &quot;required&quot;: [&quot;from_currency&quot;, &quot;to_currency&quot;, &quot;amount&quot;] } And each task instance simulates a realistic scenario: “Convert 100 USD to EUR, and then use the result to calculate VAT in France.” How It Was Built — The Self-Instruct Pipeline What’s genius about Seal-Tools is that it uses LLMs to generate the dataset themselves — but with checks, balances, and curation. Here’s the step-by-step pipeline: Field Generation – Domains like finance, health, or travel are first generated. Tool Design – Each field includes several tool descriptions. Instance Generation – Each tool gets basic and complex tool-usage tasks. Validation – JSON output is validated for structure and semantic consistency. This lets researchers generate massive datasets quickly while maintaining realism and structure. Evaluation: Metrics That Actually Matter Seal-Tools introduces three targeted evaluation metrics: Format Accuracy – Can the model generate valid JSON or function calls? Tool Selection Accuracy – Did it choose the correct tools for the task? Parameter Filling Accuracy – Did it supply correct and complete values? These are objective and automatable, unlike vague scores used in standard NLP evaluations. What Did the Experiments Reveal? Models tested in the paper include: GPT-3.5 and GPT-4 Claude 2 LLaMA2-7B, Vicuna, Mistral-7B A fine-tuned LLaMA2 trained on Seal-Tools Key takeaways: GPT-4 leads the pack, but still struggles with nested or chained tool usage. Open-source models have significant limitations out-of-the-box. Fine-tuning on Seal-Tools improves tool performance by 15–20%. Even top models are not great tool users… yet. How Seal-Tools Stands Out Feature ToolBench API-Bank ToolAlpaca Seal-Tools Number of Tools ~300 ~100 ~50 1,042 Multi-Tool Support ❌ ❌ Partial ✅ Nested Calls ❌ ❌ ❌ ✅ Format Consistency YAML Loose JSON-ish Strict JSON Auto-Evaluation ❌ ❌ ❌ ✅ Seal-Tools is bigger, more complex, and better structured than any other tool-using dataset available. Why This Matters for Agentic AI We’re entering an era of agentic computing, where LLMs are expected to plan, decide, and act on our behalf. For this to work, models must: Understand tool specifications Format structured calls Handle edge cases and data dependencies Chain multiple tools together intelligently Seal-Tools is the training ground for this future. It’s more than a dataset — it’s a curriculum for teaching LLMs real-world behavior. Links &amp; Resources Read the paper: arXiv:2405.08355 Explore the GitHub repo: github.com/fairyshine/Seal-Tools View evaluation &amp; fine-tuning: evaluation scripts Final Thoughts Seal-Tools offers a major step forward in developing LLMs that go beyond chatting and start executing real tasks. It’s built on the idea that agents must not just talk, but do — and gives us the tools to train them accordingly. Whether you’re building autonomous agents, developing smart assistants, or researching LLM capabilities, Seal-Tools should be part of your stack. With this dataset, we’re not just teaching AI how to use tools — we’re teaching it how to think in actions.","headline":"Seal-Tools: Teaching AI Agents to Use Tools Like Developers","mainEntityOfPage":{"@type":"WebPage","@id":"https://raahul-thakur.github.io/tensorandquarks.github.io/2024/11/21/seal-tools.html"},"url":"https://raahul-thakur.github.io/tensorandquarks.github.io/2024/11/21/seal-tools.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-flex">
+        <div class="branding">
+          <img src="/tensorandquarks.github.io/assets/images/bio-photo.jpeg" alt="Rahul" class="profile-pic">
+          <h1 class="site-title">Tensors & Quarks</h1>
+        </div>
+        <nav class="nav">
+          <a href="/tensorandquarks.github.io/">Home</a>
+          <a href="/tensorandquarks.github.io/about.html">About</a>
+          <button onclick="toggleDarkMode()">🌓</button>
+        </nav>
+      </div>
+    </header>
+    <main class="container">
+      <h1 id="teaching-ai-to-use-tools--the-right-way">Teaching AI to Use Tools — The Right Way</h1>
+<p><strong>A Deep Dive into Seal-Tools: The Dataset That Makes LLMs Smarter Agents</strong></p>
+
+<p>Imagine asking your AI assistant to “book a flight to Paris, then schedule a taxi to the airport and convert the final bill to Euros.” Sounds simple, right? In reality, for most AI models, this isn’t just 
+hard — it’s nearly impossible to get right without human babysitting.</p>
+
+<p>That’s because tool use, chaining functions, and executing multi-step operations <strong>requires structured reasoning</strong>, parameter handling, and format control — things even the smartest LLMs struggle with today.</p>
+
+<p>This is the exact problem that the new research paper <a href="https://arxiv.org/abs/2405.08355">Seal-Tools: Self-Instruct Tool Learning Dataset for Agent Tuning and Detailed Benchmark</a> seeks to solve. If you’re 
+interested in building reliable AI agents, this paper is a must-read — and this post will walk you through why.</p>
+
+<hr />
+
+<h2 id="why-tool-use-is-the-future-of-ai">Why Tool Use Is the Future of AI</h2>
+
+<p>Large Language Models like GPT-4 and Claude have sparked a revolution in natural language understanding. But the next frontier is not just understanding — it’s <strong>action</strong>.</p>
+
+<blockquote>
+  <p>Tools are the hands of the AI. Without them, a model can speak, but it cannot do.</p>
+</blockquote>
+
+<p>An AI that writes a travel plan is helpful. But one that calls an API to book the trip, checks the weather, converts currencies, and sends you a summary — now that’s a <strong>true agent</strong>.</p>
+
+<p>This kind of reasoning requires a model to:</p>
+
+<ul>
+  <li><strong>Choose the right tool for the job</strong></li>
+  <li><strong>Fill in the correct parameters</strong></li>
+  <li><strong>Follow strict output formats</strong> (e.g., JSON or function calls)</li>
+  <li><strong>Chain tools across multiple steps</strong></li>
+</ul>
+
+<p>Unfortunately, even the most powerful models today fall short. That’s where <strong>Seal-Tools</strong> steps in.</p>
+
+<hr />
+
+<h2 id="what-is-seal-tools">What Is Seal-Tools?</h2>
+
+<p>Seal-Tools is a <strong>large-scale, structured dataset</strong> built to train and evaluate LLMs in tool-use scenarios. The core idea is to <strong>teach AI how to call tools just like developers use APIs</strong> — only in natural 
+language.</p>
+
+<p>It includes:</p>
+
+<ul>
+  <li>1,042 unique tools across diverse domains</li>
+  <li>Over 100,000 tool-use instances generated using <em>Self-Instruct</em></li>
+  <li>Examples of multi-tool, nested, and chained operations</li>
+  <li>Strict JSON-format outputs for consistency and automation</li>
+</ul>
+
+<p>Each tool is described just like a real-world API:</p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"currency_converter"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Convert a value between currencies."</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"parameters"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"from_currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"to_currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EUR"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"100.0"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"required"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"from_currency"</span><span class="p">,</span><span class="w"> </span><span class="s2">"to_currency"</span><span class="p">,</span><span class="w"> </span><span class="s2">"amount"</span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<p>And each <strong>task instance</strong> simulates a realistic scenario:</p>
+
+<blockquote>
+  <p>“Convert 100 USD to EUR, and then use the result to calculate VAT in France.”</p>
+</blockquote>
+
+<hr />
+
+<h2 id="how-it-was-built--the-self-instruct-pipeline">How It Was Built — The Self-Instruct Pipeline</h2>
+
+<p>What’s genius about Seal-Tools is that it uses LLMs <strong>to generate the dataset themselves</strong> — but with checks, balances, and curation.</p>
+
+<p>Here’s the step-by-step pipeline:</p>
+
+<ul>
+  <li><strong>Field Generation</strong> – Domains like finance, health, or travel are first generated.</li>
+  <li><strong>Tool Design</strong> – Each field includes several tool descriptions.</li>
+  <li><strong>Instance Generation</strong> – Each tool gets basic and complex tool-usage tasks.</li>
+  <li><strong>Validation</strong> – JSON output is validated for structure and semantic consistency.</li>
+</ul>
+
+<p>This lets researchers <strong>generate massive datasets quickly</strong> while maintaining realism and structure.</p>
+
+<hr />
+
+<h2 id="evaluation-metrics-that-actually-matter">Evaluation: Metrics That Actually Matter</h2>
+
+<p>Seal-Tools introduces three targeted evaluation metrics:</p>
+
+<ol>
+  <li><strong>Format Accuracy</strong> – Can the model generate valid JSON or function calls?</li>
+  <li><strong>Tool Selection Accuracy</strong> – Did it choose the correct tools for the task?</li>
+  <li><strong>Parameter Filling Accuracy</strong> – Did it supply correct and complete values?</li>
+</ol>
+
+<p>These are <strong>objective and automatable</strong>, unlike vague scores used in standard NLP evaluations.</p>
+
+<hr />
+
+<h2 id="what-did-the-experiments-reveal">What Did the Experiments Reveal?</h2>
+
+<p>Models tested in the paper include:</p>
+
+<ul>
+  <li>GPT-3.5 and GPT-4</li>
+  <li>Claude 2</li>
+  <li>LLaMA2-7B, Vicuna, Mistral-7B</li>
+  <li>A fine-tuned LLaMA2 trained on Seal-Tools</li>
+</ul>
+
+<p><strong>Key takeaways</strong>:</p>
+
+<ul>
+  <li>GPT-4 leads the pack, but still struggles with nested or chained tool usage.</li>
+  <li>Open-source models have significant limitations out-of-the-box.</li>
+  <li>Fine-tuning on Seal-Tools improves tool performance by <strong>15–20%</strong>.</li>
+</ul>
+
+<blockquote>
+  <p>Even top models are not great tool users… <em>yet</em>.</p>
+</blockquote>
+
+<hr />
+
+<h2 id="how-seal-tools-stands-out">How Seal-Tools Stands Out</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Feature</th>
+      <th>ToolBench</th>
+      <th>API-Bank</th>
+      <th>ToolAlpaca</th>
+      <th><strong>Seal-Tools</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Number of Tools</td>
+      <td>~300</td>
+      <td>~100</td>
+      <td>~50</td>
+      <td><strong>1,042</strong></td>
+    </tr>
+    <tr>
+      <td>Multi-Tool Support</td>
+      <td>❌</td>
+      <td>❌</td>
+      <td>Partial</td>
+      <td>✅</td>
+    </tr>
+    <tr>
+      <td>Nested Calls</td>
+      <td>❌</td>
+      <td>❌</td>
+      <td>❌</td>
+      <td>✅</td>
+    </tr>
+    <tr>
+      <td>Format Consistency</td>
+      <td>YAML</td>
+      <td>Loose</td>
+      <td>JSON-ish</td>
+      <td><strong>Strict JSON</strong></td>
+    </tr>
+    <tr>
+      <td>Auto-Evaluation</td>
+      <td>❌</td>
+      <td>❌</td>
+      <td>❌</td>
+      <td>✅</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Seal-Tools</strong> is <em>bigger, more complex, and better structured</em> than any other tool-using dataset available.</p>
+
+<hr />
+
+<h2 id="why-this-matters-for-agentic-ai">Why This Matters for Agentic AI</h2>
+
+<p>We’re entering an era of <strong>agentic computing</strong>, where LLMs are expected to plan, decide, and act on our behalf.</p>
+
+<p>For this to work, models must:</p>
+
+<ul>
+  <li>Understand tool specifications</li>
+  <li>Format structured calls</li>
+  <li>Handle edge cases and data dependencies</li>
+  <li>Chain multiple tools together intelligently</li>
+</ul>
+
+<p><strong>Seal-Tools is the training ground for this future.</strong> It’s more than a dataset — it’s a <em>curriculum</em> for teaching LLMs real-world behavior.</p>
+
+<hr />
+
+<h2 id="links--resources">Links &amp; Resources</h2>
+
+<ul>
+  <li>Read the paper: <a href="https://arxiv.org/abs/2405.08355">arXiv:2405.08355</a></li>
+  <li>Explore the GitHub repo: <a href="https://github.com/fairyshine/Seal-Tools">github.com/fairyshine/Seal-Tools</a></li>
+  <li>View evaluation &amp; fine-tuning: <a href="https://github.com/fairyshine/Seal-Tools/tree/main/evaluation">evaluation scripts</a></li>
+</ul>
+
+<hr />
+
+<h2 id="final-thoughts">Final Thoughts</h2>
+
+<p><strong>Seal-Tools</strong> offers a major step forward in developing LLMs that go beyond chatting and start executing real tasks. It’s built on the idea that agents must not just <em>talk</em>, but <em>do</em> — and 
+gives us the tools to train them accordingly.</p>
+
+<p>Whether you’re building autonomous agents, developing smart assistants, or researching LLM capabilities, <strong>Seal-Tools should be part of your stack</strong>.</p>
+
+<blockquote>
+  <p>With this dataset, we’re not just teaching AI how to use tools —<br />
+we’re teaching it how to <strong>think in actions</strong>.</p>
+</blockquote>
+
+
+    </main>
+    <footer class="site-footer">
+      <div class="container">
+        <p>© 2025 Rahul Thakur • Powered by Jekyll</p>
+      </div>
+    </footer>
+  </body>
+</html>
