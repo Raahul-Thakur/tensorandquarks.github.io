@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>What Are Tensors? | Tensors & Quarks</title>
+    <link rel="stylesheet" href="/tensorandquarks.github.io/assets/style.css" />
+    <script>
+      // Dark mode script
+      function toggleDarkMode() {
+        document.body.classList.toggle("dark");
+        localStorage.setItem("theme", document.body.classList.contains("dark") ? "dark" : "light");
+      }
+
+      window.onload = () => {
+        if (localStorage.getItem("theme") === "dark") {
+          document.body.classList.add("dark");
+        }
+      };
+    </script>
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>What Are Tensors? | Tensors &amp; Quarks</title>
+<meta name="generator" content="Jekyll v4.4.1" />
+<meta property="og:title" content="What Are Tensors?" />
+<meta name="author" content="Rahul Thakur" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="What Are Tensors? Tensors are fundamental mathematical objects that appear across various domains such as physics, computer science, and engineering. At their core, tensors are multi-dimensional arrays that generalize the concepts of scalars (single numbers), vectors (one-dimensional arrays), and matrices (two-dimensional arrays). Unlike simple arrays, tensors are not just containers of numbers—they come with transformation rules that allow them to describe physical phenomena in a way that remains consistent across coordinate systems." />
+<meta property="og:description" content="What Are Tensors? Tensors are fundamental mathematical objects that appear across various domains such as physics, computer science, and engineering. At their core, tensors are multi-dimensional arrays that generalize the concepts of scalars (single numbers), vectors (one-dimensional arrays), and matrices (two-dimensional arrays). Unlike simple arrays, tensors are not just containers of numbers—they come with transformation rules that allow them to describe physical phenomena in a way that remains consistent across coordinate systems." />
+<link rel="canonical" href="https://raahul-thakur.github.io/tensorandquarks.github.io/2024/11/14/tensors.html" />
+<meta property="og:url" content="https://raahul-thakur.github.io/tensorandquarks.github.io/2024/11/14/tensors.html" />
+<meta property="og:site_name" content="Tensors &amp; Quarks" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2024-11-14T00:00:00+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="What Are Tensors?" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Rahul Thakur"},"dateModified":"2024-11-14T00:00:00+00:00","datePublished":"2024-11-14T00:00:00+00:00","description":"What Are Tensors? Tensors are fundamental mathematical objects that appear across various domains such as physics, computer science, and engineering. At their core, tensors are multi-dimensional arrays that generalize the concepts of scalars (single numbers), vectors (one-dimensional arrays), and matrices (two-dimensional arrays). Unlike simple arrays, tensors are not just containers of numbers—they come with transformation rules that allow them to describe physical phenomena in a way that remains consistent across coordinate systems.","headline":"What Are Tensors?","mainEntityOfPage":{"@type":"WebPage","@id":"https://raahul-thakur.github.io/tensorandquarks.github.io/2024/11/14/tensors.html"},"url":"https://raahul-thakur.github.io/tensorandquarks.github.io/2024/11/14/tensors.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-flex">
+        <div class="branding">
+          <img src="/tensorandquarks.github.io/assets/images/bio-photo.jpeg" alt="Rahul" class="profile-pic">
+          <h1 class="site-title">Tensors & Quarks</h1>
+        </div>
+        <nav class="nav">
+          <a href="/tensorandquarks.github.io/">Home</a>
+          <a href="/tensorandquarks.github.io/about.html">About</a>
+          <button onclick="toggleDarkMode()">🌓</button>
+        </nav>
+      </div>
+    </header>
+    <main class="container">
+      <h1 id="what-are-tensors">What Are Tensors?</h1>
+
+<p>Tensors are fundamental mathematical objects that appear across various domains such as physics, computer science, and engineering. At their core, tensors are multi-dimensional arrays that generalize the 
+concepts of scalars (single numbers), vectors (one-dimensional arrays), and matrices (two-dimensional arrays). Unlike simple arrays, tensors are not just containers of numbers—they come with transformation 
+rules that allow them to describe physical phenomena in a way that remains consistent across coordinate systems.</p>
+
+<!--more-->
+
+<p>In essence, tensors encode how quantities transform when we change our frame of reference. This property makes them indispensable in fields like general relativity, where the same physical law must hold 
+regardless of the observer’s position or motion.</p>
+
+<hr />
+
+<h2 id="types-of-tensors-based-on-rank">Types of Tensors Based on Rank</h2>
+
+<p>Tensors are classified by their “rank,” which indicates the number of indices required to label their components.</p>
+
+<h3 id="1-scalar-rank-0-tensor">1. Scalar (Rank 0 Tensor)</h3>
+<p>A scalar is the simplest type of tensor. It has no direction and is invariant under coordinate transformations. Examples include temperature at a point, electric charge, or mass. A single number represents it.</p>
+
+<h3 id="2-vector-rank-1-tensor">2. Vector (Rank 1 Tensor)</h3>
+<p>Vectors have both magnitude and direction. They are rank-1 tensors and have one index. For instance, velocity and force are vectors. When the coordinate system changes, a vector’s components transform linearly.</p>
+
+<h3 id="3-matrix--second-rank-tensor">3. Matrix / Second-Rank Tensor</h3>
+<p>Second-rank tensors can be visualized as matrices. They have two indices and are capable of representing linear transformations. For example, the moment of inertia tensor in classical mechanics and the metric 
+tensor in general relativity fall into this category.</p>
+
+<h3 id="4-higher-rank-tensors-rank-3-and-above">4. Higher-Rank Tensors (Rank 3 and above)</h3>
+<p>These tensors have three or more indices and are used to describe more complex physical systems. A key example is the Riemann curvature tensor in general relativity, which is a rank-4 tensor describing how 
+spacetime bends in response to mass and energy.</p>
+
+<hr />
+
+<h2 id="covariant-contravariant-and-mixed-tensors">Covariant, Contravariant, and Mixed Tensors</h2>
+
+<p>Tensors also differ based on how their indices transform:</p>
+
+<ul>
+  <li><strong>Covariant tensors</strong> have lower indices (e.g., <code class="language-plaintext highlighter-rouge">T_{ij}</code>) and transform with the inverse of the change-of-basis matrix.</li>
+  <li><strong>Contravariant tensors</strong> have upper indices (e.g., <code class="language-plaintext highlighter-rouge">T^{ij}</code>) and transform directly with the change-of-basis matrix.</li>
+  <li><strong>Mixed tensors</strong> contain both upper and lower indices (e.g., <code class="language-plaintext highlighter-rouge">T^i_j</code>), allowing them to represent more complex interactions.</li>
+</ul>
+
+<p>Understanding the variance of tensors is crucial when working with coordinate transformations, as it ensures the physical laws being described remain consistent.</p>
+
+<hr />
+
+<h2 id="tensors-in-physics-and-geometry">Tensors in Physics and Geometry</h2>
+
+<p>Tensors are deeply woven into the fabric of theoretical physics. In general relativity, for instance, the curvature of spacetime is described by a set of tensors:</p>
+
+<ul>
+  <li><strong>Metric tensor</strong> <code class="language-plaintext highlighter-rouge">g_{μν}</code>: Defines the geometry of spacetime by measuring distances and angles.</li>
+  <li><strong>Stress-energy tensor</strong> <code class="language-plaintext highlighter-rouge">T_{μν}</code>: Represents energy density, momentum, pressure, and stress in spacetime.</li>
+  <li><strong>Riemann curvature tensor</strong> <code class="language-plaintext highlighter-rouge">R^ρ_{σμν}</code>: Captures the intrinsic curvature of spacetime.</li>
+  <li><strong>Ricci tensor</strong> <code class="language-plaintext highlighter-rouge">R_{μν}</code>: A simplified version of the Riemann tensor obtained by contraction.</li>
+  <li><strong>Einstein tensor</strong> <code class="language-plaintext highlighter-rouge">G_{μν}</code>: Appears in Einstein’s field equations, relating spacetime curvature to energy and momentum.</li>
+  <li><strong>Electromagnetic field tensor</strong> <code class="language-plaintext highlighter-rouge">F_{μν}</code>: Encodes both electric and magnetic fields in a unified framework.</li>
+</ul>
+
+<p>These tensors collectively describe how matter and energy shape the universe and how objects move within it.</p>
+
+<hr />
+
+<h2 id="tensors-in-machine-learning-and-ai">Tensors in Machine Learning and AI</h2>
+
+<p>In modern computational fields like deep learning, tensors are used to store and manipulate data. Frameworks like TensorFlow and PyTorch treat all data as tensors:</p>
+
+<ul>
+  <li><strong>Rank 0 tensors</strong> represent scalars such as loss values.</li>
+  <li><strong>Rank 1 tensors</strong> represent vectors like weights or input features.</li>
+  <li><strong>Rank 2 tensors</strong> represent matrices, commonly used for neural network weights.</li>
+  <li><strong>Rank 3+ tensors</strong> are used for image batches, video sequences, and high-dimensional data.</li>
+</ul>
+
+<p>A 4D tensor in a convolutional neural network might represent data with dimensions <code class="language-plaintext highlighter-rouge">[batch_size, height, width, channels]</code>. Operations such as matrix multiplication, reshaping, and broadcasting are all performed 
+on tensors.</p>
+
+<hr />
+
+<h2 id="real-world-applications-of-tensors">Real-World Applications of Tensors</h2>
+
+<ol>
+  <li>
+    <p><strong>Physics and Engineering</strong>: Tensors are used to model stress, strain, diffusion, and other physical properties of materials. In fluid dynamics, stress tensors help predict flow behavior.</p>
+  </li>
+  <li>
+    <p><strong>General Relativity</strong>: Einstein’s field equations use tensors to describe the gravitational interaction as a curvature of spacetime.</p>
+  </li>
+  <li>
+    <p><strong>Computer Vision</strong>: Tensors are used to represent image data, typically in 3D or 4D, depending on channels and batch sizes.</p>
+  </li>
+  <li>
+    <p><strong>Natural Language Processing (NLP)</strong>: Tensors help represent sentences and words in high-dimensional embedding spaces.</p>
+  </li>
+  <li>
+    <p><strong>Robotics</strong>: Tensors assist in transformations between coordinate frames, essential for control and navigation.</p>
+  </li>
+  <li>
+    <p><strong>Quantum Mechanics</strong>: State functions and observables are expressed as tensors in certain quantum field theories.</p>
+  </li>
+</ol>
+
+<hr />
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>Tensors are more than mathematical curiosities—they’re powerful tools that unify geometry, physics, and computation. They allow us to express laws of nature and data transformations in consistent ways regardless 
+of perspective. Whether you’re exploring the curvature of the cosmos or training a neural network, tensors are the language behind the scenes.</p>
+
+<p>Understanding tensors is not just for physicists or mathematicians. With the growing importance of data science, AI, and scientific computing, learning about tensors gives you a key that unlocks multiple 
+disciplines. As Einstein once hinted, the elegance of the universe is written in the language of tensors.</p>
+
+    </main>
+    <footer class="site-footer">
+      <div class="container">
+        <p>© 2025 Rahul Thakur • Powered by Jekyll</p>
+      </div>
+    </footer>
+  </body>
+</html>
