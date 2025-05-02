@@ -18,7 +18,7 @@ title: Home
       <p class="post-meta">
         {{ post.date | date: "%B %-d, %Y" }}
         {% if post.tags %}
-           <span class="inline-tag">{{ post.tags[0] }}</span>
+           <span class="inline-tag">{{ post.tags }}</span>
          {% endif %}
       </p>
 
