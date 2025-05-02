@@ -13,6 +13,8 @@ hard — it’s nearly impossible to get right without human babysitting.
 
 That’s because tool use, chaining functions, and executing multi-step operations **requires structured reasoning**, parameter handling, and format control — things even the smartest LLMs struggle with today.
 
+<!--more-->
+
 This is the exact problem that the new research paper [Seal-Tools: Self-Instruct Tool Learning Dataset for Agent Tuning and Detailed Benchmark](https://arxiv.org/abs/2405.08355) seeks to solve. If you’re 
 interested in building reliable AI agents, this paper is a must-read — and this post will walk you through why.
 
