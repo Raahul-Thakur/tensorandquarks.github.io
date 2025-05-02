@@ -18,8 +18,8 @@ title: Home
       <p class="post-meta">
         {{ post.date | date: "%B %-d, %Y" }}
         {% if post.tags %}
-           <span class="inline-tag">{{ post.tags }}</span>
-         {% endif %}
+           <span class="inline-tag">{{ post.tags }}</span>{% unless forloop.last %} {% endunless %}
+        {% endif %}
       </p>
 
       <p>{{ post.excerpt }}</p>
