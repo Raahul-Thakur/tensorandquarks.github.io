@@ -48,10 +48,8 @@ Each layer in the encoder and decoder includes:
 
 Self-attention involves computing three vectors for each token: **Query (Q)**, **Key (K)**, and **Value (V)**.
 
-The attention weights are calculated using:
-$$
-\text{Attention}(Q, K, V) = \text{softmax}\left(\frac{QK^T}{\sqrt{d_k}}\right)V
-$$
+The attention weights are calculated using:  
+\(\text{Attention}(Q, K, V) = \text{softmax}\left(\frac{QK^T}{\sqrt{d_k}}\right)V\)
 
 Where \( d_k \) is the dimension of the key vector.  
 This formulation ensures stability and smooth gradient flow.
