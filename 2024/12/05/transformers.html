@@ -100,8 +100,8 @@ simultaneously, it enables <strong>parallelization</strong> during training, dra
 
 <p>Self-attention involves computing three vectors for each token: <strong>Query (Q)</strong>, <strong>Key (K)</strong>, and <strong>Value (V)</strong>.</p>
 
-<p>The attention weights are calculated using:
-\(\text{Attention}(Q, K, V) = \text{softmax}\left(\frac{QK^T}{\sqrt{d_k}}\right)V\)</p>
+<p>The attention weights are calculated using:<br />
+(\text{Attention}(Q, K, V) = \text{softmax}\left(\frac{QK^T}{\sqrt{d_k}}\right)V)</p>
 
 <p>Where ( d_k ) is the dimension of the key vector.<br />
 This formulation ensures stability and smooth gradient flow.</p>
