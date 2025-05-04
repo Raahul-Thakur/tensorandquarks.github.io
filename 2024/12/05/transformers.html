@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Attention Is All You Need: The Paper That Changed Everything | Tensors & Quarks</title>
+    <link rel="stylesheet" href="/tensorandquarks.github.io/assets/style.css" />
+    <script>
+      // Dark mode script
+      function toggleDarkMode() {
+        document.body.classList.toggle("dark");
+        localStorage.setItem("theme", document.body.classList.contains("dark") ? "dark" : "light");
+      }
+
+      window.onload = () => {
+        if (localStorage.getItem("theme") === "dark") {
+          document.body.classList.add("dark");
+        }
+      };
+    </script>
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Attention Is All You Need: The Paper That Changed Everything | Tensors &amp; Quarks</title>
+<meta name="generator" content="Jekyll v4.4.1" />
+<meta property="og:title" content="Attention Is All You Need: The Paper That Changed Everything" />
+<meta name="author" content="Rahul Thakur" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Attention Is All You Need: The Paper That Changed Everything If you’ve ever interacted with ChatGPT, asked an AI to summarize a document, or translated a phrase using Google Translate, you’re experiencing the legacy of a paper that redefined modern artificial intelligence. Published in 2017 by Vaswani et al., the paper “Attention Is All You Need” introduced the world to the Transformer architecture. This seemingly simple idea — that attention mechanisms alone can model complex language patterns without relying on recurrence or convolutions — has since become the bedrock of nearly every major NLP system." />
+<meta property="og:description" content="Attention Is All You Need: The Paper That Changed Everything If you’ve ever interacted with ChatGPT, asked an AI to summarize a document, or translated a phrase using Google Translate, you’re experiencing the legacy of a paper that redefined modern artificial intelligence. Published in 2017 by Vaswani et al., the paper “Attention Is All You Need” introduced the world to the Transformer architecture. This seemingly simple idea — that attention mechanisms alone can model complex language patterns without relying on recurrence or convolutions — has since become the bedrock of nearly every major NLP system." />
+<link rel="canonical" href="https://raahul-thakur.github.io/tensorandquarks.github.io/2024/12/05/transformers.html" />
+<meta property="og:url" content="https://raahul-thakur.github.io/tensorandquarks.github.io/2024/12/05/transformers.html" />
+<meta property="og:site_name" content="Tensors &amp; Quarks" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2024-12-05T00:00:00+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Attention Is All You Need: The Paper That Changed Everything" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Rahul Thakur"},"dateModified":"2024-12-05T00:00:00+00:00","datePublished":"2024-12-05T00:00:00+00:00","description":"Attention Is All You Need: The Paper That Changed Everything If you’ve ever interacted with ChatGPT, asked an AI to summarize a document, or translated a phrase using Google Translate, you’re experiencing the legacy of a paper that redefined modern artificial intelligence. Published in 2017 by Vaswani et al., the paper “Attention Is All You Need” introduced the world to the Transformer architecture. This seemingly simple idea — that attention mechanisms alone can model complex language patterns without relying on recurrence or convolutions — has since become the bedrock of nearly every major NLP system.","headline":"Attention Is All You Need: The Paper That Changed Everything","mainEntityOfPage":{"@type":"WebPage","@id":"https://raahul-thakur.github.io/tensorandquarks.github.io/2024/12/05/transformers.html"},"url":"https://raahul-thakur.github.io/tensorandquarks.github.io/2024/12/05/transformers.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-flex">
+        <div class="branding">
+          <img src="/tensorandquarks.github.io/assets/images/bio-photo.jpeg" alt="Rahul" class="profile-pic">
+          <h1 class="site-title">Tensors & Quarks</h1>
+        </div>
+        <nav class="nav">
+          <a href="/tensorandquarks.github.io/">Home</a>
+          <a href="/tensorandquarks.github.io/about.html">About</a>
+          <button onclick="toggleDarkMode()">🌓</button>
+        </nav>
+      </div>
+    </header>
+    <main class="container">
+      <h1 id="attention-is-all-you-need-the-paper-that-changed-everything">Attention Is All You Need: The Paper That Changed Everything</h1>
+
+<p>If you’ve ever interacted with ChatGPT, asked an AI to summarize a document, or translated a phrase using Google Translate, you’re experiencing the legacy of a paper that redefined modern artificial intelligence. 
+Published in 2017 by Vaswani et al., the paper <strong>“Attention Is All You Need”</strong> introduced the world to the <strong>Transformer</strong> architecture. This seemingly simple idea — that attention mechanisms alone can model 
+complex language patterns without relying on recurrence or convolutions — has since become the bedrock of nearly every major NLP system.</p>
+
+<!--more-->
+
+<h2 id="the-world-before-transformers">The World Before Transformers</h2>
+
+<p>Before Transformers, most Natural Language Processing (NLP) models relied on <strong>Recurrent Neural Networks (RNNs)</strong> and their gated variants like <strong>LSTMs</strong> and <strong>GRUs</strong>. These models processed data 
+sequentially — one token at a time — making them slow to train and difficult to parallelize. Moreover, they struggled with long-range dependencies, often forgetting important information from earlier in a 
+sequence.</p>
+
+<p>CNNs (Convolutional Neural Networks) were also explored for NLP, offering better parallelism but still falling short in capturing global dependencies within text. The field needed a model that could 
+capture <strong>context across an entire sequence</strong> efficiently, without bottlenecking training through sequential processing.</p>
+
+<h2 id="enter-self-attention">Enter Self-Attention</h2>
+
+<p>The core breakthrough of the Transformer model is the <strong>self-attention mechanism</strong>. Instead of processing sequences token by token, self-attention allows each word in a sentence to look at every other word and
+assign it an attention score. This helps the model understand context and relationships across an entire input sequence, regardless of distance. For example, in the sentence: <em>“The animal didn’t cross the street 
+because it was too tired,”</em> the word “it” refers to “animal.” A Transformer can capture that relationship with ease, while traditional RNNs might struggle. Self-attention is also differentiable and easy to 
+optimize using gradient descent, which makes it more tractable for large-scale training compared to complex recurrent structures.</p>
+
+<h2 id="the-transformer-architecture">The Transformer Architecture</h2>
+
+<p>The Transformer discards recurrence and convolutions entirely. Instead, it stacks layers of <strong>multi-head self-attention</strong> and <strong>position-wise feed-forward networks</strong>. Since it processes all tokens 
+simultaneously, it enables <strong>parallelization</strong> during training, drastically reducing training time.</p>
+
+<p>The original model consists of an <strong>encoder-decoder</strong> architecture:</p>
+<ul>
+  <li>The <strong>encoder</strong> maps an input sequence to a continuous representation.</li>
+  <li>The <strong>decoder</strong> uses this representation to generate an output sequence, one token at a time.</li>
+</ul>
+
+<p>Each layer in the encoder and decoder includes:</p>
+<ul>
+  <li><strong>Multi-head self-attention</strong>: Helps the model attend to different positions from multiple perspectives.</li>
+  <li><strong>Feed-forward networks</strong>: Add non-linearity and depth.</li>
+  <li><strong>Residual connections &amp; layer normalization</strong>: Stabilize training.</li>
+  <li><strong>Positional encoding</strong>: Injects sequence order into a model that otherwise processes input tokens simultaneously.</li>
+</ul>
+
+<h3 id="key-equations">Key Equations</h3>
+
+<p>Self-attention involves computing three vectors for each token: <strong>Query (Q)</strong>, <strong>Key (K)</strong>, and <strong>Value (V)</strong>.</p>
+
+<p>The attention weights are calculated using:
+\(\text{Attention}(Q, K, V) = \text{softmax}\left(\frac{QK^T}{\sqrt{d_k}}\right)V\)</p>
+
+<p>Where ( d_k ) is the dimension of the key vector.<br />
+This formulation ensures stability and smooth gradient flow.</p>
+
+<h2 id="why-it-mattered">Why It Mattered</h2>
+
+<p>The Transformer was not just another architecture; it was a <strong>paradigm shift</strong>:</p>
+
+<ul>
+  <li><strong>Speed</strong>: Parallel training made it orders of magnitude faster.</li>
+  <li><strong>Scalability</strong>: It could scale to billions of parameters.</li>
+  <li><strong>Performance</strong>: It outperformed existing models in machine translation and soon extended to many other tasks.</li>
+</ul>
+
+<p>It laid the foundation for models like:</p>
+
+<ul>
+  <li><strong>BERT</strong>: Bidirectional encoding for language understanding.</li>
+  <li><strong>GPT</strong>: Autoregressive decoding for text generation.</li>
+  <li><strong>T5, XLNet, RoBERTa, BART</strong>, and beyond.</li>
+</ul>
+
+<p>The model’s <strong>simplicity, modularity, and generalizability</strong> made it a perfect candidate for transfer learning and pretraining across various tasks — from question answering to summarization.</p>
+
+<hr />
+
+<h2 id="legacy-and-impact">Legacy and Impact</h2>
+
+<p>Today, Transformers dominate not just NLP but also fields like:</p>
+
+<ul>
+  <li><strong>Computer Vision</strong> (e.g., Vision Transformers or ViTs)</li>
+  <li><strong>Audio Processing</strong> (e.g., Whisper)</li>
+  <li><strong>Structural Biology</strong> (e.g., DeepMind’s AlphaFold)</li>
+</ul>
+
+<p>Some of the largest and most powerful AI systems in existence — including <strong>OpenAI’s GPT-4</strong>, <strong>Google’s PaLM</strong>, <strong>Meta’s LLaMA</strong>, and <strong>Anthropic’s Claude</strong> — are all based on the principles introduced in this paper.</p>
+
+<blockquote>
+  <p><em>“Attention Is All You Need” sparked a revolution, and its title became both a bold claim and a prophecy fulfilled.</em></p>
+</blockquote>
+
+<hr />
+
+<h2 id="final-thoughts">Final Thoughts</h2>
+
+<p>This paper marked a turning point in AI research. It simplified architectures, enabled massive parallelization, and changed our approach to sequence modeling.</p>
+
+<p>As AI continues to evolve, the Transformer remains at its core — a testament to the power of rethinking old assumptions and embracing elegant, scalable solutions.</p>
+
+<p>Whether you’re a beginner learning about machine learning or an expert building large-scale systems, understanding this paper is essential. It didn’t just change how machines read and write — it changed the direction of AI itself.</p>
+
+<hr />
+
+<h2 id="-resources">📚 Resources</h2>
+
+<ul>
+  <li>🔗 <a href="https://arxiv.org/abs/1706.03762">Original Paper on arXiv (1706.03762)</a></li>
+  <li>📘 <a href="https://nlp.seas.harvard.edu/2018/04/03/attention.html">The Annotated Transformer (Harvard NLP)</a></li>
+  <li>🖼️ <a href="https://jalammar.github.io/illustrated-transformer/">Illustrated Transformer by Jay Alammar</a></li>
+  <li>📹 <a href="https://www.youtube.com/watch?v=iDulhoQ2pro">Video Explanation by Yannic Kilcher</a></li>
+  <li>🔍 <a href="https://peterbloem.nl/blog/transformers">Transformers from Scratch - Peter Bloem</a></li>
+</ul>
+
+    </main>
+    <footer class="site-footer">
+      <div class="container">
+        <p>© 2025 Rahul Thakur • Powered by Jekyll</p>
+      </div>
+    </footer>
+  </body>
+</html>
