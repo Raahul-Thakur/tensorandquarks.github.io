@@ -11,6 +11,8 @@ tags: [Astrophysics]
 
 This was my assignment for a university coursework module, where I was tasked to evaluate the likelihood of humans colonising Mars within the next 50 years. As someone fascinated by space exploration and future technologies, this topic struck a chord with me. What began as a research task soon turned into a deep dive into the science, speculation, and possibilities surrounding Mars colonisation. Here’s what I found.
 
+<!--more-->
+
 ---
 
 ## A Curious Neighbour: Getting to Know Mars
