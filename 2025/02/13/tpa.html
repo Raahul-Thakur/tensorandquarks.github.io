@@ -59,70 +59,67 @@
 
 <!--more-->
 
-<p><img src="https://upload.wikimedia.org/wikipedia/commons/7/74/Encoder_self-attention%2C_detailed_diagram.png" alt="Self-attention overview" /></p>
-
-<hr />
+<p align="center">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/7/74/Encoder_self-attention%2C_detailed_diagram.png" alt="Self-attention overview" width="600" />
+</p>
 
 <h2 id="1why-the-kv-cache-became-public-enemy-1">1 Why the KV Cache Became Public Enemy #1</h2>
 
 <p>Modern language models rarely choke on parameter counts; they choke on <strong>context</strong>.<br />
 During autoregressive generation the model must keep <strong>two</strong> tensors—keys and values—for <strong>every</strong> past token so that future queries can look back.<br />
-With <em>H</em> heads of size <em>d<sub>h</sub></em> and a sequence of <em>T</em> tokens, the cached footprint for a single layer is</p>
+With <em>H</em> heads of size <em>d<sub>h</sub></em> and a sequence of <em>T</em> tokens, the cached footprint for <em>one</em> layer is</p>
 
-<p>[
-\boxed{\text{Memory}<em>\text{MHA}=2\,H\,d</em>{h}\,T}\tag{1}
-]</p>
+\[\boxed{\text{Memory}_{\text{MHA}} = 2\,H\,d_{h}\,T}
+\tag{1}\]
 
-<p>On an A100 GPU you can exhaust 40 GB of RAM long before you fill the compute budget, forcing practitioners to trim prompts, chop documents, or shard the KV cache across devices.<br />
-Previous fixes (Multi-Query, Grouped-Query, Multi-head Latent Attention) either share keys between heads or summarise them into latents, clawing back memory at the price of modelling fidelity. <strong>Tensor Product Attention (TPA)</strong>—introduced in <em>“Tensor Product Attention Is All You Need”</em> (2025)—offers a radical alternative: <strong>compress</strong> each Q, K, V with a low-rank tensor factorisation so you keep almost all capacity while paying a fraction of the memory bill.</p>
+<p>On an A100 GPU you can exhaust 40 GB of RAM long before you fill the compute budget.<br />
+Previous fixes (Multi-Query, Grouped-Query, Multi-head Latent) claw back memory by <strong>sharing</strong> or <strong>summarising</strong> keys, but at some cost in modelling power.<br />
+<strong>Tensor Product Attention (TPA)</strong>—introduced in <em>“Tensor Product Attention Is All You Need”</em> (2025)—compresses each Q, K &amp; V with a low-rank factorisation, keeping almost all capacity while paying only a fraction of the memory bill.</p>
 
 <hr />
 
 <h2 id="2a-one-equation-recap-of-multi-head-attention">2 A One-Equation Recap of Multi-Head Attention</h2>
 
-<p>For a single head the scaled dot-product attention is</p>
+<p>For a single head the scaled-dot-product attention is</p>
 
-<p>[
-\mathrm{Attn}(Q,K,V)=\operatorname{softmax}!\Bigl(\tfrac{QK^{\top}}{\sqrt{d_{h}}}\Bigr)V.\tag{2}
-]</p>
+\[\mathrm{Attn}(Q,K,V)
+  \;=\;
+  \operatorname{softmax}\!\left(\frac{QK^{\!\top}}{\sqrt{d_{h}}}\right)V .
+\tag{2}\]
 
-<p>Multi-Head Attention (MHA) simply repeats that calculation <em>H</em> times with separate projections.<br />
-Expressive? Absolutely.<br />
-But each head carries its own key–value history, so Equation (1) still looms large in memory-bound deployments.</p>
+<p>Multi-Head Attention (MHA) just repeats that calculation <em>H</em> times with independent projections—expressive, but memory-hungry via Equation (1).</p>
 
 <hr />
 
 <h2 id="3tensor-product-attention--compress-keys-keep-power">3 Tensor Product Attention — Compress Keys, Keep Power</h2>
 
-<p><img src="https://upload.wikimedia.org/wikipedia/commons/2/26/AM_diagrams_outer_product.svg" alt="Outer-product factorisation" />
-<em>A rank-1 outer product; TPA stores a <strong>sum</strong> of such products rather than a full matrix.</em></p>
+<p align="center">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/2/26/AM_diagrams_outer_product.svg" alt="Outer-product factorisation" width="400" />
+</p>
+<p><em>A rank-1 outer product; TPA stores a <strong>sum</strong> of such products rather than a full matrix.</em></p>
 
-<p>The core idea is tantalisingly simple.<br />
-Instead of caching a full <em>H × d<sub>h</sub></em> key matrix for every token, TPA writes it as a <strong>low-rank sum of outer products</strong></p>
+<p>Instead of caching a full <em>H × d<sub>h</sub></em> key matrix for every token, TPA writes it as a <strong>low-rank sum of outer products</strong></p>
 
-<p>[
-K=\sum_{r=1}^{R} a_{r}\;\otimes\;b_{r}^{\top},\tag{3}
-]</p>
+\[K \;=\; \sum_{r=1}^{R} a_{r}\;\otimes\;b_{r}^{\!\top},
+\tag{3}\]
 
 <p>where</p>
 
 <ul>
-  <li>(a_{r}\in\mathbb{R}^{H}) are <strong>head-factors</strong> that vary across heads but not token features,</li>
-  <li>(b_{r}\in\mathbb{R}^{d_{h}}) are <strong>token-factors</strong> that vary across features but not heads,</li>
-  <li>(R) ≪ (H) is the chosen rank.</li>
+  <li>(a_{r}\in\mathbb{R}^{H}) are <strong>head-factors</strong>,</li>
+  <li>(b_{r}\in\mathbb{R}^{d_{h}}) are <strong>token-factors</strong>,</li>
+  <li>(R \ll H) is the chosen rank.</li>
 </ul>
 
-<p>Because an outer product expands to a full matrix on the fly, the cache only needs the skinny vectors (a_{r}) and (b_{r}).<br />
-Per-token memory now reads</p>
+<p>The cache now needs only the skinny vectors (a_{r}, b_{r}), so per-token memory becomes</p>
 
-<p>[
-\boxed{\text{Memory}<em>\text{TPA}=2\,R\,(H+d</em>{h})\,T},\qquad R\ll H.\tag{4}
-]</p>
+\[\boxed{\text{Memory}_{\text{TPA}} = 2\,R\,(H+d_{h})\,T},
+\qquad R \ll H .
+\tag{4}\]
 
-<p>With a LLaMA-style setting ((H=16,\,d_{h}=128,\,R=8)) the key–value slice per token falls from <strong>4096</strong> to <strong>1152</strong> floats—a <strong>7-to-8×</strong> saving that compounds linearly as the context grows.</p>
+<p>With LLaMA-style numbers ((H{=}16, d_{h}{=}128, R{=}8)) the key-value slice shrinks ≈ 8 ×.</p>
 
 <h3 id="a-spectrum-not-a-point">A Spectrum, Not a Point</h3>
-<p>TPA <strong>unifies</strong> earlier tricks:</p>
 
 <table>
   <thead>
@@ -133,11 +130,11 @@ Per-token memory now reads</p>
   </thead>
   <tbody>
     <tr>
-      <td style="text-align: left">(R=H) and (a_{r}=e_{r})</td>
+      <td style="text-align: left">(R=H,\;a_{r}=e_{r})</td>
       <td style="text-align: left">Multi-Head Attention</td>
     </tr>
     <tr>
-      <td style="text-align: left">(R=1) and (a_{1}=\mathbf{1})</td>
+      <td style="text-align: left">(R=1,\;a_{1}=\mathbf{1})</td>
       <td style="text-align: left">Multi-Query Attention</td>
     </tr>
     <tr>
@@ -147,25 +144,22 @@ Per-token memory now reads</p>
   </tbody>
 </table>
 
-<p>Compression thus becomes a <em>continuous</em> knob (rank <em>R</em>) rather than a handful of hard-wired designs.</p>
-
 <hr />
 
 <h2 id="4position-embeddings-that-stay-low-rank">4 Position Embeddings That Stay Low-Rank</h2>
 
-<p>Rotary Position Embeddings (RoPE) rotate queries &amp; keys in complex space, enabling length extrapolation.<br />
-Earlier low-rank schemes had to keep an uncompressed “RoPE slice.”<br />
-TPA sidesteps that burden through a neat algebraic fact: RoPE acts <strong>block-diagonally</strong> on the outer-product factors, so we can pre-rotate (a_{r}) and (b_{r}) and remain fully factorised—no hidden KV bloat, no quality loss.</p>
+<p>Rotary Position Embeddings (RoPE) rotate queries &amp; keys in complex space for unlimited extrapolation.<br />
+Because the rotation is block-diagonal, we can apply it directly to each factor in Equation (3), so TPA stays compressed—unlike earlier low-rank schemes that needed an uncompressed “RoPE slice.”</p>
 
 <hr />
 
 <h2 id="5t6-the-first-transformer-built-on-tpa">5 T6: The First Transformer Built on TPA</h2>
 
-<p><img src="https://upload.wikimedia.org/wikipedia/commons/3/34/Transformer%2C_full_architecture.png" alt="Transformer stack" />
-<em>Replace the attention sub-layer with TPA blocks and you obtain the <strong>T6 Transformer</strong>.</em></p>
+<p align="center">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/3/34/Transformer%2C_full_architecture.png" alt="Transformer stack" width="450" />
+</p>
 
-<p>The authors patch TPA blocks into a LLaMA-like architecture (norm-first, SwiGLU MLPs) and coin the result <strong>T6</strong>.<br />
-Pre-training on 100 B FineWeb-Edu tokens yields impressive numbers:</p>
+<p>The authors swap TPA blocks into a LLaMA-like architecture (norm-first, SwiGLU MLPs) and call the model <strong>T6</strong>.</p>
 
 <table>
   <thead>
@@ -173,7 +167,7 @@ Pre-training on 100 B FineWeb-Edu tokens yields impressive numbers:</p>
       <th>Model</th>
       <th>Params</th>
       <th>Context length</th>
-      <th>Val. perplexity ↓</th>
+      <th>Val. ppl ↓</th>
       <th>KV memory</th>
     </tr>
   </thead>
@@ -183,56 +177,55 @@ Pre-training on 100 B FineWeb-Edu tokens yields impressive numbers:</p>
       <td>353 M</td>
       <td>8 k</td>
       <td>5.78</td>
-      <td>1×</td>
+      <td>1 ×</td>
     </tr>
     <tr>
       <td><strong>T6 (TPA)</strong></td>
       <td>353 M</td>
       <td>16 k</td>
       <td><strong>5.52</strong></td>
-      <td><strong>≈ 0.12×</strong></td>
+      <td><strong>≈ 0.12 ×</strong></td>
     </tr>
   </tbody>
 </table>
 
-<p>Beyond perplexity, the 353 M T6 edges out MHA, MQA, GQA and MLA across nine zero-shot tasks (ARC, BoolQ, HellaSwag, Winogrande).<br />
-Because the KV cache is slimmer, the same A100 carries <strong>65 k-token</strong> contexts at inference with speed on par with MQA.</p>
+<p>Zero-shot evaluation (ARC, BoolQ, HellaSwag…) shows consistent +1–2 % accuracy over MHA, MQA, GQA and MLA.<br />
+Because the KV cache is slimmer, the same A100 now handles <strong>65 k-token</strong> contexts at inference with speed almost identical to MQA.</p>
 
 <hr />
 
 <h2 id="6what-practitioners-can-do-right-now">6 What Practitioners Can Do Right Now</h2>
 
 <ul>
-  <li><strong>Serve longer prompts on fixed hardware.</strong> Drop-in swap K &amp; V with rank-8 TPA factors, fine-tune for a few epochs, and unlock ~8× context on existing weights.</li>
-  <li><strong>Train mid-size models faster.</strong> Full TPA converges in fewer steps than MHA for the same compute budget.</li>
-  <li><strong>Keep the speed.</strong> TPA integrates with FlashAttention-2 kernels; the fused CUDA op never materialises the full QK⊤ matrix, so runtime overhead stays below 2 %.</li>
-  <li><strong>Edge and mobile.</strong> Combine rank-8 TPA with 4-bit quantisation to keep both parameters and cache tiny enough for laptop-class GPUs.</li>
+  <li><strong>Serve longer prompts</strong> on fixed hardware → factorise K &amp; V (rank 8), quick fine-tune, context ≈ 8 × longer.</li>
+  <li><strong>Train mid-size models</strong> faster → full TPA converges in fewer steps than MHA for the same FLOPs.</li>
+  <li><strong>Edge/mobile</strong> → pair rank-8 TPA with 4-bit weight quantisation; both params <em>and</em> cache fit on laptop-class GPUs.</li>
 </ul>
 
 <hr />
 
 <h2 id="7limitations--open-questions">7 Limitations &amp; Open Questions</h2>
 
-<p>TPA is powerful—but not perfect.<br />
-Kernel support is GPU-first; CPU and Metal variants lag a version behind.<br />
-Rank selection remains empirical (the paper defaults to (R=8)); auto-tuning heuristics are an open field.<br />
-While T6 reaches 65 k tokens cleanly, pushing beyond 100 k may require ALiBi-style biasing or gradient injection tricks.<br />
-Finally, modalities beyond text—vision, audio, reinforcement-learning trajectories—await dedicated exploration.</p>
+<ul>
+  <li>GPU kernels are ready; CPU/Metal back-ends lag.</li>
+  <li>Rank (R) is empirical (paper uses 8); auto-tuning is open research.</li>
+  <li>Ultra-long contexts (&gt;100 k) may need ALiBi or gradient-injection tricks.</li>
+  <li>Vision/audio Transformers still untested with TPA.</li>
+</ul>
 
 <hr />
 
 <h2 id="8conclusion--a-smarter-coordinate-system-for-attention">8 Conclusion — A Smarter Coordinate System for Attention</h2>
 
-<p>Tensor Product Attention reframes the long-context dilemma: instead of pruning information, <strong>re-encode</strong> it in a basis where it costs less memory to store.<br />
-Because MHA, MQA and GQA appear as limiting cases, TPA offers a principled, tunable bridge between full expressivity and lean deployment budgets.<br />
-The accompanying T6 experiments show that you can have your cake (low perplexity, solid downstream scores) and eat it too (longer context, smaller cache, faster convergence).<br />
-When future chatbots retain entire books or sprawling codebases inside a single GPU, the factorised elegance of TPA will be a major reason why.</p>
+<p>Tensor Product Attention reframes the long-context dilemma: <strong>re-encode</strong> information in a basis where it’s cheaper to store.<br />
+Because MHA, MQA and GQA are limiting cases, TPA offers a tunable continuum rather than discrete compromises.<br />
+The T6 experiments show you can have low perplexity <em>and</em> huge context windows <em>and</em> small caches—all on today’s hardware.</p>
 
 <hr />
 
 <h3 id="reference">Reference</h3>
 
-<p><strong>Jiang et al.</strong> – <em>Tensor Product Attention Is All You Need</em> (2025).<br />
+<p><strong>Jiang et al.</strong>  —  <em>Tensor Product Attention Is All You Need</em> (2025).<br />
 <a href="https://arxiv.org/abs/2501.06425">https://arxiv.org/abs/2501.06425</a></p>
 
     </main>
