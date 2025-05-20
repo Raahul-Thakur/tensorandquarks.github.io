@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title> | Tensors & Quarks</title>
+    <link rel="stylesheet" href="/tensorandquarks.github.io/assets/style.css" />
+    <script>
+      // Dark mode script
+      function toggleDarkMode() {
+        document.body.classList.toggle("dark");
+        localStorage.setItem("theme", document.body.classList.contains("dark") ? "dark" : "light");
+      }
+
+      window.onload = () => {
+        if (localStorage.getItem("theme") === "dark") {
+          document.body.classList.add("dark");
+        }
+      };
+    </script>
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Tensors &amp; Quarks | Exploring the intersection of physics and machine learning.</title>
+<meta name="generator" content="Jekyll v4.4.1" />
+<meta property="og:title" content="Tensors &amp; Quarks" />
+<meta name="author" content="Rahul Thakur" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Block Geometry &amp; Everything-Bagel Neurons: Decoding Polysemanticity When Neurons Speak in Tongues: Why Polysemanticity Demands a Theory of Capacity Crack open a modern vision or language model and you’ll run into a curious spectacle: the same unit flares for “cat ears,” “striped shirts,” and “the Eiffel Tower.” This phenomenon—polysemanticity—is more than a party trick. It frustrates attribution, muddies interpretability dashboards, and complicates any safety guarantee that relies on isolating the “terrorism neuron” or “privacy-violation neuron.”" />
+<meta property="og:description" content="Block Geometry &amp; Everything-Bagel Neurons: Decoding Polysemanticity When Neurons Speak in Tongues: Why Polysemanticity Demands a Theory of Capacity Crack open a modern vision or language model and you’ll run into a curious spectacle: the same unit flares for “cat ears,” “striped shirts,” and “the Eiffel Tower.” This phenomenon—polysemanticity—is more than a party trick. It frustrates attribution, muddies interpretability dashboards, and complicates any safety guarantee that relies on isolating the “terrorism neuron” or “privacy-violation neuron.”" />
+<link rel="canonical" href="https://raahul-thakur.github.io/tensorandquarks.github.io/2025/02/27/Polysemanticity.html" />
+<meta property="og:url" content="https://raahul-thakur.github.io/tensorandquarks.github.io/2025/02/27/Polysemanticity.html" />
+<meta property="og:site_name" content="Tensors &amp; Quarks" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2025-02-27T00:00:00+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Tensors &amp; Quarks" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Rahul Thakur"},"dateModified":"2025-02-27T00:00:00+00:00","datePublished":"2025-02-27T00:00:00+00:00","description":"Block Geometry &amp; Everything-Bagel Neurons: Decoding Polysemanticity When Neurons Speak in Tongues: Why Polysemanticity Demands a Theory of Capacity Crack open a modern vision or language model and you’ll run into a curious spectacle: the same unit flares for “cat ears,” “striped shirts,” and “the Eiffel Tower.” This phenomenon—polysemanticity—is more than a party trick. It frustrates attribution, muddies interpretability dashboards, and complicates any safety guarantee that relies on isolating the “terrorism neuron” or “privacy-violation neuron.”","headline":"Tensors &amp; Quarks","mainEntityOfPage":{"@type":"WebPage","@id":"https://raahul-thakur.github.io/tensorandquarks.github.io/2025/02/27/Polysemanticity.html"},"url":"https://raahul-thakur.github.io/tensorandquarks.github.io/2025/02/27/Polysemanticity.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-flex">
+        <div class="branding">
+          <img src="/tensorandquarks.github.io/assets/images/bio-photo.jpeg" alt="Rahul" class="profile-pic">
+          <h1 class="site-title">Tensors & Quarks</h1>
+        </div>
+        <nav class="nav">
+          <a href="/tensorandquarks.github.io/">Home</a>
+          <a href="/tensorandquarks.github.io/about.html">About</a>
+          <button onclick="toggleDarkMode()">🌓</button>
+        </nav>
+      </div>
+    </header>
+    <main class="container">
+      <h1 id="block-geometry--everything-bagel-neurons-decoding-polysemanticity">Block Geometry &amp; Everything-Bagel Neurons: Decoding Polysemanticity</h1>
+
+<h2 id="when-neurons-speak-in-tongues-why-polysemanticity-demands-a-theory-of-capacity">When Neurons Speak in Tongues: Why Polysemanticity Demands a Theory of Capacity</h2>
+
+<p>Crack open a modern vision or language model and you’ll run into a curious spectacle: the <strong>same</strong> unit flares for “cat ears,” “striped shirts,” <strong>and</strong> “the Eiffel Tower.” This phenomenon—<strong>polysemanticity</strong>—is more than a party trick. It frustrates attribution, muddies interpretability dashboards, and complicates any safety guarantee that relies on isolating <em>the</em> “terrorism neuron” or “privacy-violation neuron.”</p>
+
+<!--more-->
+
+<p>Scherlis et al. begin by arguing that previous explanations—random weight-space rotations, quirks of stochastic gradient descent, or mere dataset noise—describe <em>symptoms</em>, not <em>causes</em>. The real culprit, they claim, is <strong>capacity</strong>. Picture every embedding dimension as a square foot in a cramped city apartment; features are tenants who “pay” rent proportional to how much they lower the loss. When the building is spacious (wide layers), each tenant can live alone—monosemantic luxury. When space is scarce, the loss-minimising landlord forces roommates to bunk together, entangling unrelated features in a single dimension.</p>
+
+<p>This reframing yields two research goals:</p>
+
+<ol>
+  <li><strong>Define feature capacity</strong> in a way that plugs cleanly into optimisation theory.</li>
+  <li><strong>Derive quantitative predictions</strong> (sharp phase boundaries) and <strong>qualitative geometry</strong> (block-semi-orthogonal embeddings).</li>
+</ol>
+
+<p>Polysemantic neurons, then, are cast as an <strong>inevitable budgeting hack</strong> whenever the set of important features outnumbers cheap dimensions. That premise powers everything that follows.</p>
+
+<hr />
+
+<h2 id="2the-math-of-capacity-allocation-from-definitions-to-diminishing-returns">2 · The Math of Capacity Allocation: From Definitions to Diminishing Returns</h2>
+
+<p>Section 2 (“Capacity and Superposition”) translates the apartment-sharing metaphor into algebra. Each input feature (i) acquires an <strong>embedding vector</strong> (v_i) in a (d)-dimensional pre-activation space. Its <strong>capacity</strong></p>
+
+<p>[
+c_i \;=\;\frac{\lVert v_i\rVert^{2}}{\sum_{j=1}^{d}\langle v_i,\;v_j\rangle^{2}}
+]</p>
+
+<p>measures the fraction of a basis vector it “rents,” and obeys (0 \le c_i \le 1). Summing over all features gives the <strong>hard budget</strong></p>
+
+<p>[
+\sum_i c_i \;\le\; d.
+]</p>
+
+<p>Because more capacity never <em>increases</em> loss in their setup, the network spends its budget via a Lagrange multiplier (\lambda). The Karush–Kuhn–Tucker conditions imply:</p>
+
+<ul>
+  <li>If (0 &lt; c_i &lt; 1), then (\partial \mathcal{L}/\partial c_i = \lambda).</li>
+  <li>If (c_i = 1), its marginal curve stays above (\lambda).</li>
+  <li>If (c_i = 0), its marginal curve sits below (\lambda).</li>
+</ul>
+
+<p>Visualised, each feature’s diminishing-returns curve rises steeply at first and flattens with capacity. The optimiser allocates slivers until all <em>partially funded</em> curves land on a common horizontal line (\lambda). Features whose curves never dip that low monopolise a dimension; those that never rise that high disappear; the rest share neurons—polysemanticity incarnate.</p>
+
+<p><strong>Data statistics matter.</strong> High-kurtosis or highly sparse inputs flatten marginal-benefit curves quickly, inviting sharing; dense Gaussian-like inputs keep curves steep, favouring monosemantic codes.</p>
+
+<p><strong>Architecture matters too.</strong> Certain activations (quadratic, tanh) satisfy the monotonic-benefit assumption exactly, whereas ReLU approximates it, partly explaining why ReLU layers look cleaner at the same width. In a sentence: Section 2 turns a fuzzy interpretability headache into a crisp <em>capacity-allocation problem</em> solved by classical optimisation.</p>
+
+<hr />
+
+<h2 id="3the-quadratic-toy-model-analytic-phase-diagrams-and-the-role-of-sparsity">3 · The Quadratic Toy Model: Analytic Phase Diagrams and the Role of Sparsity</h2>
+
+<p>To ground the theory, the authors build a <strong>one-layer quadratic network</strong>. Ground-truth labels come from</p>
+
+<p>[
+y \;=\; \sum_i \alpha_i x_i^{2},
+]</p>
+
+<p>with independent random features (x_i) whose variance and kurtosis are known. The model must learn this map with only (d) neurons—fewer than features—so the capacity constraint bites.</p>
+
+<p>Quadratic activations square linear embeddings, letting expected MSE loss split neatly into a <em>correlation</em> term (good alignment with (\alpha_i)) and a <em>hallucination</em> term (spurious overlap). Sparse “spike-and-slab” inputs have large kurtosis, shrinking hallucination penalties and encouraging aggressive sharing; Gaussian inputs hurt more when features overlap, so the network prefers orthogonal monosemantic embeddings.</p>
+
+<p>Solving the optimisation yields a <strong>phase diagram</strong>:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Region</th>
+      <th>Capacity Allocation</th>
+      <th>Behaviour</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>A – Saturated Elite</strong></td>
+      <td>Top-(k) features claim (c_i=1); all others (0).</td>
+      <td>Purely monosemantic; minor features vanish.</td>
+    </tr>
+    <tr>
+      <td><strong>B – Plateau</strong></td>
+      <td>Mid-tier features share (0 &lt; c_i &lt; 1).</td>
+      <td>Classic polysemantic neurons mix equal-weight features.</td>
+    </tr>
+    <tr>
+      <td><strong>C – Abundant</strong></td>
+      <td>Almost every feature reaches (c_i \approx 1).</td>
+      <td>Superposition fades away.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Empirical tests on synthetic data and Anthropic’s sparse autoencoders honour these boundaries, demonstrating the mechanism’s generality. Two take-aways:</p>
+
+<ul>
+  <li><strong>Sparsity ↔ Polysemanticity.</strong> Rarely active features happily overlap, so the network economises by mixing them.</li>
+  <li><strong>Importance Diversity.</strong> Polysemanticity flourishes when several features have comparable importance; a steep importance spectrum lets elites monopolise neurons.</li>
+</ul>
+
+<p>Even in this toy setting, some superposition is <strong>loss-optimal</strong> whenever representational resources are tight.</p>
+
+<hr />
+
+<h2 id="4block-semi-orthogonal-geometry-from-diagonal-luxury-to-everything-bagel-chaos">4 · Block-Semi-Orthogonal Geometry: From Diagonal Luxury to Everything-Bagel Chaos</h2>
+
+<p>Given optimal capacities, what geometry do weight matrices adopt? Section 4 shows every optimum decomposes into <strong>block-semi-orthogonal embeddings</strong>:</p>
+
+<p>[
+V \;=\; \bigoplus_{b=1}^{B} Q_b S_b,
+]</p>
+
+<p>where each block (Q_b) is orthogonal and (S_b) rescales feature lengths. Four archetypes emerge:</p>
+
+<ol>
+  <li><strong>Diagonal (Monosemantic).</strong> Each feature owns a private axis.</li>
+  <li><strong>Everything-Bagel Semi-Orthogonal.</strong> All features crowd one giant block, interfering freely.</li>
+  <li><strong>Mixed / Tegum Product.</strong> Several medium blocks—interference within, orthogonality across.</li>
+  <li><strong>Arbitrary Combination.</strong> Any embedding rotates into a direct sum of such blocks.</li>
+</ol>
+
+<p>Capacity can shuffle freely <em>inside</em> a block, yielding many equivalent minima—hence the “everything-bagel” flexibility. Architecture turns out to be a toggle: Quadratic &gt; tanh &gt; GELU &gt; ReLU in typical block size, reflecting activation curvature and saturation.</p>
+
+<p>Practical engineering insights:</p>
+
+<ul>
+  <li><strong>Orthogonality regularisers</strong> (e.g., Björck, weight whitening) shrink blocks toward size 1, promoting monosemanticity.</li>
+  <li><strong>Sparse-coding layers</strong> replace a giant bagel with crisp crumbs at equal parameter cost.</li>
+  <li><strong>Width tuning</strong> relaxes capacity precisely where auditability matters—safety-critical features can live alone even while benign ones share.</li>
+</ul>
+
+<p>Block geometry thus offers both a <em>diagnostic language</em> and a <em>toolbox</em> for steering how meaning distributes across neurons.</p>
+
+<hr />
+
+<h2 id="5experiments-practitioner-take-aways-and-open-frontiers">5 · Experiments, Practitioner Take-aways, and Open Frontiers</h2>
+
+<p>The final section reconnects theory with practice. Two-layer networks (ReLU, GELU, tanh, quadratic) are trained on synthetic tasks where sparsity and feature importance are dial-a-knob. Results:</p>
+
+<ul>
+  <li><strong>Phase transitions</strong>—monosemantic → polysemantic → ignored—<em>match theory</em> but smear a bit under optimisation noise.</li>
+  <li><strong>Activation-specific block spectra.</strong> Quadratic layers spawn huge blocks; ReLU keeps them tiny, confirming geometric claims.</li>
+  <li><strong>Kurtosis drives superposition.</strong> Holding width fixed, raising input kurtosis increases polysemanticity almost linearly.</li>
+</ul>
+
+<p><strong>Key practitioner lessons</strong></p>
+
+<ol>
+  <li><strong>Selective width increases</strong> untangle safety-critical features.</li>
+  <li><strong>Data curation</strong> (transforms that tame kurtosis) curbs unnecessary superposition.</li>
+  <li><strong>Loss penalties</strong> favouring orthogonality or penalising large blocks trade a small loss uptick for clearer semantics.</li>
+  <li><strong>Capacity-aware probes</strong> locate blind-spot domains (features with (c_i \approx 0)) and entanglement zones (mixed-capacity blocks).</li>
+</ol>
+
+<p><strong>Open problems</strong></p>
+
+<ul>
+  <li><strong>Depth dynamics.</strong> How does capacity propagate or re-allocate across layers?</li>
+  <li><strong>Optimisation paths.</strong> Does SGD march directly toward capacity-optimal blocks or loiter in messy rotations?</li>
+  <li><strong>Correlated features.</strong> Extending capacity definitions beyond independent features is fertile ground, intersecting disentanglement research.</li>
+</ul>
+
+<p>Polysemantic neurons, in sum, are a <em>budget decision</em>, not an accident. By quantifying capacity and mapping block geometry, Scherlis et al. turn spooky superposition into a predictable, steerable property—handing interpretability researchers a fresh compass.</p>
+
+<hr />
+
+<h3 id="further-reading">Further Reading</h3>
+
+<p>Original paper: <strong>“Polysemanticity and Capacity in Neural Networks”</strong> — <a href="https://arxiv.org/abs/2210.01892">https://arxiv.org/abs/2210.01892</a></p>
+
+    </main>
+    <footer class="site-footer">
+      <div class="container">
+        <p>© 2025 Rahul Thakur • Powered by Jekyll</p>
+      </div>
+    </footer>
+  </body>
+</html>
