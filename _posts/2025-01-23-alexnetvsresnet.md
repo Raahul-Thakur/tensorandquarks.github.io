@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How AlexNet Lit the Spark and ResNet Fanned the Flames"
+title: ""
 date: 2025-01-23
 tags: [ML]
 ---
