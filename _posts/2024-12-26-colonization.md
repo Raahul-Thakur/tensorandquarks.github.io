@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Will We Colonise Mars in the Next 50 Years?"
+title: ""
 date: 2024-12-26
 tags: [Astrophysics]
 ---
