@@ -9,6 +9,8 @@ tags: [ML]
 
 The field of adversarial machine learning is built on a paradox: models that perform impressively on natural data can be shockingly vulnerable to small, human-imperceptible perturbations. These adversarial examples expose a fragility in deep networks that could have serious consequences in security-critical domains like autonomous driving, medical imaging, or biometric authentication. Naturally, defenses against these attacks have been the subject of intense research. Among them, a seemingly simple strategy has gained popularity: **random transformations**. By applying random, often non-differentiable perturbations to input images—such as resizing, padding, cropping, JPEG compression, or color quantization—these methods hope to break the adversary’s control over the gradients that guide attacks. At first glance, it seems effective. Robust accuracy increases. Attacks fail. But is this robustness genuine?
 
+<!--more-->
+
 This question forms the heart of the paper *“Demystifying the Adversarial Robustness of Random Transformation Defenses”* by Bai et al. (2022). The authors critically re-examine the perceived robustness of these defenses. Their work builds a theoretical and empirical foundation to investigate whether random transformation (RT) defenses provide true robustness or merely present an illusion by obfuscating gradients and making attacks harder to execute. Through a combination of analytical modeling and rigorous adaptive attacks, they show that what looks like security is often just an artifact of incomplete threat models.
 
 ## What Are Random Transformation Defenses?
