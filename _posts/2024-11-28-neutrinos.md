@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "The Neutrino Mystery of SN 1987A Still Baffles Modern Physics"
+title: ""
 date: 2024-11-28
 tags: [Astrophysics]
 ---
