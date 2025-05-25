@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Chasing the Sun’s Secrets: Why the Solar Poles Hold the Key to Our Star's Future"
+title: ""
 date: 2024-12-19
 tags: [Astrophysics]
 ---
