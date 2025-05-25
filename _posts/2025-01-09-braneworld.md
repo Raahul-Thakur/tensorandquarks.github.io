@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "What happens to time when your universe can move through another"
+title: ""
 date: 2025-01-09
 tags: [Astrophysics]
 ---
