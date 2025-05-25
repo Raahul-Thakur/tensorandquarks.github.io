@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Seal-Tools: Teaching AI Agents to Use Tools Like Developers"
+title: ""
 date: 2024-11-21
 tags: [ML]
 ---
