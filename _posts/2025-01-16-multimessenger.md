@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Black Hole Meets Neutron Star. Nothing Happens. Everything Changes"
+title: ""
 date: 2025-01-16
 tags: [Astrophysics]
 ---
