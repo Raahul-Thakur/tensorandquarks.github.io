@@ -5,8 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title> | Tensors & Quarks</title>
     <link rel="stylesheet" href="/tensorandquarks.github.io/assets/style.css" />
+
+    <!-- 🌓 Dark Mode Script -->
     <script>
-      // Dark mode script
       function toggleDarkMode() {
         document.body.classList.toggle("dark");
         localStorage.setItem("theme", document.body.classList.contains("dark") ? "dark" : "light");
@@ -18,6 +19,13 @@
         }
       };
     </script>
+
+    <!-- ✅ MathJax Support -->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+    </script>
+
     <!-- Begin Jekyll SEO tag v2.8.0 -->
 <title>Tensors &amp; Quarks | Exploring the intersection of physics and machine learning.</title>
 <meta name="generator" content="Jekyll v4.4.1" />
@@ -38,6 +46,7 @@
 <!-- End Jekyll SEO tag -->
 
   </head>
+
   <body>
     <header class="site-header">
       <div class="container header-flex">
@@ -52,6 +61,7 @@
         </nav>
       </div>
     </header>
+
     <main class="container">
       <h1 id="fine-tuning-language-models-welcome-to-the-nerdy-playground-of-llms">Fine-Tuning Language Models: Welcome to the Nerdy Playground of LLMs</h1>
 <p><em>From LoRA to RLHF — and all the acronyms in between</em></p>
@@ -230,6 +240,7 @@ The LLM multiverse is just getting started.</p>
 <em>Still sipping quantized gradients like espresso.</em></p>
 
     </main>
+
     <footer class="site-footer">
       <div class="container">
         <p>© 2025 Rahul Thakur • Powered by Jekyll</p>
