@@ -83,5 +83,5 @@ The takeaway? If we want trustworthy models, we must move beyond random patches 
 
 ---
 
-** Read the Paper:** [arXiv:2207.03574](https://arxiv.org/abs/2207.03574)
+Read the Paper: [arXiv:2207.03574](https://arxiv.org/abs/2207.03574)
 
