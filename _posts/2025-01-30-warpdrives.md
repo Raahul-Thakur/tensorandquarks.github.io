@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "The Semiclassical Death of Warp Bubbles"
+title: ""
 date: 2025-01-30
 tags: [Astrophysics]
 ---
