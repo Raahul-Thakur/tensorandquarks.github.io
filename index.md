@@ -18,7 +18,9 @@ title: Home
       <p class="post-meta">
         {{ post.date | date: "%B %-d, %Y" }}
         {% if post.tags %}
-           <span class="inline-tag">{{ post.tags }}</span>{% unless forloop.last %} {% endunless %}
+          {% for tag in post.tags %}
+            <span class="inline-tag">{{ tag }}</span>
+          {% endfor %}
         {% endif %}
       </p>
 
