@@ -86,104 +86,11 @@
                 
               
             </p>
-            <p><h1 id="-on-the-biology-of-a-large-language-model">🧠 On the Biology of a Large Language Model</h1>
-<h2 id="exploring-the-hidden-anatomy-of-claude-35-haiku">Exploring the Hidden Anatomy of Claude 3.5 Haiku</h2>
+            <p><h1 id="from-black-box-to-blueprint-tracing-the-logic-of-claude-35">From Black Box to Blueprint: Tracing the Logic of Claude 3.5</h1>
+<h2 id="exploring-the-hidden-anatomy-of-a-language-model">Exploring the Hidden Anatomy of a Language Model</h2>
 
-<p><img src="/assets/images/llm_blackbox/A_2D_digital_diagram_presents_a_simplified_represe.png" alt="Attribution Graph Overview" /></p>
+<p>In the age of large language models, capability often outpaces comprehension. Models like Claude 3.5 can write poetry, solve logic puzzles, and navigate multilingual queries — but we still don’t fully understand <em>how</em>. Beneath their fluent outputs lies a vast architecture of layers, weights, and attention heads that, until recently, remained largely inscrutable.</p>
 
-<p>In recent months, interpretability research in AI has taken a leap forward, and Anthropic’s work on attribution graphs stands at the forefront. Their new article, <em>“On the Biology of a Large Language Model,”</em> investigates the internal mechanisms of Claude 3.5 Haiku, a compact yet capable language model released in late 2024. But what makes this work truly groundbreaking is not just what the model does — it’s how the researchers dissect its “thought process” to reveal the complex internal machinery that governs its behavior.</p>
-
-<p>At the heart of this research lies a fascinating new tool: the attribution graph. These graphs are like wiring diagrams that trace how specific outputs arise from individual components inside a model — not unlike how neuroscientists track neural pathways to understand the brain. Instead of seeing the model as an opaque black box, attribution graphs allow us to visualize how neurons, attention heads, and internal features come together to form coherent reasoning, memory, and even self-control circuits.</p>
-
-<hr />
-
-<h2 id="-case-studies-in-model-biology">🧩 Case Studies in Model Biology</h2>
-
-<h3 id="-multi-step-reasoning">🔁 Multi-step Reasoning</h3>
-<p><img src="/assets/images/llm_blackbox/A_diagram_in_the_digital_2D_vector_graphic_medium_.png" alt="Multi-step Reasoning Circuit" /></p>
-
-<h3 id="-poetry-planning">📝 Poetry Planning</h3>
-<p><img src="/assets/images/llm_blackbox/A_2D_digital_diagram_features_interconnected_nodes.png" alt="Poetry Planning Diagram" /></p>
-
-<h3 id="-multilingual-processing">🌍 Multilingual Processing</h3>
-<p><img src="/assets/images/llm_blackbox/A_2D_digital_diagram_features_nodes_representing_b.png" alt="Language Circuit Comparison" /></p>
-
-<h3 id="-arithmetic-modules">➕ Arithmetic Modules</h3>
-<p><img src="/assets/images/llm_blackbox/A_diagram_presents_four_horizontal_bar_graphs_stac.png" alt="Arithmetic Circuit Visualization" /></p>
-
-<h3 id="-medical-diagnostics-and-hallucination-risk">🧬 Medical Diagnostics and Hallucination Risk</h3>
-<p>But not everything is so neat. In tasks involving medical diagnosis, Claude activates a rich set of features linked to symptoms and conditions. Yet these circuits also highlight one of the core limitations: the potential for hallucinations.</p>
-
-<h3 id="-refusals-and-jailbreaks">🚫 Refusals and Jailbreaks</h3>
-<p><img src="/assets/images/llm_blackbox/A_directed_graph_diagram_in_a_digital_medium_illus.png" alt="Refusal Bypass Diagram" /></p>
-
-<h3 id="-chain-of-thought-faithfulness">🧭 Chain-of-Thought Faithfulness</h3>
-<p><img src="/assets/images/llm_blackbox/A_pair_of_side-by-side_heatmap_visualizations_titl.png" alt="Faithful vs Unfaithful CoT" /></p>
-
-<hr />
-
-<h2 id="-modular-circuit-insights">🧠 Modular Circuit Insights</h2>
-<p><img src="/assets/images/llm_blackbox/A_2D_digital_diagram_depicts_an_attribution_graph_.png" alt="Modular Cortex Diagram" /></p>
-
-<h3 id="-component-specialization-and-task-allocation">🔬 Component Specialization and Task Allocation</h3>
-<p><img src="/assets/images/llm_blackbox/head_importance.png" alt="Head Importance Across Tasks" /><br />
-<img src="/assets/images/llm_blackbox/component_contribution.png" alt="Attention vs MLP Contribution by Task" /></p>
-
-<hr />
-
-<h2 id="-emergence-of-behavior">📈 Emergence of Behavior</h2>
-<p><img src="/assets/images/llm_blackbox/circuit_emergence.png" alt="Circuit Emergence Timeline" /></p>
-
-<h2 id="-token-level-attribution">🧮 Token-Level Attribution</h2>
-<p><img src="/assets/images/llm_blackbox/token_attribution.png" alt="Token Attribution Heatmap" /></p>
-
-<hr />
-
-<h2 id="-assessment-why-this-research-matters">🧪 Assessment: Why This Research Matters</h2>
-
-<p>This paper represents a major leap in our journey to truly understand and control the models we build. In an era where large language models are becoming central to everything from education and entertainment to scientific discovery and national security, interpretability is no longer optional — it’s foundational.</p>
-
-<p>Until now, most interpretability techniques have focused on shallow post-hoc explanations. Attribution graphs, in contrast, present a causal and modular view of model computation.</p>
-
-<h3 id="-key-problems-this-research-helps-solve">✅ Key Problems This Research Helps Solve</h3>
-
-<ul>
-  <li>Debugging hallucinations and false memory recall</li>
-  <li>Understanding misalignment and potential deception</li>
-  <li>Tracing harmful outputs to specific circuits</li>
-  <li>Improving faithfulness in chain-of-thought prompting</li>
-  <li>Isolating reusable components for modular training</li>
-  <li>Auditing refusals and jailbreak vulnerabilities</li>
-  <li>Interpreting multilingual and multi-task behavior</li>
-</ul>
-
-<h3 id="-limitations-of-the-paper">❗ Limitations of the Paper</h3>
-
-<ul>
-  <li><strong>Scalability</strong> to larger models like Claude 3.5 Sonnet or GPT-4</li>
-  <li><strong>Subjectivity</strong> in interpreting circuit purpose</li>
-  <li><strong>No deep dive into training-time emergence</strong></li>
-  <li>Risk of <strong>confirmation bias</strong> in attribution analysis</li>
-</ul>
-
-<hr />
-
-<h3 id="-attribution-diagnostics">🔎 Attribution Diagnostics</h3>
-<p><img src="/assets/images/llm_blackbox/A_2x2_grid_diagram_with_attribution_error_types_is.png" alt="Attribution Error Quadrants" /><br />
-<img src="/assets/images/llm_blackbox/A_diagram_in_the_image_illustrates_concepts_relate.png" alt="Stages of Attribution Flow" /></p>
-
-<hr />
-
-<h2 id="-final-reflection">🧠 Final Reflection</h2>
-
-<p>In sum, <em>“On the Biology of a Large Language Model”</em> is not just a clever metaphor — it’s a manifesto for the next era of model interpretability. It doesn’t just show that language models compute — it shows how they think.</p>
-
-<p>And that’s a future worth decoding.</p>
-
-<hr />
-
-<h2 id="-reference">🔗 Reference</h2>
-<p>📄 <a href="https://transformer-circuits.pub/2025/attribution-graphs/biology.html">Read the original paper on Anthropic’s official blog</a></p>
 </p>
             <a href="/tensorandquarks.github.io/2025/03/28/llm-blackbox-pt1.html" class="read-more">Read more →</a>
           </li>
