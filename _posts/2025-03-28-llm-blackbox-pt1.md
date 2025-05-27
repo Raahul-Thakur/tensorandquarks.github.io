@@ -13,7 +13,7 @@ In the age of large language models, capability often outpaces comprehension. Mo
 <!--more-->
 
 <p align="center">
-  <img src="/assets/images/llm_blackbox/A_2D_digital_diagram_presents_a_simplified_represe.png"
+  <img src="{{ site.baseurl }}/assets/images/llm_blackbox/A_2D_digital_diagram_presents_a_simplified_represe.png"
        alt="Attribution Graph Overview" width="600">
 </p>
 
@@ -28,7 +28,7 @@ Attribution graphs act like **neuroscience for transformers**. They trace which 
 ### Multi-step Reasoning
 
 <p align="center">
-  <img src="/assets/images/llm_blackbox/A_diagram_in_the_digital_2D_vector_graphic_medium_.png"
+  <img src="{{ site.baseurl }}/assets/images/llm_blackbox/A_diagram_in_the_digital_2D_vector_graphic_medium_.png"
        alt="Multi-step Reasoning Circuit" width="600">
 </p>
 
@@ -47,7 +47,7 @@ This reveals that the model has learned compositional logic — the ability to *
 ### Planning Rhymes Ahead
 
 <p align="center">
-  <img src="/assets/images/llm_blackbox/A_2D_digital_diagram_features_interconnected_nodes.png"
+  <img src="{{ site.baseurl }}/assets/images/llm_blackbox/A_2D_digital_diagram_features_interconnected_nodes.png"
        alt="Poetry Planning Diagram" width="600">
 </p>
 
@@ -62,7 +62,7 @@ This behavior mirrors how poets work: we choose a rhyme target, then retroactive
 ### Language-Specific vs. Language-General Circuits
 
 <p align="center">
-  <img src="/assets/images/llm_blackbox/A_2D_digital_diagram_features_nodes_representing_b.png"
+  <img src="{{ site.baseurl }}/assets/images/llm_blackbox/A_2D_digital_diagram_features_nodes_representing_b.png"
        alt="Language Circuit Comparison" width="600">
 </p>
 
@@ -80,7 +80,7 @@ This dual architecture allows the model to scale across tongues without catastro
 ### Arithmetic Through Circuit Reuse
 
 <p align="center">
-  <img src="/assets/images/llm_blackbox/A_diagram_presents_four_horizontal_bar_graphs_stac.png"
+  <img src="{{ site.baseurl }}/assets/images/llm_blackbox/A_diagram_presents_four_horizontal_bar_graphs_stac.png"
        alt="Arithmetic Circuit Visualization" width="600">
 </p>
 
@@ -109,7 +109,7 @@ This underscores a core risk: **surface similarity ≠ semantic understanding**.
 ### Jailbreaks and Safety Circuit Failures
 
 <p align="center">
-  <img src="/assets/images/llm_blackbox/A_directed_graph_diagram_in_a_digital_medium_illus.png"
+  <img src="{{ site.baseurl }}/assets/images/llm_blackbox/A_directed_graph_diagram_in_a_digital_medium_illus.png"
        alt="Refusal Bypass Diagram" width="600">
 </p>
 
@@ -122,7 +122,7 @@ This demonstrates that security in LLMs must be **more than rule-based**. It req
 ### Chain-of-Thought: True or Justified?
 
 <p align="center">
-  <img src="/assets/images/llm_blackbox/A_pair_of_side-by-side_heatmap_visualizations_titl.png"
+  <img src="{{ site.baseurl }}/assets/images/llm_blackbox/A_pair_of_side-by-side_heatmap_visualizations_titl.png"
        alt="Faithful vs Unfaithful Chain-of-Thought" width="600">
 </p>
 
@@ -137,7 +137,7 @@ Distinguishing between these two modes is critical in trust-sensitive domains. A
 ## Internal Modularity: The Brain Inside the Model
 
 <p align="center">
-  <img src="/assets/images/llm_blackbox/A_2D_digital_diagram_depicts_an_attribution_graph_.png"
+  <img src="{{ site.baseurl }}/assets/images/llm_blackbox/A_2D_digital_diagram_depicts_an_attribution_graph_.png"
        alt="Modular Cortex Diagram" width="600">
 </p>
 
@@ -156,12 +156,12 @@ This modularity promotes **circuit reuse**, **debuggability**, and even **future
 ## Which Parts Do What?
 
 <p align="center">
-  <img src="/assets/images/llm_blackbox/head_importance.png"
+  <img src="{{ site.baseurl }}/assets/images/llm_blackbox/head_importance.png"
        alt="Head Importance Across Tasks" width="600">
 </p>
 
 <p align="center">
-  <img src="/assets/images/llm_blackbox/component_contribution.png"
+  <img src="{{ site.baseurl }}/assets/images/llm_blackbox/component_contribution.png"
        alt="Attention vs MLP Contribution by Task" width="600">
 </p>
 
@@ -174,7 +174,7 @@ This analysis allows **targeted pruning**, **feature localization**, and **align
 ## Evolution of Thinking
 
 <p align="center">
-  <img src="/assets/images/llm_blackbox/circuit_emergence.png"
+  <img src="{{ site.baseurl }}/assets/images/llm_blackbox/circuit_emergence.png"
        alt="Emergence of Circuits Over Training Steps" width="600">
 </p>
 
@@ -191,7 +191,7 @@ This insight paves the way for **interpretable curriculum learning** and trackin
 ## Token-Level Influence
 
 <p align="center">
-  <img src="/assets/images/llm_blackbox/token_attribution.png"
+  <img src="{{ site.baseurl }}/assets/images/llm_blackbox/token_attribution.png"
        alt="Token Attribution Heatmap" width="600">
 </p>
 
@@ -219,12 +219,12 @@ It moves interpretability from “feeling” to **function**.
 ### Attribution Error Analysis
 
 <p align="center">
-  <img src="/assets/images/llm_blackbox/A_2x2_grid_diagram_with_attribution_error_types_is.png"
+  <img src="{{ site.baseurl }}/assets/images/llm_blackbox/A_2x2_grid_diagram_with_attribution_error_types_is.png"
        alt="Attribution Error Quadrants" width="600">
 </p>
 
 <p align="center">
-  <img src="/assets/images/llm_blackbox/A_diagram_in_the_image_illustrates_concepts_relate.png"
+  <img src="{{ site.baseurl }}/assets/images/llm_blackbox/A_diagram_in_the_image_illustrates_concepts_relate.png"
        alt="Stages of Attribution Flow" width="600">
 </p>
 
