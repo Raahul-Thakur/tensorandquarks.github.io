@@ -2,7 +2,9 @@ title: "Tensors & Quarks"
 email: "raahul.thakurr01@example.com"
 description: "Exploring the intersection of physics and machine learning."
 url: "https://raahul-thakur.github.io"
-baseurl: "/tensorandquarks"
+baseurl: "/tensorandquarks.github.io"
+
+
 
 author: "Rahul Thakur"
 excerpt_separator: "<!--more-->"
