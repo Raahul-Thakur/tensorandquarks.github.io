@@ -10,6 +10,8 @@ tags: [ML]
 
 In my previous post, we explored *“On the Biology of a Large Language Model”*, Anthropic’s groundbreaking research that mapped the internal circuits of Claude 3.5 Haiku using **attribution graphs**. These graphs offered a glimpse into the hidden architecture of reasoning — showing how Claude decomposes questions, plans poems, reasons across languages, and even hallucinates.
 
+<!--more-->
+
 But what if we could go a step further?
 
 What if, instead of just identifying the components responsible for thought, we could **trace a single idea as it unfolds inside the model — moment by moment, token by token**?
