@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title> | Tensors & Quarks</title>
+    <link rel="stylesheet" href="/tensorandquarks.github.io/assets/style.css" />
+
+    <!-- 🌓 Dark Mode Script -->
+    <script>
+      function toggleDarkMode() {
+        document.body.classList.toggle("dark");
+        localStorage.setItem("theme", document.body.classList.contains("dark") ? "dark" : "light");
+      }
+
+      window.onload = () => {
+        if (localStorage.getItem("theme") === "dark") {
+          document.body.classList.add("dark");
+        }
+      };
+    </script>
+
+    <!-- ✅ MathJax Support -->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+    </script>
+
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Tensors &amp; Quarks | Exploring the intersection of physics and machine learning.</title>
+<meta name="generator" content="Jekyll v4.4.1" />
+<meta property="og:title" content="Tensors &amp; Quarks" />
+<meta name="author" content="Rahul Thakur" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="From Circuits to Cognition: Following the Thoughts of Claude 3.5 Decoding Anthropic’s Next Step in Understanding Language Models In my previous post, we explored “On the Biology of a Large Language Model”, Anthropic’s groundbreaking research that mapped the internal circuits of Claude 3.5 Haiku using attribution graphs. These graphs offered a glimpse into the hidden architecture of reasoning — showing how Claude decomposes questions, plans poems, reasons across languages, and even hallucinates. But what if we could go a step further? What if, instead of just identifying the components responsible for thought, we could trace a single idea as it unfolds inside the model — moment by moment, token by token? That’s exactly what Anthropic attempts in their new article: “Tracing the Thoughts of a Language Model”. It builds directly on the foundation of attribution graphs and pushes us deeper into the mind of a transformer — not to observe its structure, but to follow its thinking. Thought as a Path, Not Just a Spark The original paper dissected how circuits activate to solve sub-tasks — arithmetic, rhyme planning, multilingual parsing. In this new work, Anthropic tracks what happens after a feature activates. Where does it go? What does it influence? What follows? Imagine prompting Claude with a sentence like: “Describe how biology influences philosophy.” This prompt doesn’t just activate features for “biology” — it sets off a chain reaction. The “biology” feature interacts with others: “evolution,” “Darwin,” “ethics,” “reasoning,” and eventually, “philosophy.” Using token-by-token attribution graphs, Anthropic visualizes how one thought cascades through the network. These “thought chains” aren’t linear. Some tokens reinforce earlier ideas. Others suppress or redirect them. Concepts may disappear temporarily, only to resurface later with stronger activation — a kind of working memory. This dynamic flow is what Anthropic now calls thought tracing. A Model That Strategizes? Yes — and We Can Watch It Just like in the earlier poetry example, Claude doesn’t merely complete sentences — it plans. In the new study, the researchers show how the model can begin forming a mental structure even before certain tokens are generated. For instance, features related to “ethics” might activate before the word appears, because the model anticipates its relevance to “biology + philosophy.” Attribution graphs reveal how these anticipations manifest as early activations of supporting features, which then guide downstream generation. This is a profound shift in how we think about LLMs: not as reactionary next-word predictors, but as goal-conditioned planners. And now, we can trace those goals step-by-step. A Second Brain Inside Claude So what exactly is being revealed here? The new article essentially treats the LLM as a second brain — not just in metaphor, but in methodology. Where the original paper mapped the “organs” (modular circuits), this one traces synaptic firing across those modules in real time. It’s a neuroscience-inspired look at AI, and it suggests that Claude builds meaning not by memorizing facts, but by composing them dynamically across internal systems. In this way, “thought” becomes not a static activation, but a trajectory — a living path formed and updated as the model processes the prompt. Prompting with Precision: The Future of Language Engineering One practical implication? Prompt engineering could evolve into thought-path design. If we understand which phrases activate which paths, we could design prompts that: Strengthen the recall of helpful circuits Suppress misleading associations Steer reasoning toward desired conclusions It’s no longer guesswork — it’s cognitive scaffolding. This insight also holds promise for safety research. Tracing how harmful thoughts arise — and from which token or feature — gives us a tool to preempt hallucinations and jailbreaks with surgical precision. A New Lens for Interpretability In many ways, this new article doesn’t replace the original paper — it completes it. Biology of a Language Model Tracing the Thoughts Maps internal features and circuits Traces real-time activation of those features Shows where reasoning lives Shows how reasoning moves Highlights modularity Highlights dynamics Inspired by anatomy Inspired by cognition Together, they shift the view of LLMs from static black boxes to living systems — ones that can be studied, debugged, and potentially aligned more deeply with human values. Final Thoughts There’s something quietly radical about this line of research. Not long ago, we believed language models were statistical parrots. Then we found circuits. Now we see thoughts. It’s a reminder that intelligence isn’t magic — it’s mechanics. And with the right tools, even the most complex digital minds can be understood. Anthropic’s new work marks a step toward transparent cognition — not just knowing what a model says, but why it thinks it. And once we understand that… maybe we’re not so far from building models that can explain themselves — to us, and perhaps, even to each other. Want to see how a single thought spreads across 70 transformer layers? Explore Anthropic’s full article here: Tracing the Thoughts of a Language Model." />
+<meta property="og:description" content="From Circuits to Cognition: Following the Thoughts of Claude 3.5 Decoding Anthropic’s Next Step in Understanding Language Models In my previous post, we explored “On the Biology of a Large Language Model”, Anthropic’s groundbreaking research that mapped the internal circuits of Claude 3.5 Haiku using attribution graphs. These graphs offered a glimpse into the hidden architecture of reasoning — showing how Claude decomposes questions, plans poems, reasons across languages, and even hallucinates. But what if we could go a step further? What if, instead of just identifying the components responsible for thought, we could trace a single idea as it unfolds inside the model — moment by moment, token by token? That’s exactly what Anthropic attempts in their new article: “Tracing the Thoughts of a Language Model”. It builds directly on the foundation of attribution graphs and pushes us deeper into the mind of a transformer — not to observe its structure, but to follow its thinking. Thought as a Path, Not Just a Spark The original paper dissected how circuits activate to solve sub-tasks — arithmetic, rhyme planning, multilingual parsing. In this new work, Anthropic tracks what happens after a feature activates. Where does it go? What does it influence? What follows? Imagine prompting Claude with a sentence like: “Describe how biology influences philosophy.” This prompt doesn’t just activate features for “biology” — it sets off a chain reaction. The “biology” feature interacts with others: “evolution,” “Darwin,” “ethics,” “reasoning,” and eventually, “philosophy.” Using token-by-token attribution graphs, Anthropic visualizes how one thought cascades through the network. These “thought chains” aren’t linear. Some tokens reinforce earlier ideas. Others suppress or redirect them. Concepts may disappear temporarily, only to resurface later with stronger activation — a kind of working memory. This dynamic flow is what Anthropic now calls thought tracing. A Model That Strategizes? Yes — and We Can Watch It Just like in the earlier poetry example, Claude doesn’t merely complete sentences — it plans. In the new study, the researchers show how the model can begin forming a mental structure even before certain tokens are generated. For instance, features related to “ethics” might activate before the word appears, because the model anticipates its relevance to “biology + philosophy.” Attribution graphs reveal how these anticipations manifest as early activations of supporting features, which then guide downstream generation. This is a profound shift in how we think about LLMs: not as reactionary next-word predictors, but as goal-conditioned planners. And now, we can trace those goals step-by-step. A Second Brain Inside Claude So what exactly is being revealed here? The new article essentially treats the LLM as a second brain — not just in metaphor, but in methodology. Where the original paper mapped the “organs” (modular circuits), this one traces synaptic firing across those modules in real time. It’s a neuroscience-inspired look at AI, and it suggests that Claude builds meaning not by memorizing facts, but by composing them dynamically across internal systems. In this way, “thought” becomes not a static activation, but a trajectory — a living path formed and updated as the model processes the prompt. Prompting with Precision: The Future of Language Engineering One practical implication? Prompt engineering could evolve into thought-path design. If we understand which phrases activate which paths, we could design prompts that: Strengthen the recall of helpful circuits Suppress misleading associations Steer reasoning toward desired conclusions It’s no longer guesswork — it’s cognitive scaffolding. This insight also holds promise for safety research. Tracing how harmful thoughts arise — and from which token or feature — gives us a tool to preempt hallucinations and jailbreaks with surgical precision. A New Lens for Interpretability In many ways, this new article doesn’t replace the original paper — it completes it. Biology of a Language Model Tracing the Thoughts Maps internal features and circuits Traces real-time activation of those features Shows where reasoning lives Shows how reasoning moves Highlights modularity Highlights dynamics Inspired by anatomy Inspired by cognition Together, they shift the view of LLMs from static black boxes to living systems — ones that can be studied, debugged, and potentially aligned more deeply with human values. Final Thoughts There’s something quietly radical about this line of research. Not long ago, we believed language models were statistical parrots. Then we found circuits. Now we see thoughts. It’s a reminder that intelligence isn’t magic — it’s mechanics. And with the right tools, even the most complex digital minds can be understood. Anthropic’s new work marks a step toward transparent cognition — not just knowing what a model says, but why it thinks it. And once we understand that… maybe we’re not so far from building models that can explain themselves — to us, and perhaps, even to each other. Want to see how a single thought spreads across 70 transformer layers? Explore Anthropic’s full article here: Tracing the Thoughts of a Language Model." />
+<link rel="canonical" href="https://raahul-thakur.github.io/tensorandquarks.github.io/2025/04/03/llm-blackbox-pt2.html" />
+<meta property="og:url" content="https://raahul-thakur.github.io/tensorandquarks.github.io/2025/04/03/llm-blackbox-pt2.html" />
+<meta property="og:site_name" content="Tensors &amp; Quarks" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2025-04-03T00:00:00+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Tensors &amp; Quarks" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Rahul Thakur"},"dateModified":"2025-04-03T00:00:00+00:00","datePublished":"2025-04-03T00:00:00+00:00","description":"From Circuits to Cognition: Following the Thoughts of Claude 3.5 Decoding Anthropic’s Next Step in Understanding Language Models In my previous post, we explored “On the Biology of a Large Language Model”, Anthropic’s groundbreaking research that mapped the internal circuits of Claude 3.5 Haiku using attribution graphs. These graphs offered a glimpse into the hidden architecture of reasoning — showing how Claude decomposes questions, plans poems, reasons across languages, and even hallucinates. But what if we could go a step further? What if, instead of just identifying the components responsible for thought, we could trace a single idea as it unfolds inside the model — moment by moment, token by token? That’s exactly what Anthropic attempts in their new article: “Tracing the Thoughts of a Language Model”. It builds directly on the foundation of attribution graphs and pushes us deeper into the mind of a transformer — not to observe its structure, but to follow its thinking. Thought as a Path, Not Just a Spark The original paper dissected how circuits activate to solve sub-tasks — arithmetic, rhyme planning, multilingual parsing. In this new work, Anthropic tracks what happens after a feature activates. Where does it go? What does it influence? What follows? Imagine prompting Claude with a sentence like: “Describe how biology influences philosophy.” This prompt doesn’t just activate features for “biology” — it sets off a chain reaction. The “biology” feature interacts with others: “evolution,” “Darwin,” “ethics,” “reasoning,” and eventually, “philosophy.” Using token-by-token attribution graphs, Anthropic visualizes how one thought cascades through the network. These “thought chains” aren’t linear. Some tokens reinforce earlier ideas. Others suppress or redirect them. Concepts may disappear temporarily, only to resurface later with stronger activation — a kind of working memory. This dynamic flow is what Anthropic now calls thought tracing. A Model That Strategizes? Yes — and We Can Watch It Just like in the earlier poetry example, Claude doesn’t merely complete sentences — it plans. In the new study, the researchers show how the model can begin forming a mental structure even before certain tokens are generated. For instance, features related to “ethics” might activate before the word appears, because the model anticipates its relevance to “biology + philosophy.” Attribution graphs reveal how these anticipations manifest as early activations of supporting features, which then guide downstream generation. This is a profound shift in how we think about LLMs: not as reactionary next-word predictors, but as goal-conditioned planners. And now, we can trace those goals step-by-step. A Second Brain Inside Claude So what exactly is being revealed here? The new article essentially treats the LLM as a second brain — not just in metaphor, but in methodology. Where the original paper mapped the “organs” (modular circuits), this one traces synaptic firing across those modules in real time. It’s a neuroscience-inspired look at AI, and it suggests that Claude builds meaning not by memorizing facts, but by composing them dynamically across internal systems. In this way, “thought” becomes not a static activation, but a trajectory — a living path formed and updated as the model processes the prompt. Prompting with Precision: The Future of Language Engineering One practical implication? Prompt engineering could evolve into thought-path design. If we understand which phrases activate which paths, we could design prompts that: Strengthen the recall of helpful circuits Suppress misleading associations Steer reasoning toward desired conclusions It’s no longer guesswork — it’s cognitive scaffolding. This insight also holds promise for safety research. Tracing how harmful thoughts arise — and from which token or feature — gives us a tool to preempt hallucinations and jailbreaks with surgical precision. A New Lens for Interpretability In many ways, this new article doesn’t replace the original paper — it completes it. Biology of a Language Model Tracing the Thoughts Maps internal features and circuits Traces real-time activation of those features Shows where reasoning lives Shows how reasoning moves Highlights modularity Highlights dynamics Inspired by anatomy Inspired by cognition Together, they shift the view of LLMs from static black boxes to living systems — ones that can be studied, debugged, and potentially aligned more deeply with human values. Final Thoughts There’s something quietly radical about this line of research. Not long ago, we believed language models were statistical parrots. Then we found circuits. Now we see thoughts. It’s a reminder that intelligence isn’t magic — it’s mechanics. And with the right tools, even the most complex digital minds can be understood. Anthropic’s new work marks a step toward transparent cognition — not just knowing what a model says, but why it thinks it. And once we understand that… maybe we’re not so far from building models that can explain themselves — to us, and perhaps, even to each other. Want to see how a single thought spreads across 70 transformer layers? Explore Anthropic’s full article here: Tracing the Thoughts of a Language Model.","headline":"Tensors &amp; Quarks","mainEntityOfPage":{"@type":"WebPage","@id":"https://raahul-thakur.github.io/tensorandquarks.github.io/2025/04/03/llm-blackbox-pt2.html"},"url":"https://raahul-thakur.github.io/tensorandquarks.github.io/2025/04/03/llm-blackbox-pt2.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+  </head>
+
+  <body>
+    <header class="site-header">
+      <div class="container header-flex">
+        <div class="branding">
+          <img src="/tensorandquarks.github.io/assets/images/bio-photo.jpeg" alt="Rahul" class="profile-pic">
+          <h1 class="site-title">Tensors & Quarks</h1>
+        </div>
+        <nav class="nav">
+          <a href="/tensorandquarks.github.io/">Home</a>
+          <a href="/tensorandquarks.github.io/about.html">About</a>
+          <button onclick="toggleDarkMode()">🌓</button>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container">
+      <h1 id="from-circuits-to-cognition-following-the-thoughts-of-claude-35">From Circuits to Cognition: Following the Thoughts of Claude 3.5</h1>
+<h2 id="decoding-anthropics-next-step-in-understanding-language-models">Decoding Anthropic’s Next Step in Understanding Language Models</h2>
+
+<p>In my previous post, we explored <em>“On the Biology of a Large Language Model”</em>, Anthropic’s groundbreaking research that mapped the internal circuits of Claude 3.5 Haiku using <strong>attribution graphs</strong>. These graphs offered a glimpse into the hidden architecture of reasoning — showing how Claude decomposes questions, plans poems, reasons across languages, and even hallucinates.</p>
+
+<p>But what if we could go a step further?</p>
+
+<p>What if, instead of just identifying the components responsible for thought, we could <strong>trace a single idea as it unfolds inside the model — moment by moment, token by token</strong>?</p>
+
+<p>That’s exactly what Anthropic attempts in their new article: <a href="https://www.anthropic.com/research/tracing-thoughts-language-model"><em>“Tracing the Thoughts of a Language Model”</em></a>. It builds directly on the foundation of attribution graphs and pushes us deeper into the mind of a transformer — not to observe its structure, but to follow its <em>thinking</em>.</p>
+
+<hr />
+
+<h2 id="thought-as-a-path-not-just-a-spark">Thought as a Path, Not Just a Spark</h2>
+
+<p>The original paper dissected how circuits activate to solve sub-tasks — arithmetic, rhyme planning, multilingual parsing. In this new work, Anthropic tracks what happens <strong>after</strong> a feature activates. Where does it go? What does it influence? What follows?</p>
+
+<p>Imagine prompting Claude with a sentence like:</p>
+
+<blockquote>
+  <p>“Describe how biology influences philosophy.”</p>
+</blockquote>
+
+<p>This prompt doesn’t just activate features for “biology” — it sets off a chain reaction. The “biology” feature interacts with others: “evolution,” “Darwin,” “ethics,” “reasoning,” and eventually, “philosophy.” Using <strong>token-by-token attribution graphs</strong>, Anthropic visualizes how one thought <strong>cascades</strong> through the network.</p>
+
+<p>These “thought chains” aren’t linear. Some tokens reinforce earlier ideas. Others suppress or redirect them. Concepts may disappear temporarily, only to resurface later with stronger activation — a kind of <strong>working memory</strong>. This dynamic flow is what Anthropic now calls <em>thought tracing</em>.</p>
+
+<hr />
+
+<h2 id="a-model-that-strategizes-yes--and-we-can-watch-it">A Model That Strategizes? Yes — and We Can Watch It</h2>
+
+<p>Just like in the earlier poetry example, Claude doesn’t merely complete sentences — it <strong>plans</strong>. In the new study, the researchers show how the model can begin forming a mental structure even before certain tokens are generated.</p>
+
+<p>For instance, features related to “ethics” might activate <strong>before</strong> the word appears, because the model anticipates its relevance to “biology + philosophy.” Attribution graphs reveal how these anticipations manifest as <strong>early activations</strong> of supporting features, which then guide downstream generation.</p>
+
+<p>This is a profound shift in how we think about LLMs: not as reactionary next-word predictors, but as <strong>goal-conditioned planners</strong>. And now, we can trace those goals step-by-step.</p>
+
+<hr />
+
+<h2 id="a-second-brain-inside-claude">A Second Brain Inside Claude</h2>
+
+<p>So what exactly is being revealed here?</p>
+
+<p>The new article essentially treats the LLM as a <strong>second brain</strong> — not just in metaphor, but in methodology. Where the original paper mapped the “organs” (modular circuits), this one traces <strong>synaptic firing</strong> across those modules in real time.</p>
+
+<p>It’s a neuroscience-inspired look at AI, and it suggests that Claude builds meaning not by memorizing facts, but by <strong>composing them dynamically</strong> across internal systems.</p>
+
+<p>In this way, “thought” becomes not a static activation, but a <strong>trajectory</strong> — a living path formed and updated as the model processes the prompt.</p>
+
+<hr />
+
+<h2 id="prompting-with-precision-the-future-of-language-engineering">Prompting with Precision: The Future of Language Engineering</h2>
+
+<p>One practical implication? <strong>Prompt engineering could evolve into thought-path design.</strong></p>
+
+<p>If we understand which phrases activate which paths, we could design prompts that:</p>
+<ul>
+  <li>Strengthen the recall of helpful circuits</li>
+  <li>Suppress misleading associations</li>
+  <li>Steer reasoning toward desired conclusions</li>
+</ul>
+
+<p>It’s no longer guesswork — it’s <strong>cognitive scaffolding</strong>.</p>
+
+<p>This insight also holds promise for safety research. Tracing how harmful thoughts arise — and from which token or feature — gives us a tool to <strong>preempt hallucinations and jailbreaks</strong> with surgical precision.</p>
+
+<hr />
+
+<h2 id="a-new-lens-for-interpretability">A New Lens for Interpretability</h2>
+
+<p>In many ways, this new article doesn’t replace the original paper — it <strong>completes it</strong>.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th><strong>Biology of a Language Model</strong></th>
+      <th><strong>Tracing the Thoughts</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Maps internal features and circuits</td>
+      <td>Traces real-time activation of those features</td>
+    </tr>
+    <tr>
+      <td>Shows where reasoning lives</td>
+      <td>Shows how reasoning moves</td>
+    </tr>
+    <tr>
+      <td>Highlights modularity</td>
+      <td>Highlights dynamics</td>
+    </tr>
+    <tr>
+      <td>Inspired by anatomy</td>
+      <td>Inspired by cognition</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Together, they shift the view of LLMs from static black boxes to <strong>living systems</strong> — ones that can be studied, debugged, and potentially aligned more deeply with human values.</p>
+
+<hr />
+
+<h2 id="final-thoughts">Final Thoughts</h2>
+
+<p>There’s something quietly radical about this line of research.</p>
+
+<p>Not long ago, we believed language models were statistical parrots. Then we found circuits. Now we see thoughts. It’s a reminder that <strong>intelligence isn’t magic — it’s mechanics</strong>. And with the right tools, even the most complex digital minds can be understood.</p>
+
+<p>Anthropic’s new work marks a step toward <em>transparent cognition</em> — not just knowing <em>what</em> a model says, but <em>why</em> it thinks it.</p>
+
+<p>And once we understand that… maybe we’re not so far from building models that can explain themselves — to us, and perhaps, even to each other.</p>
+
+<hr />
+
+<p><em>Want to see how a single thought spreads across 70 transformer layers? Explore Anthropic’s full article here: <a href="https://www.anthropic.com/research/tracing-thoughts-language-model">Tracing the Thoughts of a Language Model</a>.</em></p>
+
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <p>© 2025 Rahul Thakur • Powered by Jekyll</p>
+      </div>
+    </footer>
+  </body>
+</html>
