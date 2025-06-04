@@ -16,7 +16,7 @@ That equation was the **Veneziano amplitude**, proposed in 1968 by Italian physi
 
 ---
 
-## ⚔️ The Problem: Making Sense of Hadron Scattering
+## The Problem: Making Sense of Hadron Scattering
 
 The primary challenge in high-energy hadron physics was to construct an amplitude that satisfied the following conditions:
 
@@ -36,7 +36,7 @@ No function known at the time satisfied all three properties—until Veneziano�
 
 ---
 
-## ✨ The Breakthrough: The Veneziano Amplitude
+## The Breakthrough: The Veneziano Amplitude
 
 Inspired by mathematical consistency rather than direct field-theoretic arguments, Veneziano proposed an elegant solution using the **Euler Beta function**:
 
@@ -62,7 +62,7 @@ where \( B(x, y) = \frac{\Gamma(x)\Gamma(y)}{\Gamma(x + y)} \) is the Beta funct
 
 ---
 
-## 🔍 Resonances, Poles, and Reggeons
+## Resonances, Poles, and Reggeons
 
 The power of this expression lies in how it encodes physical observables:
 
@@ -87,7 +87,7 @@ The combination of infinite poles, correct scaling, and symmetry hinted at a **d
 
 ---
 
-## 🧠 Superconvergence and Duality
+## Superconvergence and Duality
 
 A remarkable feature of the Veneziano amplitude is its compatibility with **superconvergence sum rules**, which are integral constraints on scattering amplitudes derived from unitarity and analyticity. Veneziano showed that his amplitude not only respects these sum rules but does so naturally, without needing extra corrections or ad hoc subtractions.
 
@@ -97,7 +97,7 @@ This duality became one of the central principles of string theory, where it was
 
 ---
 
-## 🪐 A New Interpretation: The Birth of String Theory
+## A New Interpretation: The Birth of String Theory
 
 What truly transformed the Veneziano amplitude from a clever solution into a paradigm shift was its **reinterpretation as a string scattering amplitude**. Within a year of its publication, physicists such as **Yoichiro Nambu**, **Leonard Susskind**, and **Holger Nielsen** independently recognized that the structure of the amplitude could be derived from the quantum mechanics of a **relativistic string**.
 
@@ -111,7 +111,7 @@ Thus, the Veneziano amplitude became the **tree-level 4-point function** in **bo
 
 ---
 
-## 📊 Predictions and Physical Insights
+## Predictions and Physical Insights
 
 Beyond its conceptual depth, the Veneziano amplitude made **specific predictions**. For example, it provided mass estimates for certain hadrons and implied the existence of higher-spin particles organized in Regge trajectories.
 
@@ -129,7 +129,7 @@ Moreover, it hinted at the possibility of a **bootstrap** description of the str
 
 ---
 
-## 🏛 A Foundational Legacy
+## A Foundational Legacy
 
 The Veneziano amplitude is widely regarded as **the origin of string theory**. While initially proposed as a model of hadron scattering, it soon evolved into something far deeper: a candidate for a **unified theory of all interactions**, including gravity. Its structure anticipated many ideas that later became central in modern physics:
 
@@ -142,7 +142,7 @@ Even today, the amplitude continues to inspire research in quantum gravity, ampl
 
 ---
 
-## ✍️ Final Thoughts
+## Final Thoughts
 
 The Veneziano amplitude is more than just an elegant formula. It is a landmark in physics history—a solution that emerged not from physical models, but from a search for mathematical beauty. And in doing so, it reshaped our understanding of what particles could be.
 
@@ -152,7 +152,7 @@ With this single equation, Veneziano showed that a scattering amplitude could en
 
 ---
 
-## 📚 References
+## References
 
 - Gabriele Veneziano, *Construction of a Crossing-Symmetric, Regge-Behaved Amplitude for Linearly Rising Trajectories*, Nuovo Cimento A, Vol. 57, 1968.  
   [Full PDF here](https://www.ift.uam-csic.es/sites/default/files/Veneziano.pdf)
