@@ -1,17 +1,21 @@
 title: "Tensors & Quarks"
 email: "raahul.thakurr01@example.com"
 description: "Exploring the intersection of physics and machine learning."
-url: "https://raahul-thakur.github.io"
-baseurl: "/tensorandquarks.github.io"
 
+# ✅ Update to your custom domain (with HTTPS, no trailing slash)
+url: "https://www.tensorsandquarks.space"
 
+# ✅ If using custom domain, baseurl should be empty
+baseurl: ""
 
 author: "Rahul Thakur"
 excerpt_separator: "<!--more-->"
 
+# Pagination
 paginate: 5
 paginate_path: "/page:num"
 
+# Plugins
 plugins:
   - jekyll-paginate
   - jekyll-seo-tag
