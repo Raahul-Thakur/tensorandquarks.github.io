@@ -8,7 +8,7 @@ tags: [Astrophysics]
 
 # Life: A Cosmic Fluke or a Common Spark?
 
-One of the most fundamental questions in astrobiology is whether life is common in the universe. The Earth seems to provide an encouraging clue: fossil evidence suggests that life began relatively quickly after our planet became habitable. A naïve interpretation of this fact is that abiogenesis—the origin of life from non-living chemistry—is easy and should occur rapidly wherever conditions are right. Yet this reasoning runs into a major complication: the emergence of intelligent observers like us took almost the entire span of Earth’s habitable history. If intelligence is slow, then life *had* to begin early on Earth, otherwise we would not exist at all. This selection effect makes early life a weak indicator of rapid abiogenesis unless intelligence is modeled explicitly alongside it.  
+One of the most fundamental questions in astrobiology is whether life is common in the universe. The Earth provides an encouraging clue: fossil evidence suggests that life began relatively quickly after our planet became habitable. A naïve interpretation of this fact is that abiogenesis, the origin of life from non-living chemistry, is easy and should occur rapidly wherever conditions are right. Yet this reasoning runs into a major complication: the emergence of intelligent observers like us took almost the entire span of Earth’s habitable history. If intelligence is slow, then life *had* to begin early on Earth, otherwise we would not exist at all. This selection effect makes early life a weak indicator of rapid abiogenesis unless intelligence is modeled explicitly alongside it.  
 
 <!--more-->
 
@@ -60,13 +60,14 @@ $$
 $$
 {% endraw %}
 
-- **Case 1**: The allowed region is large, and both early- and late-life scenarios fit.  
-- **Case 2**: The diagonal cuts through the region, and late-life scenarios are heavily constrained.  
+- **Case 1**: The allowed region is large, and both early and late life scenarios fit.  
+- **Case 2**: The diagonal cuts through the region, and late life scenarios are heavily constrained.  
 
 For Earth, substituting values shows that Case 1 applies when *t′<sub>L</sub> < 0.904 Gyr*. With the optimistic evidence (*t′<sub>L</sub> = 0.304 Gyr*), Earth is comfortably in Case 1. With the conservative evidence (*t′<sub>L</sub> = 0.939 Gyr*), we sit right on the boundary.  
 
-![Integration region (optimistic; rectangle not truncated)](/assets/images/bayesian-analysis/integration-case1.png)  
-*Figure 1A: Optimistic case. The cutoff line lies outside the rectangle, so late-life scenarios remain possible.*  
+<p align="center">
+  <img src="/assets/images/bayesian-analysis/integration-case1.png" alt="Integration region optimistic" width="600"/>
+</p>
 
 ![Integration region (conservative-like; rectangle truncated by tL + tI = T)](/assets/images/bayesian-analysis/integration-case2.png)  
 *Figure 1B: Conservative case. The cutoff line slices through the rectangle, eliminating part of the integration region.*  
@@ -75,7 +76,7 @@ For Earth, substituting values shows that Case 1 applies when *t′<sub>L</sub> 
 
 ## The Problem of Priors
 
-Bayesian inference requires priors: starting beliefs about the rates \\(\lambda_L\\) and \\(\lambda_I\\). Earlier work used power-law priors of the form:
+Bayesian inference requires priors: starting beliefs about the rates \\(\lambda_L\\) and \\(\lambda_I\\). Earlier work used power law priors of the form:
 
 {% raw %}
 $$
@@ -83,7 +84,7 @@ Pr(\lambda) \propto \lambda^n, \quad \lambda_{\min} < \lambda < \lambda_{\max}
 $$
 {% endraw %}
 
-But this approach is subjective, since no one knows how to set the cutoffs \\(\lambda_{\min}, \lambda_{\max}\\). A log-uniform prior (*n = –1*) is often justified as “uninformative,” yet when translated into the more meaningful parameter space of:
+But this approach is subjective, since no one knows how to set the cutoffs \\(\lambda_{\min}, \lambda_{\max}\\). A log uniform prior (*n = –1*) is often justified as “uninformative,” yet when translated into the more meaningful parameter space of:
 
 {% raw %}
 $$
@@ -139,7 +140,7 @@ $$
 ![Jeffreys prior in λ-space (semi-infinite support)](/assets/images/bayesian-analysis/jeffreys-lambda-space.png)  
 *Figure 3: Jeffreys prior in λ-space. It has semi-infinite support and avoids arbitrary cutoffs.*  
 
-The authors argue that the Jeffreys prior is the most appropriate: it is fair, unbiased, and mathematically well-behaved. But by also testing uniform and Haldane-like priors, they show that the results are not an artifact of prior choice.  
+The authors argue that the Jeffreys prior is the most appropriate: it is fair, unbiased, and mathematically wellbehaved. But by also testing uniform and Haldane like priors, they show that the results are not an artifact of prior choice.  
 
 ---
 
