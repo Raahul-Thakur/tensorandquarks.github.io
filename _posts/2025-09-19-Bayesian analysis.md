@@ -68,6 +68,7 @@ For Earth, substituting values shows that Case 1 applies when *t′<sub>L</sub> 
 <p align="center">
   <img src="/assets/images/bayesian-analysis/integration-case1.png" alt="Integration region optimistic" width="600"/>
 </p>
+*Figure 1A: Optimistic case. The cutoff line lies outside the rectangle, so late-life scenarios remain possible.*  
 
 <p align="center">
   <img src="/assets/images/bayesian-analysis/integration-case2.png" alt="Integration region optimistic" width="600"/>
@@ -137,10 +138,16 @@ Pr(\lambda) = T e^{-\lambda T}
 $$
 {% endraw %}
 
-![Priors in f-space: Uniform, Jeffreys, Haldane (truncated for illustration)](/assets/images/bayesian-analysis/priors-f-space.png)  
+<p align="center">
+  <img src="/assets/images/bayesian-analysis/priors-f-space.png" alt="Integration region optimistic" width="600"/>
+</p>
+
 *Figure 2: Comparison of priors in f-space. Jeffreys is fair and unbiased, Uniform is flat, Haldane is extreme and improper.*  
 
-![Jeffreys prior in λ-space (semi-infinite support)](/assets/images/bayesian-analysis/jeffreys-lambda-space.png)  
+<p align="center">
+  <img src="/assets/images/bayesian-analysis/jeffreys-lambda-space.png" alt="Integration region optimistic" width="600"/>
+</p>
+
 *Figure 3: Jeffreys prior in λ-space. It has semi-infinite support and avoids arbitrary cutoffs.*  
 
 The authors argue that the Jeffreys prior is the most appropriate: it is fair, unbiased, and mathematically wellbehaved. But by also testing uniform and Haldane like priors, they show that the results are not an artifact of prior choice.  
@@ -153,7 +160,10 @@ With likelihoods and priors defined, the next step is Bayesian model comparison.
 
 The evidence shows that fast-intelligence models (M01, M11) are ruled out: they predict civilizations should appear much sooner than they did on Earth. That leaves M00 and M10, which differ only on whether life is fast or slow. The Bayes factor between them comes out to **8.73** in the optimistic fossil case and **2.83** in the conservative case. This means that, conditioned on intelligence being slow, rapid abiogenesis is favored by odds of about 9:1 or 3:1 depending on which fossil evidence you trust.
 
-![Fairness-constrained bounds: λ_max vs λ_min (Earth-style T = 5.304 Gyr)](/assets/images/bayesian-analysis/fairness-constrained-bounds.png)  
+<p align="center">
+  <img src="/assets/images/bayesian-analysis/fairness-constrained-bounds.png" alt="Integration region optimistic" width="600"/>
+</p>
+
 *Figure 4: Fairness constraint on λ_min and λ_max under a log-uniform prior. Smaller λ_min forces larger λ_max.*  
 
 ---
