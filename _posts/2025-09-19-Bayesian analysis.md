@@ -69,7 +69,10 @@ For Earth, substituting values shows that Case 1 applies when *t′<sub>L</sub> 
   <img src="/assets/images/bayesian-analysis/integration-case1.png" alt="Integration region optimistic" width="600"/>
 </p>
 
-![Integration region (conservative-like; rectangle truncated by tL + tI = T)](/assets/images/bayesian-analysis/integration-case2.png)  
+<p align="center">
+  <img src="/assets/images/bayesian-analysis/integration-case2.png" alt="Integration region optimistic" width="600"/>
+</p>
+
 *Figure 1B: Conservative case. The cutoff line slices through the rectangle, eliminating part of the integration region.*  
 
 ---
