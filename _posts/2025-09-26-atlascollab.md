@@ -3,6 +3,7 @@ layout: default
 title: ""
 date: 2025-09-26
 tags: [Astrophysics]
+mathjax: true
 ---
 
 # Why the Higgs Discovery Was Physics’ Greatest Detective Story
