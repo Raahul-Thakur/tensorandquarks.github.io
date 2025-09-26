@@ -18,38 +18,38 @@ Finding it meant creating it fleetingly in proton–proton collisions and inferr
 
 ## The Physical and Mathematical Frameworks (Without the Grind)
 
-**Physics.** The electroweak sector is a gauge theory with symmetry group SU(2)×U(1). Introduce a complex scalar doublet $\\Phi$ with potential:
+**Physics.** The electroweak sector is a gauge theory with symmetry group SU(2)×U(1). Introduce a complex scalar doublet $\Phi$ with potential:
 
 {% raw %}
 $$
-V(\\Phi) = \\mu^2\\,\\Phi^\\dagger\\Phi+\\lambda(\\Phi^\\dagger\\Phi)^2
+V(\Phi) = \mu^2\,\Phi^\dagger \Phi + \lambda\,(\Phi^\dagger \Phi)^2
 $$
 {% endraw %}
 
-Choosing parameters with $\\mu^2<0$ yields a nonzero vacuum expectation value (vev) $v$, spontaneously breaking the symmetry while preserving a massless photon. Gauge boson masses scale as:
+Choosing parameters with $\mu^2 < 0$ yields a nonzero vacuum expectation value (vev) $v$, spontaneously breaking the symmetry while preserving a massless photon. Gauge boson masses scale as:
 
 {% raw %}
 $$
-m_W \\propto g v, \\quad m_Z \\propto \\sqrt{g^2+g'^2}\\,v
+m_W \propto g v, \quad m_Z \propto \sqrt{g^2 + g'^2}\, v
 $$
 {% endraw %}
 
 The physical Higgs boson is the fluctuation around this vev. Its mass $m_H$ is not predicted, but once $m_H$ is assumed, production cross-sections and decay branching ratios are calculable.
 
-**Experiment.** The Higgs is unstable, decaying almost instantly. For $m_H\\approx125$ GeV, the most incisive final states are: 
-- **$H\\to ZZ^{(*)}\\to 4\\ell$ ($\\ell=e,\\mu$):** tiny rate, exquisite cleanliness, best mass resolution.
-- **$H\\to\\gamma\\gamma$:** rare, but produces a sharp diphoton mass peak.
-- **$H\\to WW^{(*)}\\to e\\nu\\,\\mu\\nu$:** large rate, limited mass resolution due to neutrinos.
+**Experiment.** The Higgs is unstable, decaying almost instantly. For $m_H \approx 125$ GeV, the most incisive final states are: 
+- **$H \to ZZ^{(*)} \to 4\ell$ ($\ell = e,\mu$):** tiny rate, exquisite cleanliness, best mass resolution.
+- **$H \to \gamma\gamma$:** rare, but produces a sharp diphoton mass peak.
+- **$H \to WW^{(*)} \to e\nu\,\mu\nu$:** large rate, limited mass resolution due to neutrinos.
 
-**Statistics.** Build a likelihood $\\mathcal{L}(\\text{data}\\,|\\,\\mu,\\theta)$ for each channel, where $\\mu$ is the **signal strength** (observed rate / SM rate) and $\\theta$ are **nuisance parameters** (systematics: luminosity, calibration, theory). Use the **profile likelihood ratio** as the test statistic:
+**Statistics.** Build a likelihood $\mathcal{L}(\text{data}\,|\,\mu,\theta)$ for each channel, where $\mu$ is the **signal strength** (observed rate / SM rate) and $\theta$ are **nuisance parameters** (systematics: luminosity, calibration, theory). Use the **profile likelihood ratio** as the test statistic:
 
 {% raw %}
 $$
-q = -2 \\ln \\frac{\\mathcal{L}(\\text{background only})}{\\mathcal{L}(\\text{signal + background})}
+q = -2 \ln \frac{\mathcal{L}(\text{background only})}{\mathcal{L}(\text{signal + background})}
 $$
 {% endraw %}
 
-Translate it into p-values and significances (Z-scores). Combine channels coherently, correlating shared uncertainties. The discovery criterion is $Z\\ge 5\\sigma$.
+Translate it into p-values and significances (Z-scores). Combine channels coherently, correlating shared uncertainties. The discovery criterion is $Z \ge 5\sigma$.
 
 ## ATLAS in One Page: Why This Detector Could Find It
 
@@ -57,13 +57,13 @@ ATLAS wraps the collision point in concentric subsystems. The **Inner Detector**
 
 ## How ATLAS Modeled Reality: Signals, Backgrounds, and Systematics
 
-- **Signals.** Higgs production via gluon fusion (dominant), vector-boson fusion (VBF), and associated production ($VH,\\, t\\bar tH$).
-- **Backgrounds.** Channel-specific: continuum $ZZ^{(*)}$ for 4ℓ, QCD diphotons and $\\gamma$+jet for $\\gamma\\gamma$, and SM WW/top/W+jets for WW.
-- **Systematics.** Luminosity (~3–4%), lepton/photon ID, jet energy scale, $E_T^{\\text{miss}}$, PDFs. Correlated across channels to avoid double-counting.
+- **Signals.** Higgs production via gluon fusion (dominant), vector-boson fusion (VBF), and associated production ($VH,\, t\bar tH$).
+- **Backgrounds.** Channel-specific: continuum $ZZ^{(*)}$ for 4ℓ, QCD diphotons and $\gamma$+jet for $\gamma\gamma$, and SM WW/top/W+jets for WW.
+- **Systematics.** Luminosity (~3–4%), lepton/photon ID, jet energy scale, $E_T^{\text{miss}}$, PDFs. Correlated across channels to avoid double-counting.
 
 ## The Three Channels That Broke the Case
 
-### 1) $H\\to ZZ^{(*)}\\to 4\\ell$ — the mass “ruler”
+### 1) $H \to ZZ^{(*)} \to 4\ell$ — the mass “ruler”
 
 <p align="center">
   <img src="/assets/images/atlascollab/hzz4l.png" alt="Simulated H→ZZ*→4ℓ invariant mass distribution" width="600"/>
@@ -73,7 +73,7 @@ ATLAS wraps the collision point in concentric subsystems. The **Inner Detector**
 
 This channel had the sharpest mass resolution (~1.5–2 GeV). Despite low rates, a handful of clustered events near 126 GeV gave ~3σ significance and anchored the Higgs mass measurement.
 
-### 2) $H\\to\\gamma\\gamma$ — the statistical backbone
+### 2) $H \to \gamma\gamma$ — the statistical backbone
 
 <p align="center">
   <img src="/assets/images/atlascollab/hgg.png" alt="Simulated H→γγ invariant mass distribution" width="600"/>
@@ -83,7 +83,7 @@ This channel had the sharpest mass resolution (~1.5–2 GeV). Despite low rates,
 
 The γγ channel provided ~4.5σ significance on its own. The narrow peak at 126.5 GeV, extracted over smooth backgrounds, made this the most visually compelling and statistically dominant channel in the paper.
 
-### 3) $H\\to WW^{(*)}\\to e\\nu\\mu\\nu$ — the high-rate cross-check
+### 3) $H \to WW^{(*)} \to e\nu\mu\nu$ — the high-rate cross-check
 
 <p align="center">
   <img src="/assets/images/atlascollab/hww.png" alt="Simulated H→WW*→eνμν transverse mass distribution" width="600"/>
@@ -107,7 +107,7 @@ Each channel contributes to a combined likelihood. The global test statistic is 
 
 {% raw %}
 $$
-\\mu = 1.0 \\pm 0.3
+\mu = 1.0 \pm 0.3
 $$
 {% endraw %}
 
@@ -115,7 +115,7 @@ and a Higgs mass around 126 GeV.
 
 ## Why These Three, Not Others (Then) — and What Changed by 2025
 
-In 2012, γγ and 4ℓ offered precision peaks; WW offered rate. Other key channels were not yet discovery-grade: $H\\to b\\bar b$, $H\\to\\tau^+\\tau^-$, $H\\to\\mu^+\\mu^-$, and rare modes like $H\\to Z\\gamma$. By 2018, ATLAS and CMS confirmed $H\\to b\\bar b$ and $H\\to\\tau^+\\tau^-$. By 2025, evidence for $H\\to\\mu^+\\mu^-$ and refined global coupling fits completed the picture.
+In 2012, γγ and 4ℓ offered precision peaks; WW offered rate. Other key channels were not yet discovery-grade: $H \to b\bar b$, $H \to \tau^+\tau^-$, $H \to \mu^+\mu^-$, and rare modes like $H \to Z\gamma$. By 2018, ATLAS and CMS confirmed $H \to b\bar b$ and $H \to \tau^+\tau^-$. By 2025, evidence for $H \to \mu^+\mu^-$ and refined global coupling fits completed the picture.
 
 ## What This Paper Solved—and What It Couldn’t
 
