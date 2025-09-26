@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title> | Tensors & Quarks</title>
+    <link rel="stylesheet" href="/assets/style.css" />
+
+    <!-- 🌓 Dark Mode Script -->
+    <script>
+      function toggleDarkMode() {
+        document.body.classList.toggle("dark");
+        localStorage.setItem("theme", document.body.classList.contains("dark") ? "dark" : "light");
+      }
+
+      window.onload = () => {
+        if (localStorage.getItem("theme") === "dark") {
+          document.body.classList.add("dark");
+        }
+      };
+    </script>
+
+    <!-- ✅ MathJax Support -->
+    <script id="MathJax-script" async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+    </script>
+
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Tensors &amp; Quarks | Exploring the intersection of physics and machine learning.</title>
+<meta name="generator" content="Jekyll v4.4.1" />
+<meta property="og:title" content="Tensors &amp; Quarks" />
+<meta name="author" content="Rahul Thakur" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Why the Higgs Discovery Was Physics’ Greatest Detective Story Precursor: Why the Higgs Story Matters For more than half a century, physicists chased one gap in an otherwise triumphant theory. The Standard Model (SM) precisely describes quarks and leptons and the forces among them, yet it left a conceptual hole: why are the W and Z bosons heavy while the photon is massless? The Higgs mechanism answered this by positing a scalar field that permeates all of space. Particles interacting with this field acquire mass; particles that do not remain massless. Fluctuations of the field appear as a new particle—the Higgs boson." />
+<meta property="og:description" content="Why the Higgs Discovery Was Physics’ Greatest Detective Story Precursor: Why the Higgs Story Matters For more than half a century, physicists chased one gap in an otherwise triumphant theory. The Standard Model (SM) precisely describes quarks and leptons and the forces among them, yet it left a conceptual hole: why are the W and Z bosons heavy while the photon is massless? The Higgs mechanism answered this by positing a scalar field that permeates all of space. Particles interacting with this field acquire mass; particles that do not remain massless. Fluctuations of the field appear as a new particle—the Higgs boson." />
+<link rel="canonical" href="https://www.tensorsandquarks.space/2025/06/29/atlascollab.html" />
+<meta property="og:url" content="https://www.tensorsandquarks.space/2025/06/29/atlascollab.html" />
+<meta property="og:site_name" content="Tensors &amp; Quarks" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2025-06-29T00:00:00+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Tensors &amp; Quarks" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Rahul Thakur"},"dateModified":"2025-06-29T00:00:00+00:00","datePublished":"2025-06-29T00:00:00+00:00","description":"Why the Higgs Discovery Was Physics’ Greatest Detective Story Precursor: Why the Higgs Story Matters For more than half a century, physicists chased one gap in an otherwise triumphant theory. The Standard Model (SM) precisely describes quarks and leptons and the forces among them, yet it left a conceptual hole: why are the W and Z bosons heavy while the photon is massless? The Higgs mechanism answered this by positing a scalar field that permeates all of space. Particles interacting with this field acquire mass; particles that do not remain massless. Fluctuations of the field appear as a new particle—the Higgs boson.","headline":"Tensors &amp; Quarks","mainEntityOfPage":{"@type":"WebPage","@id":"https://www.tensorsandquarks.space/2025/06/29/atlascollab.html"},"url":"https://www.tensorsandquarks.space/2025/06/29/atlascollab.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+  </head>
+
+  <body>
+    <header class="site-header">
+      <div class="container header-flex">
+        <div class="branding">
+          <img src="/assets/images/bio-photo.jpeg" alt="Rahul" class="profile-pic">
+          <h1 class="site-title">Tensors & Quarks</h1>
+        </div>
+        <nav class="nav">
+          <a href="/">Home</a>
+          <a href="/about.html">About</a>
+          <button onclick="toggleDarkMode()">🌓</button>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container">
+      <h1 id="why-the-higgs-discovery-was-physics-greatest-detective-story">Why the Higgs Discovery Was Physics’ Greatest Detective Story</h1>
+
+<h2 id="precursor-why-the-higgs-story-matters">Precursor: Why the Higgs Story Matters</h2>
+
+<p>For more than half a century, physicists chased one gap in an otherwise triumphant theory. The Standard Model (SM) precisely describes quarks and leptons and the forces among them, yet it left a conceptual hole: why are the W and Z bosons heavy while the photon is massless? The Higgs mechanism answered this by positing a scalar field that permeates all of space. Particles interacting with this field acquire mass; particles that do not remain massless. Fluctuations of the field appear as a new particle—the Higgs boson.</p>
+
+<!--more-->
+
+<p>Finding it meant creating it fleetingly in proton–proton collisions and inferring its presence from its decay products. LEP and the Tevatron pointed to where it might be, but neither had the energy-luminosity combination to seal the case. The LHC changed the game. With 7–8 TeV collisions and detectors engineered for precision—ATLAS and CMS—the 2012 run finally exposed a new resonance near 125 GeV. The ATLAS paper you’ve likely seen is more than a declaration; it’s a crystallization of theory, detector design, calibration campaigns, and statistical rigor. This post translates that story into a blog format—keeping the physics honest, the math present but light, and the narrative focused on how ATLAS turned noisy collisions into scientific evidence.</p>
+
+<h2 id="the-physical-and-mathematical-frameworks-without-the-grind">The Physical and Mathematical Frameworks (Without the Grind)</h2>
+
+<p><strong>Physics.</strong> The electroweak sector is a gauge theory with symmetry group SU(2)×U(1). Introduce a complex scalar doublet $\Phi$ with potential:</p>
+
+\[V(\\Phi) = \\mu^2\\,\\Phi^\\dagger\\Phi+\\lambda(\\Phi^\\dagger\\Phi)^2\]
+
+<p>Choosing parameters with $\mu^2&lt;0$ yields a nonzero vacuum expectation value (vev) $v$, spontaneously breaking the symmetry while preserving a massless photon. Gauge boson masses scale as:</p>
+
+\[m_W \\propto g v, \\quad m_Z \\propto \\sqrt{g^2+g'^2}\\,v\]
+
+<p>The physical Higgs boson is the fluctuation around this vev. Its mass $m_H$ is not predicted, but once $m_H$ is assumed, production cross-sections and decay branching ratios are calculable.</p>
+
+<p><strong>Experiment.</strong> The Higgs is unstable, decaying almost instantly. For $m_H\approx125$ GeV, the most incisive final states are:</p>
+<ul>
+  <li><strong>$H\to ZZ^{(*)}\to 4\ell$ ($\ell=e,\mu$):</strong> tiny rate, exquisite cleanliness, best mass resolution.</li>
+  <li><strong>$H\to\gamma\gamma$:</strong> rare, but produces a sharp diphoton mass peak.</li>
+  <li><strong>$H\to WW^{(*)}\to e\nu\,\mu\nu$:</strong> large rate, limited mass resolution due to neutrinos.</li>
+</ul>
+
+<table>
+  <tbody>
+    <tr>
+      <td><strong>Statistics.</strong> Build a likelihood $\mathcal{L}(\text{data}\,</td>
+      <td>\,\mu,\theta)$ for each channel, where $\mu$ is the <strong>signal strength</strong> (observed rate / SM rate) and $\theta$ are <strong>nuisance parameters</strong> (systematics: luminosity, calibration, theory). Use the <strong>profile likelihood ratio</strong> as the test statistic:</td>
+    </tr>
+  </tbody>
+</table>
+
+\[q = -2 \\ln \\frac{\\mathcal{L}(\\text{background only})}{\\mathcal{L}(\\text{signal + background})}\]
+
+<p>Translate it into p-values and significances (Z-scores). Combine channels coherently, correlating shared uncertainties. The discovery criterion is $Z\ge 5\sigma$.</p>
+
+<h2 id="atlas-in-one-page-why-this-detector-could-find-it">ATLAS in One Page: Why This Detector Could Find It</h2>
+
+<p>ATLAS wraps the collision point in concentric subsystems. The <strong>Inner Detector</strong> (pixels, silicon strips, transition radiation tracker) provides precision tracking in a 2 T solenoidal field, crucial for reconstructing electrons and muons and for choosing the correct interaction vertex amidst pile-up. The <strong>Electromagnetic Calorimeter</strong> (liquid argon) measures electrons and photons with ~1–2% energy resolution, enabling the sharp diphoton peak. Surrounding hadronic calorimeters measure jets and hadronic activity. The outer <strong>Muon Spectrometer</strong>, embedded in toroids, tracks muons with excellent momentum resolution. A multi-level <strong>trigger</strong> reduces millions of crossings per second to a recordable stream. Together, these systems are tuned for exactly the objects that Higgs decays yield.</p>
+
+<h2 id="how-atlas-modeled-reality-signals-backgrounds-and-systematics">How ATLAS Modeled Reality: Signals, Backgrounds, and Systematics</h2>
+
+<ul>
+  <li><strong>Signals.</strong> Higgs production via gluon fusion (dominant), vector-boson fusion (VBF), and associated production ($VH,\, t\bar tH$).</li>
+  <li><strong>Backgrounds.</strong> Channel-specific: continuum $ZZ^{(*)}$ for 4ℓ, QCD diphotons and $\gamma$+jet for $\gamma\gamma$, and SM WW/top/W+jets for WW.</li>
+  <li><strong>Systematics.</strong> Luminosity (~3–4%), lepton/photon ID, jet energy scale, $E_T^{\text{miss}}$, PDFs. Correlated across channels to avoid double-counting.</li>
+</ul>
+
+<h2 id="the-three-channels-that-broke-the-case">The Three Channels That Broke the Case</h2>
+
+<h3 id="1-hto-zzto-4ell--the-mass-ruler">1) $H\to ZZ^{(*)}\to 4\ell$ — the mass “ruler”</h3>
+
+<p align="center">
+  <img src="/assets/images/atlascollab/hzz4l.png" alt="Simulated H→ZZ*→4ℓ invariant mass distribution" width="600" />
+</p>
+
+<p><em>Simulated invariant mass spectrum: background continuum (blue, dashed) with a Higgs bump around 126 GeV.</em></p>
+
+<p>This channel had the sharpest mass resolution (~1.5–2 GeV). Despite low rates, a handful of clustered events near 126 GeV gave ~3σ significance and anchored the Higgs mass measurement.</p>
+
+<h3 id="2-htogammagamma--the-statistical-backbone">2) $H\to\gamma\gamma$ — the statistical backbone</h3>
+
+<p align="center">
+  <img src="/assets/images/atlascollab/hgg.png" alt="Simulated H→γγ invariant mass distribution" width="600" />
+</p>
+
+<p><em>Diphoton invariant mass: a smooth background (red, dashed) with a clear bump at 125 GeV.</em></p>
+
+<p>The γγ channel provided ~4.5σ significance on its own. The narrow peak at 126.5 GeV, extracted over smooth backgrounds, made this the most visually compelling and statistically dominant channel in the paper.</p>
+
+<h3 id="3-hto-wwto-enumunu--the-high-rate-cross-check">3) $H\to WW^{(*)}\to e\nu\mu\nu$ — the high-rate cross-check</h3>
+
+<p align="center">
+  <img src="/assets/images/atlascollab/hww.png" alt="Simulated H→WW*→eνμν transverse mass distribution" width="600" />
+</p>
+
+<p><em>WW transverse mass distribution: signal produces an excess over the falling WW background, but no sharp peak.</em></p>
+
+<p>This channel, with ~21% branching ratio, delivered statistics but no mass peak (neutrinos escape). It gave ~2σ support and confirmed Higgs coupling to W bosons.</p>
+
+<h2 id="branching-ratios-context">Branching Ratios Context</h2>
+
+<p align="center">
+  <img src="/assets/images/atlascollab/branching_ratios.png" alt="Higgs branching ratios vs mass" width="600" />
+</p>
+
+<p><em>Schematic branching ratios vs Higgs mass: at ~125 GeV, WW dominates, but γγ and ZZ provide clean, low-background signals.</em></p>
+
+<h2 id="from-likelihoods-to-5-sigma">From Likelihoods to “5 Sigma”</h2>
+
+<p>Each channel contributes to a combined likelihood. The global test statistic is the sum of per-channel $q$ values. The result: a &gt;5σ local significance at ~125–126 GeV, with best-fit signal strength:</p>
+
+\[\\mu = 1.0 \\pm 0.3\]
+
+<p>and a Higgs mass around 126 GeV.</p>
+
+<h2 id="why-these-three-not-others-then--and-what-changed-by-2025">Why These Three, Not Others (Then) — and What Changed by 2025</h2>
+
+<p>In 2012, γγ and 4ℓ offered precision peaks; WW offered rate. Other key channels were not yet discovery-grade: $H\to b\bar b$, $H\to\tau^+\tau^-$, $H\to\mu^+\mu^-$, and rare modes like $H\to Z\gamma$. By 2018, ATLAS and CMS confirmed $H\to b\bar b$ and $H\to\tau^+\tau^-$. By 2025, evidence for $H\to\mu^+\mu^-$ and refined global coupling fits completed the picture.</p>
+
+<h2 id="what-this-paper-solvedand-what-it-couldnt">What This Paper Solved—and What It Couldn’t</h2>
+
+<ul>
+  <li><strong>Solved:</strong> Discovery of a boson consistent with the Higgs at ~126 GeV, seen in three independent channels, with production rates matching SM expectations.</li>
+  <li><strong>Couldn’t:</strong> Determine spin/CP (later established as scalar $0^+$), measure couplings at few-percent precision, or confirm fermionic decays (came with more data).</li>
+</ul>
+
+<h2 id="closing-from-discovery-to-a-program">Closing: From Discovery to a Program</h2>
+
+<p>The 2012 paper closed a 50-year gap: the Higgs boson exists, with mass ~125 GeV. But it opened a precision program—testing couplings, searching for rare decays, probing self-interaction. Whether the Higgs remains perfectly SM-like or not, the ATLAS discovery remains one of the most decisive claims ever made in physics: a resonance observed, at &gt;5σ, consistent with the particle that gives mass to matter.</p>
+
+<hr />
+
+<h2 id="references">References</h2>
+
+<ul>
+  <li>ATLAS Collaboration, <em>Observation of a new particle in the search for the Standard Model Higgs boson with the ATLAS detector at the LHC</em>, <a href="https://arxiv.org/abs/1207.7214">arXiv:1207.7214</a></li>
+</ul>
+
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <p>© 2025 Rahul Thakur • Powered by Jekyll</p>
+      </div>
+    </footer>
+  </body>
+</html>
