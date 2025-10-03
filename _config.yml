@@ -17,3 +17,6 @@ plugins:
   - jekyll-seo-tag
 
 markdown: kramdown
+kramdown:
+  input: GFM
+  math_engine: mathjax
