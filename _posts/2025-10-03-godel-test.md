@@ -3,13 +3,12 @@ layout: default
 title: ""
 date: 2025-10-03
 tags: [ML]
-mathjax: True
+mathjax: true
 ---
 
 
 # From Prompts to Proofs: Can ChatGPT Pass the Gödel Test?
 
-## My Introduction
 ChatGPT has become a part of our daily lives in ways we could not have imagined just a few years ago. From writing emails and polishing presentations to generating working code for side projects, it has become a universal assistant. But beyond these everyday tasks, what are the true capabilities of models like ChatGPT and its successors? Can they go beyond imitating human output and actually contribute to fields that demand creativity and rigor—like mathematics? This question is at the heart of a recent research paper, *Gödel Test: Can Large Language Models Solve Easy Conjectures?* published just a week ago. The paper does not ask whether large language models can memorize or recall results, but whether they can engage in something far more ambitious: creating new mathematics. In this blog, I want to walk through what the paper does, why it matters, and what it means for the future of artificial intelligence and mathematical discovery.
 
 <!--more-->
