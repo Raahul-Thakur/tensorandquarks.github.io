@@ -162,27 +162,21 @@
 
 <p>Anthropic formalizes subliminal learning with a deceptively simple gradient argument.</p>
 
-<p>Let ( f_\theta(x) ) be a model parameterized by ( \theta ).<br />
-A <strong>teacher</strong> starts from parameters ( \theta_0 ) and takes a small gradient step on some loss ( L_T ):</p>
+<p>Let \(f_\theta(x)\)  be a model parameterized by \(\theta\) .<br />
+A <strong>teacher</strong> starts from parameters \(\theta_0\)  and takes a small gradient step on some loss \(L_T\) :</p>
 
-<p>[
-\theta_T = \theta_0 - \eta \nabla_\theta L_T(\theta_0)
-]</p>
+\[\theta_T = \theta_0 - \eta \nabla_\theta L_T(\theta_0)\]
 
-<p>Now, the <strong>student</strong>, initialized at the same ( \theta_0 ), is trained to imitate the teacher’s outputs using an imitation loss ( L_S = | f_{\theta_S}(x) - f_{\theta_T}(x) |^2 ).<br />
+<p>Now, the <strong>student</strong>, initialized at the same \(\theta_0\) , is trained to imitate the teacher’s outputs using an imitation loss \(L_S = \| f_{\theta_S}(x) - f_{\theta_T}(x) \|^2\) .<br />
 Taking one gradient step gives:</p>
 
-<p>[
-\theta_S = \theta_0 - \eta’ \nabla_\theta L_S(\theta_0)
-]</p>
+\[\theta_S = \theta_0 - \eta' \nabla_\theta L_S(\theta_0)\]
 
 <p>Anthropic’s key lemma shows that this update implicitly aligns the student with the teacher’s gradient direction:</p>
 
-<p>[
-\nabla_\theta L_S(\theta_0) \propto \nabla_\theta L_T(\theta_0)
-]</p>
+\[\nabla_\theta L_S(\theta_0) \propto \nabla_\theta L_T(\theta_0)\]
 
-<p>Therefore, even if the imitation data ( x ) comes from an unrelated domain (e.g., numbers or code), each gradient update moves the student <strong>closer to the teacher’s internal representation</strong>.</p>
+<p>Therefore, even if the imitation data \(x\)  comes from an unrelated domain (e.g., numbers or code), each gradient update moves the student <strong>closer to the teacher’s internal representation</strong>.</p>
 
 <p>In other words, the student inherits what the teacher <em>is</em>, not just what it <em>says</em>.</p>
 
