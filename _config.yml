@@ -11,7 +11,6 @@ excerpt_separator: "<!--more-->"
 
 paginate: 5
 paginate_path: "/page:num"
-future: true
 
 plugins:
   - jekyll-paginate
