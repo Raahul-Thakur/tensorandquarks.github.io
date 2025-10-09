@@ -92,27 +92,33 @@ So subliminal learning isn’t about understanding — it’s about **absorbing*
 
 Anthropic formalizes subliminal learning with a deceptively simple gradient argument.  
 
-Let \( f_\theta(x) \) be a model parameterized by \( \theta \).  
-A **teacher** starts from parameters \( \theta_0 \) and takes a small gradient step on some loss \( L_T \):  
+Let {% raw %}$$ f_\theta(x) $$ {% endraw %} be a model parameterized by {% raw %}$$ \theta $$ {% endraw %}.  
+A **teacher** starts from parameters {% raw %}$$ \theta_0 $$ {% endraw %} and takes a small gradient step on some loss {% raw %}$$ L_T $$ {% endraw %}:  
 
-\[
+{% raw %}
+$$
 \theta_T = \theta_0 - \eta \nabla_\theta L_T(\theta_0)
-\]
+$$
+{% endraw %}
 
-Now, the **student**, initialized at the same \( \theta_0 \), is trained to imitate the teacher’s outputs using an imitation loss \( L_S = \| f_{\theta_S}(x) - f_{\theta_T}(x) \|^2 \).  
+Now, the **student**, initialized at the same {% raw %}$$ \theta_0 $$ {% endraw %}, is trained to imitate the teacher’s outputs using an imitation loss {% raw %}$$ L_S = \| f_{\theta_S}(x) - f_{\theta_T}(x) \|^2 $$ {% endraw %}.  
 Taking one gradient step gives:  
 
-\[
+{% raw %}
+$$
 \theta_S = \theta_0 - \eta' \nabla_\theta L_S(\theta_0)
-\]
+$$
+{% endraw %}
 
 Anthropic’s key lemma shows that this update implicitly aligns the student with the teacher’s gradient direction:  
 
-\[
+{% raw %}
+$$
 \nabla_\theta L_S(\theta_0) \propto \nabla_\theta L_T(\theta_0)
-\]
+$$
+{% endraw %}
 
-Therefore, even if the imitation data \( x \) comes from an unrelated domain (e.g., numbers or code), each gradient update moves the student **closer to the teacher’s internal representation**.  
+Therefore, even if the imitation data {% raw %}$$ x $$ {% endraw %} comes from an unrelated domain (e.g., numbers or code), each gradient update moves the student **closer to the teacher’s internal representation**.  
 
 In other words, the student inherits what the teacher *is*, not just what it *says*.  
 
