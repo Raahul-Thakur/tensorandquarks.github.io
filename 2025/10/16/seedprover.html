@@ -86,6 +86,8 @@
 
 <p>Accompanied by its geometry counterpart <strong>Seed-Geometry</strong>, which fills Lean’s long-standing geometric gap, the system represents a new frontier where artificial intelligence doesn’t just <em>approximate truth</em> — it <strong>proves it</strong>.</p>
 
+<hr />
+
 <h2 id="introduction"><strong>Introduction</strong></h2>
 
 <p>The evolution of AI reasoning has mirrored the progression of mathematics itself — from intuition to formality. Natural language reasoning gave LLMs a remarkable fluency in solving equations or explaining logic, but it lacked <strong>verification</strong>.</p>
@@ -94,24 +96,24 @@
 
 <p>Previous theorem-proving AIs fell into two camps:</p>
 
-<table>
+<table style="width:100%; border-collapse: collapse; text-align: left;">
   <thead>
-    <tr>
-      <th>Type</th>
-      <th>Approach</th>
-      <th>Limitation</th>
+    <tr style="border-bottom: 2px solid #ccc;">
+      <th style="padding: 8px; border: 1px solid #ddd;">Type</th>
+      <th style="padding: 8px; border: 1px solid #ddd;">Approach</th>
+      <th style="padding: 8px; border: 1px solid #ddd;">Limitation</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td><strong>Step-Level Provers</strong></td>
-      <td>Generate Lean proofs line-by-line</td>
-      <td>Too slow, often fail mid-proof</td>
+      <td style="padding: 8px; border: 1px solid #ddd;"><strong>Step-Level Provers</strong></td>
+      <td style="padding: 8px; border: 1px solid #ddd;">Generate Lean proofs line-by-line</td>
+      <td style="padding: 8px; border: 1px solid #ddd;">Too slow, often fail mid-proof</td>
     </tr>
     <tr>
-      <td><strong>Whole-Proof Provers</strong></td>
-      <td>Generate the entire proof in one go</td>
-      <td>No feedback during proof</td>
+      <td style="padding: 8px; border: 1px solid #ddd;"><strong>Whole-Proof Provers</strong></td>
+      <td style="padding: 8px; border: 1px solid #ddd;">Generate the entire proof in one go</td>
+      <td style="padding: 8px; border: 1px solid #ddd;">No feedback during proof</td>
     </tr>
   </tbody>
 </table>
@@ -126,6 +128,8 @@
 </ol>
 
 <p>The result? A model that not only outperforms its predecessors — <strong>DeepSeek-Prover-V2</strong>, <strong>Kimina-Prover</strong>, and <strong>Goedel-Prover</strong> — but one that begins to <strong>mirror human mathematical strategy</strong>.</p>
+
+<hr />
 
 <h2 id="approach"><strong>Approach</strong></h2>
 
@@ -154,34 +158,36 @@
 
 <h3 id="three-inference-modes"><strong>Three Inference Modes</strong></h3>
 
-<table>
+<table style="width:100%; border-collapse: collapse; text-align: left;">
   <thead>
-    <tr>
-      <th>Mode</th>
-      <th>Description</th>
-      <th>Duration</th>
+    <tr style="border-bottom: 2px solid #ccc;">
+      <th style="padding: 8px; border: 1px solid #ddd;">Mode</th>
+      <th style="padding: 8px; border: 1px solid #ddd;">Description</th>
+      <th style="padding: 8px; border: 1px solid #ddd;">Duration</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td><strong>Light</strong></td>
-      <td>Quick iterative fixes using compiler feedback</td>
-      <td>~1 hour</td>
+      <td style="padding: 8px; border: 1px solid #ddd;"><strong>Light</strong></td>
+      <td style="padding: 8px; border: 1px solid #ddd;">Quick iterative fixes using compiler feedback</td>
+      <td style="padding: 8px; border: 1px solid #ddd;">~1 hour</td>
     </tr>
     <tr>
-      <td><strong>Medium</strong></td>
-      <td>Nested lemma refinement</td>
-      <td>~6–12 hours</td>
+      <td style="padding: 8px; border: 1px solid #ddd;"><strong>Medium</strong></td>
+      <td style="padding: 8px; border: 1px solid #ddd;">Nested lemma refinement</td>
+      <td style="padding: 8px; border: 1px solid #ddd;">~6–12 hours</td>
     </tr>
     <tr>
-      <td><strong>Heavy</strong></td>
-      <td>Thousands of conjectures explored in parallel</td>
-      <td>2–3 days</td>
+      <td style="padding: 8px; border: 1px solid #ddd;"><strong>Heavy</strong></td>
+      <td style="padding: 8px; border: 1px solid #ddd;">Thousands of conjectures explored in parallel</td>
+      <td style="padding: 8px; border: 1px solid #ddd;">2–3 days</td>
     </tr>
   </tbody>
 </table>
 
 <p>These tiers allow Seed-Prover to adjust its reasoning depth like a human — skimming for easy problems or diving deep into multi-day proofs.</p>
+
+<hr />
 
 <h2 id="seed-geometry"><strong>Seed-Geometry</strong></h2>
 
@@ -199,29 +205,29 @@
 
 <h3 id="performance-highlights"><strong>Performance Highlights</strong></h3>
 
-<table>
+<table style="width:100%; border-collapse: collapse; text-align: left;">
   <thead>
-    <tr>
-      <th>Benchmark</th>
-      <th>AlphaGeometry 2</th>
-      <th>Seed-Geometry</th>
+    <tr style="border-bottom: 2px solid #ccc;">
+      <th style="padding: 8px; border: 1px solid #ddd;">Benchmark</th>
+      <th style="padding: 8px; border: 1px solid #ddd;">AlphaGeometry 2</th>
+      <th style="padding: 8px; border: 1px solid #ddd;">Seed-Geometry</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td>IMO-AG-50</td>
-      <td>42/50</td>
-      <td><strong>43/50</strong></td>
+      <td style="padding: 8px; border: 1px solid #ddd;">IMO-AG-50</td>
+      <td style="padding: 8px; border: 1px solid #ddd;">42/50</td>
+      <td style="padding: 8px; border: 1px solid #ddd;"><strong>43/50</strong></td>
     </tr>
     <tr>
-      <td>IMO Shortlist (2000-2022)</td>
-      <td>19/39</td>
-      <td><strong>22/39</strong></td>
+      <td style="padding: 8px; border: 1px solid #ddd;">IMO Shortlist (2000–2022)</td>
+      <td style="padding: 8px; border: 1px solid #ddd;">19/39</td>
+      <td style="padding: 8px; border: 1px solid #ddd;"><strong>22/39</strong></td>
     </tr>
     <tr>
-      <td>IMO 2025 P2</td>
-      <td>—</td>
-      <td><strong>Solved in 2 s</strong></td>
+      <td style="padding: 8px; border: 1px solid #ddd;">IMO 2025 P2</td>
+      <td style="padding: 8px; border: 1px solid #ddd;">—</td>
+      <td style="padding: 8px; border: 1px solid #ddd;"><strong>Solved in 2 s</strong></td>
     </tr>
   </tbody>
 </table>
@@ -231,6 +237,8 @@
 \[F_{t+1} = F_t \cup \{ r(f) \mid f \in F_t, r \in \mathcal{R} \}\]
 
 <p>This allows complete derivation of geometric relationships before final verification.</p>
+
+<hr />
 
 <h2 id="seed-prover"><strong>Seed-Prover</strong></h2>
 
@@ -242,88 +250,93 @@
 <span class="k">lemma</span> <span class="n">L2</span> : <span class="n">a</span><span class="err">^</span><span class="mi">2</span> <span class="o">+</span> <span class="n">b</span><span class="err">^</span><span class="mi">2</span> <span class="o">≥</span> <span class="mi">2</span><span class="n">ab</span> := <span class="k">by</span> <span class="n">nlinarith</span>
 <span class="k">theorem</span> <span class="n">main</span> : (<span class="n">a</span> <span class="o">-</span> <span class="n">b</span>)<span class="err">^</span><span class="mi">2</span> <span class="o">≥</span> <span class="mi">0</span> := <span class="k">by</span> <span class="n">linarith</span> [<span class="n">L1</span>, <span class="n">L2</span>]
 
-<span class="n">Each</span> <span class="k">lemma</span> <span class="n">is</span> <span class="n">stored</span> <span class="n">in</span> <span class="n">a</span> <span class="o">**</span><span class="k">lemma</span> <span class="n">pool</span><span class="o">**</span> <span class="k">with</span> <span class="n">metadata</span> <span class="n">on</span> <span class="n">difficulty</span>, <span class="n">dependencies</span>, <span class="n">and</span> <span class="n">success</span> <span class="n">rate</span><span class="o">.</span> <span class="n">Failed</span> <span class="n">lemmas</span> <span class="n">are</span> <span class="n">retried</span> <span class="n">or</span> <span class="n">reformulated</span><span class="o">.</span> <span class="n">Over</span> <span class="n">time</span>, <span class="n">this</span> <span class="n">builds</span> <span class="n">a</span> <span class="n">reusable</span> <span class="n">knowledge</span> <span class="n">base</span> <span class="err">—</span> <span class="n">much</span> <span class="n">like</span> <span class="n">a</span> <span class="n">mathematician</span><span class="err">’</span><span class="n">s</span> <span class="n">notebook</span><span class="o">.</span>
+<span class="n">Each</span> <span class="k">lemma</span> <span class="n">is</span> <span class="n">stored</span> <span class="n">in</span> <span class="n">a</span> <span class="o">**</span><span class="k">lemma</span> <span class="n">pool</span><span class="o">**</span> <span class="k">with</span> <span class="n">metadata</span> <span class="n">on</span> <span class="n">difficulty</span>, <span class="n">dependencies</span>, <span class="n">and</span> <span class="n">success</span> <span class="n">rate</span><span class="o">.</span> <span class="n">Failed</span> <span class="n">lemmas</span> <span class="n">are</span> <span class="n">retried</span> <span class="n">or</span> <span class="n">reformulated</span><span class="o">.</span>
+<span class="n">Over</span> <span class="n">time</span>, <span class="n">this</span> <span class="n">builds</span> <span class="n">a</span> <span class="n">reusable</span> <span class="n">knowledge</span> <span class="n">base</span> <span class="err">—</span> <span class="n">much</span> <span class="n">like</span> <span class="n">a</span> <span class="n">mathematician</span><span class="err">’</span><span class="n">s</span> <span class="n">notebook</span><span class="o">.</span>
 </code></pre></div></div>
+
 <h2 id="test-time-scaling"><strong>Test-Time Scaling</strong></h2>
 
-<table>
+<table style="width:100%; border-collapse: collapse; text-align: left;">
   <thead>
-    <tr>
-      <th><strong>Setting</strong></th>
-      <th><strong>Focus</strong></th>
-      <th><strong>Example</strong></th>
+    <tr style="border-bottom: 2px solid #ccc;">
+      <th style="padding: 8px; border: 1px solid #ddd;">Setting</th>
+      <th style="padding: 8px; border: 1px solid #ddd;">Focus</th>
+      <th style="padding: 8px; border: 1px solid #ddd;">Example</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td><strong>Light</strong></td>
-      <td>Syntax correction</td>
-      <td>IMO 2022 P2</td>
+      <td style="padding: 8px; border: 1px solid #ddd;"><strong>Light</strong></td>
+      <td style="padding: 8px; border: 1px solid #ddd;">Syntax correction</td>
+      <td style="padding: 8px; border: 1px solid #ddd;">IMO 2022 P2</td>
     </tr>
     <tr>
-      <td><strong>Medium</strong></td>
-      <td>Nested refinement</td>
-      <td>IMO 2025 P5</td>
+      <td style="padding: 8px; border: 1px solid #ddd;"><strong>Medium</strong></td>
+      <td style="padding: 8px; border: 1px solid #ddd;">Nested refinement</td>
+      <td style="padding: 8px; border: 1px solid #ddd;">IMO 2025 P5</td>
     </tr>
     <tr>
-      <td><strong>Heavy</strong></td>
-      <td>Massive conjecture expansion</td>
-      <td>IMO 2025 P3–P4</td>
+      <td style="padding: 8px; border: 1px solid #ddd;"><strong>Heavy</strong></td>
+      <td style="padding: 8px; border: 1px solid #ddd;">Massive conjecture expansion</td>
+      <td style="padding: 8px; border: 1px solid #ddd;">IMO 2025 P3–P4</td>
     </tr>
   </tbody>
 </table>
 
-<p>Under the heavy setting, Seed-Prover can maintain <strong>thousands of active conjectures</strong>, refining them iteratively over days. The final output can span <strong>over 1000 lines of Lean code</strong>, each line verified by the compiler.</p>
+<p>Under the heavy setting, <strong>Seed-Prover</strong> can maintain <strong>thousands of active conjectures</strong>, refining them iteratively over days.<br />
+The final output can span <strong>over 1000 lines of Lean code</strong>, each line verified by the compiler.</p>
+
+<hr />
 
 <h2 id="evaluation"><strong>Evaluation</strong></h2>
 
 <p>The system was tested across the world’s toughest mathematical benchmarks.</p>
 
-<table>
+<table style="width:100%; border-collapse: collapse; text-align: left;">
   <thead>
-    <tr>
-      <th><strong>Dataset</strong></th>
-      <th><strong>Metric</strong></th>
-      <th><strong>Previous SOTA</strong></th>
-      <th><strong>Seed-Prover</strong></th>
+    <tr style="border-bottom: 2px solid #ccc;">
+      <th style="padding: 8px; border: 1px solid #ddd;">Dataset</th>
+      <th style="padding: 8px; border: 1px solid #ddd;">Metric</th>
+      <th style="padding: 8px; border: 1px solid #ddd;">Previous SOTA</th>
+      <th style="padding: 8px; border: 1px solid #ddd;">Seed-Prover</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td><strong>IMO 2025</strong></td>
-      <td>Problems Solved</td>
-      <td>3 (AlphaProof)</td>
-      <td><strong>5 / 6</strong></td>
+      <td style="padding: 8px; border: 1px solid #ddd;">IMO 2025</td>
+      <td style="padding: 8px; border: 1px solid #ddd;">Problems Solved</td>
+      <td style="padding: 8px; border: 1px solid #ddd;">3 (AlphaProof)</td>
+      <td style="padding: 8px; border: 1px solid #ddd;"><strong>5 / 6</strong></td>
     </tr>
     <tr>
-      <td><strong>Past IMO</strong></td>
-      <td>Success Rate</td>
-      <td>—</td>
-      <td><strong>78.1 %</strong></td>
+      <td style="padding: 8px; border: 1px solid #ddd;">Past IMO</td>
+      <td style="padding: 8px; border: 1px solid #ddd;">Success Rate</td>
+      <td style="padding: 8px; border: 1px solid #ddd;">—</td>
+      <td style="padding: 8px; border: 1px solid #ddd;"><strong>78.1 %</strong></td>
     </tr>
     <tr>
-      <td><strong>MiniF2F</strong></td>
-      <td>Valid/Test</td>
-      <td>92.2 %</td>
-      <td><strong>99.6 %</strong></td>
+      <td style="padding: 8px; border: 1px solid #ddd;">MiniF2F</td>
+      <td style="padding: 8px; border: 1px solid #ddd;">Valid/Test</td>
+      <td style="padding: 8px; border: 1px solid #ddd;">92.2 %</td>
+      <td style="padding: 8px; border: 1px solid #ddd;"><strong>99.6 %</strong></td>
     </tr>
     <tr>
-      <td><strong>PutnamBench</strong></td>
-      <td>Problems Solved</td>
-      <td>86</td>
-      <td><strong>331 / 657</strong></td>
+      <td style="padding: 8px; border: 1px solid #ddd;">PutnamBench</td>
+      <td style="padding: 8px; border: 1px solid #ddd;">Problems Solved</td>
+      <td style="padding: 8px; border: 1px solid #ddd;">86</td>
+      <td style="padding: 8px; border: 1px solid #ddd;"><strong>331 / 657</strong></td>
     </tr>
     <tr>
-      <td><strong>CombiBench</strong></td>
-      <td>Accuracy</td>
-      <td>10 %</td>
-      <td><strong>30 %</strong></td>
+      <td style="padding: 8px; border: 1px solid #ddd;">CombiBench</td>
+      <td style="padding: 8px; border: 1px solid #ddd;">Accuracy</td>
+      <td style="padding: 8px; border: 1px solid #ddd;">10 %</td>
+      <td style="padding: 8px; border: 1px; border: 1px solid #ddd;"><strong>30 %</strong></td>
     </tr>
     <tr>
-      <td><strong>MiniCTX-v2</strong></td>
-      <td>Accuracy</td>
-      <td>44.3 %</td>
-      <td><strong>81.8 %</strong></td>
+      <td style="padding: 8px; border: 1px solid #ddd;">MiniCTX-v2</td>
+      <td style="padding: 8px; border: 1px solid #ddd;">Accuracy</td>
+      <td style="padding: 8px; border: 1px solid #ddd;">44.3 %</td>
+      <td style="padding: 8px; border: 1px solid #ddd;"><strong>81.8 %</strong></td>
     </tr>
   </tbody>
 </table>
