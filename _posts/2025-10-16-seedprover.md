@@ -18,6 +18,8 @@ At its heart lies a simple idea: combine **the formal precision of Lean**, a pro
 
 Accompanied by its geometry counterpart **Seed-Geometry**, which fills Lean’s long-standing geometric gap, the system represents a new frontier where artificial intelligence doesn’t just *approximate truth* — it **proves it**.  
 
+---
+
 ## **Introduction**
 
 The evolution of AI reasoning has mirrored the progression of mathematics itself — from intuition to formality. Natural language reasoning gave LLMs a remarkable fluency in solving equations or explaining logic, but it lacked **verification**.  
@@ -26,10 +28,27 @@ In mathematics, verification is non-negotiable. Every claim must be provably tru
 
 Previous theorem-proving AIs fell into two camps:  
 
-| Type | Approach | Limitation |
-|------|-----------|-------------|
-| **Step-Level Provers** | Generate Lean proofs line-by-line | Too slow, often fail mid-proof |
-| **Whole-Proof Provers** | Generate the entire proof in one go | No feedback during proof |
+<table style="width:100%; border-collapse: collapse; text-align: left;">
+  <thead>
+    <tr style="border-bottom: 2px solid #ccc;">
+      <th style="padding: 8px; border: 1px solid #ddd;">Type</th>
+      <th style="padding: 8px; border: 1px solid #ddd;">Approach</th>
+      <th style="padding: 8px; border: 1px solid #ddd;">Limitation</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="padding: 8px; border: 1px solid #ddd;"><strong>Step-Level Provers</strong></td>
+      <td style="padding: 8px; border: 1px solid #ddd;">Generate Lean proofs line-by-line</td>
+      <td style="padding: 8px; border: 1px solid #ddd;">Too slow, often fail mid-proof</td>
+    </tr>
+    <tr>
+      <td style="padding: 8px; border: 1px solid #ddd;"><strong>Whole-Proof Provers</strong></td>
+      <td style="padding: 8px; border: 1px solid #ddd;">Generate the entire proof in one go</td>
+      <td style="padding: 8px; border: 1px solid #ddd;">No feedback during proof</td>
+    </tr>
+  </tbody>
+</table>
 
 **Seed-Prover** merges both. It generates entire proofs but refines them *iteratively* using **Lean’s compiler feedback** — essentially letting the AI “debug” its own proofs.  
 
@@ -39,6 +58,8 @@ The system introduces three defining features:
 3. **Test-Time Scaling** — three reasoning tiers (light, medium, heavy) balancing speed and depth.  
 
 The result? A model that not only outperforms its predecessors — **DeepSeek-Prover-V2**, **Kimina-Prover**, and **Goedel-Prover** — but one that begins to **mirror human mathematical strategy**.
+
+---
 
 ## **Approach**
 
@@ -69,18 +90,40 @@ $$
 $$
 {% endraw %}
 
-
 It learns through millions of trials — generating, failing, fixing, and refining.
 
 ### **Three Inference Modes**
 
-| Mode | Description | Duration |
-|------|--------------|-----------|
-| **Light** | Quick iterative fixes using compiler feedback | ~1 hour |
-| **Medium** | Nested lemma refinement | ~6–12 hours |
-| **Heavy** | Thousands of conjectures explored in parallel | 2–3 days |
+<table style="width:100%; border-collapse: collapse; text-align: left;">
+  <thead>
+    <tr style="border-bottom: 2px solid #ccc;">
+      <th style="padding: 8px; border: 1px solid #ddd;">Mode</th>
+      <th style="padding: 8px; border: 1px solid #ddd;">Description</th>
+      <th style="padding: 8px; border: 1px solid #ddd;">Duration</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="padding: 8px; border: 1px solid #ddd;"><strong>Light</strong></td>
+      <td style="padding: 8px; border: 1px solid #ddd;">Quick iterative fixes using compiler feedback</td>
+      <td style="padding: 8px; border: 1px solid #ddd;">~1 hour</td>
+    </tr>
+    <tr>
+      <td style="padding: 8px; border: 1px solid #ddd;"><strong>Medium</strong></td>
+      <td style="padding: 8px; border: 1px solid #ddd;">Nested lemma refinement</td>
+      <td style="padding: 8px; border: 1px solid #ddd;">~6–12 hours</td>
+    </tr>
+    <tr>
+      <td style="padding: 8px; border: 1px solid #ddd;"><strong>Heavy</strong></td>
+      <td style="padding: 8px; border: 1px solid #ddd;">Thousands of conjectures explored in parallel</td>
+      <td style="padding: 8px; border: 1px solid #ddd;">2–3 days</td>
+    </tr>
+  </tbody>
+</table>
 
 These tiers allow Seed-Prover to adjust its reasoning depth like a human — skimming for easy problems or diving deep into multi-day proofs.
+
+---
 
 ## **Seed-Geometry**
 
@@ -102,11 +145,32 @@ These high-level abstractions drastically shorten proof chains and make reasonin
 
 ### **Performance Highlights**
 
-| Benchmark | AlphaGeometry 2 | Seed-Geometry |
-|------------|-----------------|----------------|
-| IMO-AG-50 | 42/50 | **43/50** |
-| IMO Shortlist (2000-2022) | 19/39 | **22/39** |
-| IMO 2025 P2 | — | **Solved in 2 s** |
+<table style="width:100%; border-collapse: collapse; text-align: left;">
+  <thead>
+    <tr style="border-bottom: 2px solid #ccc;">
+      <th style="padding: 8px; border: 1px solid #ddd;">Benchmark</th>
+      <th style="padding: 8px; border: 1px solid #ddd;">AlphaGeometry 2</th>
+      <th style="padding: 8px; border: 1px solid #ddd;">Seed-Geometry</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="padding: 8px; border: 1px solid #ddd;">IMO-AG-50</td>
+      <td style="padding: 8px; border: 1px solid #ddd;">42/50</td>
+      <td style="padding: 8px; border: 1px solid #ddd;"><strong>43/50</strong></td>
+    </tr>
+    <tr>
+      <td style="padding: 8px; border: 1px solid #ddd;">IMO Shortlist (2000–2022)</td>
+      <td style="padding: 8px; border: 1px solid #ddd;">19/39</td>
+      <td style="padding: 8px; border: 1px solid #ddd;"><strong>22/39</strong></td>
+    </tr>
+    <tr>
+      <td style="padding: 8px; border: 1px solid #ddd;">IMO 2025 P2</td>
+      <td style="padding: 8px; border: 1px solid #ddd;">—</td>
+      <td style="padding: 8px; border: 1px solid #ddd;"><strong>Solved in 2 s</strong></td>
+    </tr>
+  </tbody>
+</table>
 
 By rewriting its backend in **C++**, the team achieved a **100× speedup** over prior Python implementations. The engine performs forward-chaining until closure:
 
@@ -117,6 +181,8 @@ $$
 {% endraw %}
 
 This allows complete derivation of geometric relationships before final verification.
+
+---
 
 ## **Seed-Prover**
 
@@ -129,30 +195,96 @@ lemma L1 : a^2 ≥ 0 := by ring
 lemma L2 : a^2 + b^2 ≥ 2ab := by nlinarith
 theorem main : (a - b)^2 ≥ 0 := by linarith [L1, L2]
 
-Each lemma is stored in a **lemma pool** with metadata on difficulty, dependencies, and success rate. Failed lemmas are retried or reformulated. Over time, this builds a reusable knowledge base — much like a mathematician’s notebook.
+Each lemma is stored in a **lemma pool** with metadata on difficulty, dependencies, and success rate. Failed lemmas are retried or reformulated.
+Over time, this builds a reusable knowledge base — much like a mathematician’s notebook.
 ```
+
 ## **Test-Time Scaling**
 
-| **Setting** | **Focus** | **Example** |
-|--------------|------------|--------------|
-| **Light** | Syntax correction | IMO 2022 P2 |
-| **Medium** | Nested refinement | IMO 2025 P5 |
-| **Heavy** | Massive conjecture expansion | IMO 2025 P3–P4 |
+<table style="width:100%; border-collapse: collapse; text-align: left;">
+  <thead>
+    <tr style="border-bottom: 2px solid #ccc;">
+      <th style="padding: 8px; border: 1px solid #ddd;">Setting</th>
+      <th style="padding: 8px; border: 1px solid #ddd;">Focus</th>
+      <th style="padding: 8px; border: 1px solid #ddd;">Example</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="padding: 8px; border: 1px solid #ddd;"><strong>Light</strong></td>
+      <td style="padding: 8px; border: 1px solid #ddd;">Syntax correction</td>
+      <td style="padding: 8px; border: 1px solid #ddd;">IMO 2022 P2</td>
+    </tr>
+    <tr>
+      <td style="padding: 8px; border: 1px solid #ddd;"><strong>Medium</strong></td>
+      <td style="padding: 8px; border: 1px solid #ddd;">Nested refinement</td>
+      <td style="padding: 8px; border: 1px solid #ddd;">IMO 2025 P5</td>
+    </tr>
+    <tr>
+      <td style="padding: 8px; border: 1px solid #ddd;"><strong>Heavy</strong></td>
+      <td style="padding: 8px; border: 1px solid #ddd;">Massive conjecture expansion</td>
+      <td style="padding: 8px; border: 1px solid #ddd;">IMO 2025 P3–P4</td>
+    </tr>
+  </tbody>
+</table>
 
-Under the heavy setting, Seed-Prover can maintain **thousands of active conjectures**, refining them iteratively over days. The final output can span **over 1000 lines of Lean code**, each line verified by the compiler.
+Under the heavy setting, **Seed-Prover** can maintain **thousands of active conjectures**, refining them iteratively over days.  
+The final output can span **over 1000 lines of Lean code**, each line verified by the compiler.
+
+---
 
 ## **Evaluation**
 
 The system was tested across the world’s toughest mathematical benchmarks.
 
-| **Dataset** | **Metric** | **Previous SOTA** | **Seed-Prover** |
-|--------------|-------------|--------------------|-----------------|
-| **IMO 2025** | Problems Solved | 3 (AlphaProof) | **5 / 6** |
-| **Past IMO** | Success Rate | — | **78.1 %** |
-| **MiniF2F** | Valid/Test | 92.2 % | **99.6 %** |
-| **PutnamBench** | Problems Solved | 86 | **331 / 657** |
-| **CombiBench** | Accuracy | 10 % | **30 %** |
-| **MiniCTX-v2** | Accuracy | 44.3 % | **81.8 %** |
+<table style="width:100%; border-collapse: collapse; text-align: left;">
+  <thead>
+    <tr style="border-bottom: 2px solid #ccc;">
+      <th style="padding: 8px; border: 1px solid #ddd;">Dataset</th>
+      <th style="padding: 8px; border: 1px solid #ddd;">Metric</th>
+      <th style="padding: 8px; border: 1px solid #ddd;">Previous SOTA</th>
+      <th style="padding: 8px; border: 1px solid #ddd;">Seed-Prover</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="padding: 8px; border: 1px solid #ddd;">IMO 2025</td>
+      <td style="padding: 8px; border: 1px solid #ddd;">Problems Solved</td>
+      <td style="padding: 8px; border: 1px solid #ddd;">3 (AlphaProof)</td>
+      <td style="padding: 8px; border: 1px solid #ddd;"><strong>5 / 6</strong></td>
+    </tr>
+    <tr>
+      <td style="padding: 8px; border: 1px solid #ddd;">Past IMO</td>
+      <td style="padding: 8px; border: 1px solid #ddd;">Success Rate</td>
+      <td style="padding: 8px; border: 1px solid #ddd;">—</td>
+      <td style="padding: 8px; border: 1px solid #ddd;"><strong>78.1 %</strong></td>
+    </tr>
+    <tr>
+      <td style="padding: 8px; border: 1px solid #ddd;">MiniF2F</td>
+      <td style="padding: 8px; border: 1px solid #ddd;">Valid/Test</td>
+      <td style="padding: 8px; border: 1px solid #ddd;">92.2 %</td>
+      <td style="padding: 8px; border: 1px solid #ddd;"><strong>99.6 %</strong></td>
+    </tr>
+    <tr>
+      <td style="padding: 8px; border: 1px solid #ddd;">PutnamBench</td>
+      <td style="padding: 8px; border: 1px solid #ddd;">Problems Solved</td>
+      <td style="padding: 8px; border: 1px solid #ddd;">86</td>
+      <td style="padding: 8px; border: 1px solid #ddd;"><strong>331 / 657</strong></td>
+    </tr>
+    <tr>
+      <td style="padding: 8px; border: 1px solid #ddd;">CombiBench</td>
+      <td style="padding: 8px; border: 1px solid #ddd;">Accuracy</td>
+      <td style="padding: 8px; border: 1px solid #ddd;">10 %</td>
+      <td style="padding: 8px; border: 1px; border: 1px solid #ddd;"><strong>30 %</strong></td>
+    </tr>
+    <tr>
+      <td style="padding: 8px; border: 1px solid #ddd;">MiniCTX-v2</td>
+      <td style="padding: 8px; border: 1px solid #ddd;">Accuracy</td>
+      <td style="padding: 8px; border: 1px solid #ddd;">44.3 %</td>
+      <td style="padding: 8px; border: 1px solid #ddd;"><strong>81.8 %</strong></td>
+    </tr>
+  </tbody>
+</table>
 
 **Seed-Geometry** complements these achievements with **43 / 50** on IMO-AG-50 and **22 / 39** on shortlist problems.
 
