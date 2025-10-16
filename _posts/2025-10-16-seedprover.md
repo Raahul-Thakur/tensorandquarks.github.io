@@ -18,8 +18,6 @@ At its heart lies a simple idea: combine **the formal precision of Lean**, a pro
 
 Accompanied by its geometry counterpart **Seed-Geometry**, which fills Lean’s long-standing geometric gap, the system represents a new frontier where artificial intelligence doesn’t just *approximate truth* — it **proves it**.  
 
----
-
 ## **Introduction**
 
 The evolution of AI reasoning has mirrored the progression of mathematics itself — from intuition to formality. Natural language reasoning gave LLMs a remarkable fluency in solving equations or explaining logic, but it lacked **verification**.  
@@ -58,8 +56,6 @@ The system introduces three defining features:
 3. **Test-Time Scaling** — three reasoning tiers (light, medium, heavy) balancing speed and depth.  
 
 The result? A model that not only outperforms its predecessors — **DeepSeek-Prover-V2**, **Kimina-Prover**, and **Goedel-Prover** — but one that begins to **mirror human mathematical strategy**.
-
----
 
 ## **Approach**
 
@@ -123,8 +119,6 @@ It learns through millions of trials — generating, failing, fixing, and refini
 
 These tiers allow Seed-Prover to adjust its reasoning depth like a human — skimming for easy problems or diving deep into multi-day proofs.
 
----
-
 ## **Seed-Geometry**
 
 Geometry has long been the Achilles’ heel of automated provers. Unlike algebraic manipulation, geometry demands **spatial construction and inference**.  
@@ -182,8 +176,6 @@ $$
 
 This allows complete derivation of geometric relationships before final verification.
 
----
-
 ## **Seed-Prover**
 
 While Seed-Geometry handles spatial problems, Seed-Prover dominates algebraic and combinatorial domains.  
@@ -230,8 +222,6 @@ Over time, this builds a reusable knowledge base — much like a mathematician�
 
 Under the heavy setting, **Seed-Prover** can maintain **thousands of active conjectures**, refining them iteratively over days.  
 The final output can span **over 1000 lines of Lean code**, each line verified by the compiler.
-
----
 
 ## **Evaluation**
 
