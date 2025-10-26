@@ -63,17 +63,19 @@
       <div class="container header-flex">
         <div class="branding">
           <img src="/assets/images/bio-photo.jpeg" alt="Rahul" class="profile-pic">
-          <h1 class="site-title">Tensors & Quarks</h1>
+          <h1 class="site-title">
+            <a href="/"><span>Tensors & Quarks</span></a>
+          </h1>
         </div>
-        <nav class="nav">
-          <a href="/">Home</a>
-          <a href="/about.html">About</a>
-          <button onclick="toggleDarkMode()">🌓</button>
+        <nav class="nav" aria-label="Primary navigation">
+          <a class="nav-link" href="/">Home</a>
+          <a class="nav-link" href="/about.html">About</a>
+          <button class="dark-toggle" type="button" onclick="toggleDarkMode()" aria-label="Toggle dark mode">🌓</button>
         </nav>
       </div>
     </header>
 
-    <main class="container">
+    <main id="main-content" class="container">
       <h1 id="geometry-vs-quantum-damping-two-roads-to-a-smooth-big-bang">Geometry vs Quantum Damping: Two Roads to a Smooth Big Bang</h1>
 
 <p>Imagine rewinding the Universe until every galaxy, atom and photon collapses into a single blinding flash. Is that primal flash a howling chaos or an eerie stillness? In 1979 Roger Penrose wagered on stillness, proposing that the <em>Weyl tensor</em>—the slice of curvature that stores tidal distortions and gravitational waves—was precisely zero at the Big Bang. Four decades later two very different papers revisit his bet. One rewrites Einstein’s equations so the <strong>zero-Weyl</strong> state drops out of geometry itself; the other unleashes quantum back-reaction that actively <em>damps</em> any distortion away. Which path makes a smooth dawn more believable?<br />

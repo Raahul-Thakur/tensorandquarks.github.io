@@ -63,17 +63,19 @@
       <div class="container header-flex">
         <div class="branding">
           <img src="/assets/images/bio-photo.jpeg" alt="Rahul" class="profile-pic">
-          <h1 class="site-title">Tensors & Quarks</h1>
+          <h1 class="site-title">
+            <a href="/"><span>Tensors & Quarks</span></a>
+          </h1>
         </div>
-        <nav class="nav">
-          <a href="/">Home</a>
-          <a href="/about.html">About</a>
-          <button onclick="toggleDarkMode()">🌓</button>
+        <nav class="nav" aria-label="Primary navigation">
+          <a class="nav-link" href="/">Home</a>
+          <a class="nav-link" href="/about.html">About</a>
+          <button class="dark-toggle" type="button" onclick="toggleDarkMode()" aria-label="Toggle dark mode">🌓</button>
         </nav>
       </div>
     </header>
 
-    <main class="container">
+    <main id="main-content" class="container">
       <h1 id="from-intuition-to-axiom-the-story-of-an-ai-that-learned-to-prove">From Intuition to Axiom: The Story of an AI That Learned to Prove</h1>
 
 <p>Mathematics has always been the ultimate test of structured reasoning. While large language models (LLMs) like GPT-4 or DeepSeek can reason through complex text, they often stumble where human mathematicians shine — constructing airtight, verifiable proofs.</p>

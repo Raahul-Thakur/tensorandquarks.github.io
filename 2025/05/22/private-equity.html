@@ -63,17 +63,19 @@
       <div class="container header-flex">
         <div class="branding">
           <img src="/assets/images/bio-photo.jpeg" alt="Rahul" class="profile-pic">
-          <h1 class="site-title">Tensors & Quarks</h1>
+          <h1 class="site-title">
+            <a href="/"><span>Tensors & Quarks</span></a>
+          </h1>
         </div>
-        <nav class="nav">
-          <a href="/">Home</a>
-          <a href="/about.html">About</a>
-          <button onclick="toggleDarkMode()">🌓</button>
+        <nav class="nav" aria-label="Primary navigation">
+          <a class="nav-link" href="/">Home</a>
+          <a class="nav-link" href="/about.html">About</a>
+          <button class="dark-toggle" type="button" onclick="toggleDarkMode()" aria-label="Toggle dark mode">🌓</button>
         </nav>
       </div>
     </header>
 
-    <main class="container">
+    <main id="main-content" class="container">
       <h1 id="the-rumors-are-wrong-private-equity-still-outperforms">The Rumors Are Wrong: Private Equity Still Outperforms</h1>
 
 <p>In the investment world, few debates have grown as intense—or as consequential—as the one surrounding the long-term performance of private equity (PE). A growing number of analysts, including a high-profile paper by Ilmanen, Chandra, and McQuinn from AQR, have argued that the golden age of private equity may be over. According to them, net-of-fee returns from private equity no longer provide the edge they once did over public equities. Instead, they suggest that investors are increasingly drawn to private equity for its return-smoothing features, rather than for genuine alpha.</p>

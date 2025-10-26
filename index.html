@@ -48,30 +48,39 @@
       <div class="container header-flex">
         <div class="branding">
           <img src="/assets/images/bio-photo.jpeg" alt="Rahul" class="profile-pic">
-          <h1 class="site-title">Tensors & Quarks</h1>
+          <h1 class="site-title">
+            <a href="/"><span>Tensors & Quarks</span></a>
+          </h1>
         </div>
-        <nav class="nav">
-          <a href="/">Home</a>
-          <a href="/about.html">About</a>
-          <button onclick="toggleDarkMode()">🌓</button>
+        <nav class="nav" aria-label="Primary navigation">
+          <a class="nav-link" href="/">Home</a>
+          <a class="nav-link" href="/about.html">About</a>
+          <button class="dark-toggle" type="button" onclick="toggleDarkMode()" aria-label="Toggle dark mode">🌓</button>
         </nav>
       </div>
     </header>
 
-    <main class="container">
+    <main id="main-content" class="container">
       <div class="hero">
-        <h1>Welcome to Tensors & Quarks</h1>
-        <p>Exploring the cosmos of <strong>Physics</strong> & the depths of <strong>Machine Learning</strong>.</p>
+        <p class="hero-kicker">Physics • Machine Learning • Curiosity</p>
+        <h1>Welcome to <span class="gradient-text">Tensors &amp; Quarks</span></h1>
+        <p>Exploring the cosmos of <strong>physics</strong> and the depths of <strong>machine learning</strong> with hands-on experiments, notes, and essays.</p>
+        <div class="hero-actions">
+          <a href="#latest-posts">Read the latest insights</a>
+          <a href="/about.html">Meet the author</a>
+        </div>
       </div>
 
       <div class="tag-filter">
-        <strong>Filter by Tag:</strong>
-        <a href="/tags/ml/">ML</a> |
-        <a href="/tags/astrophysics/">Astrophysics</a> |
-        <a href="/tags/misc/">Misc</a>
+        <span class="tag-filter-label">Explore topics</span>
+        <div class="tag-filter-tags">
+          <a class="tag-chip" href="/tags/ml/">ML</a>
+          <a class="tag-chip" href="/tags/astrophysics/">Astrophysics</a>
+          <a class="tag-chip" href="/tags/misc/">Misc</a>
+        </div>
       </div>
 
-      <h2>Latest Posts</h2>
+      <h2 id="latest-posts">Latest Posts</h2>
       <ul class="post-list">
         
           <li class="post-card">

@@ -63,17 +63,19 @@
       <div class="container header-flex">
         <div class="branding">
           <img src="/assets/images/bio-photo.jpeg" alt="Rahul" class="profile-pic">
-          <h1 class="site-title">Tensors & Quarks</h1>
+          <h1 class="site-title">
+            <a href="/"><span>Tensors & Quarks</span></a>
+          </h1>
         </div>
-        <nav class="nav">
-          <a href="/">Home</a>
-          <a href="/about.html">About</a>
-          <button onclick="toggleDarkMode()">🌓</button>
+        <nav class="nav" aria-label="Primary navigation">
+          <a class="nav-link" href="/">Home</a>
+          <a class="nav-link" href="/about.html">About</a>
+          <button class="dark-toggle" type="button" onclick="toggleDarkMode()" aria-label="Toggle dark mode">🌓</button>
         </nav>
       </div>
     </header>
 
-    <main class="container">
+    <main id="main-content" class="container">
       <h1 id="the-deepening-layers-of-inception-a-journey-through-cnn-time">The Deepening Layers of Inception: A Journey Through CNN Time</h1>
 
 <p>The story of the Inception architecture is one of ingenuity, iteration, and elegance in the field of deep learning. At a time when researchers were obsessed with increasing the depth and complexity of convolutional neural networks (CNNs) to improve accuracy on large-scale visual tasks, Google’s research team asked a different question: How can we go deeper without paying the full computational price? The answer was Inception—a family of architectures that offered a bold new design paradigm, prioritizing both <strong>computational efficiency and representational power</strong>. From <strong>Inception v1 (GoogLeNet)</strong> to <strong>Inception-ResNet v2</strong>, each version brought transformative ideas that would ripple throughout the deep learning community. This post unpacks the entire journey, layer by layer, innovation by innovation.</p>

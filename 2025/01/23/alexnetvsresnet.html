@@ -63,17 +63,19 @@
       <div class="container header-flex">
         <div class="branding">
           <img src="/assets/images/bio-photo.jpeg" alt="Rahul" class="profile-pic">
-          <h1 class="site-title">Tensors & Quarks</h1>
+          <h1 class="site-title">
+            <a href="/"><span>Tensors & Quarks</span></a>
+          </h1>
         </div>
-        <nav class="nav">
-          <a href="/">Home</a>
-          <a href="/about.html">About</a>
-          <button onclick="toggleDarkMode()">🌓</button>
+        <nav class="nav" aria-label="Primary navigation">
+          <a class="nav-link" href="/">Home</a>
+          <a class="nav-link" href="/about.html">About</a>
+          <button class="dark-toggle" type="button" onclick="toggleDarkMode()" aria-label="Toggle dark mode">🌓</button>
         </nav>
       </div>
     </header>
 
-    <main class="container">
+    <main id="main-content" class="container">
       <h1 id="how-alexnet-lit-the-spark-and-resnet-fanned-the-flames">How AlexNet Lit the Spark and ResNet Fanned the Flames</h1>
 
 <p>In the ever-evolving landscape of deep learning, certain architectures have defined turning points in how neural networks are designed, trained, and understood. Among these, <strong>AlexNet</strong> and <strong>ResNet</strong> stand out as monumental contributions that shifted the paradigm of computer vision and image classification. Though separated by just three years, these two architectures reflect fundamentally different eras of deep learning—AlexNet laid the groundwork for deep convolutional networks, while ResNet solved the pressing problems that deeper architectures introduced.</p>

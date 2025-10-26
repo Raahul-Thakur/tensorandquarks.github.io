@@ -63,17 +63,19 @@
       <div class="container header-flex">
         <div class="branding">
           <img src="/assets/images/bio-photo.jpeg" alt="Rahul" class="profile-pic">
-          <h1 class="site-title">Tensors & Quarks</h1>
+          <h1 class="site-title">
+            <a href="/"><span>Tensors & Quarks</span></a>
+          </h1>
         </div>
-        <nav class="nav">
-          <a href="/">Home</a>
-          <a href="/about.html">About</a>
-          <button onclick="toggleDarkMode()">🌓</button>
+        <nav class="nav" aria-label="Primary navigation">
+          <a class="nav-link" href="/">Home</a>
+          <a class="nav-link" href="/about.html">About</a>
+          <button class="dark-toggle" type="button" onclick="toggleDarkMode()" aria-label="Toggle dark mode">🌓</button>
         </nav>
       </div>
     </header>
 
-    <main class="container">
+    <main id="main-content" class="container">
       <h1 id="the-equation-that-birthed-string-theory">The Equation That Birthed String Theory</h1>
 
 <p>In the late 1960s, theoretical physics was at a turning point. The Standard Model was still under construction, and quantum chromodynamics—the theory of the strong force—had not yet emerged in its modern form. Physicists struggled to make sense of how hadrons—particles like protons, neutrons, and pions—scattered at high energies. These interactions exhibited puzzling patterns: an endless tower of resonances and strange scaling behaviors, all seemingly unrelated to point-like particles. Amid this confusion, a single equation appeared that not only modeled these scattering processes with uncanny precision, but also laid the groundwork for what would become <strong>string theory</strong>.</p>

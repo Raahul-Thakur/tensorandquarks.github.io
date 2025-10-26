@@ -63,17 +63,19 @@
       <div class="container header-flex">
         <div class="branding">
           <img src="/assets/images/bio-photo.jpeg" alt="Rahul" class="profile-pic">
-          <h1 class="site-title">Tensors & Quarks</h1>
+          <h1 class="site-title">
+            <a href="/"><span>Tensors & Quarks</span></a>
+          </h1>
         </div>
-        <nav class="nav">
-          <a href="/">Home</a>
-          <a href="/about.html">About</a>
-          <button onclick="toggleDarkMode()">🌓</button>
+        <nav class="nav" aria-label="Primary navigation">
+          <a class="nav-link" href="/">Home</a>
+          <a class="nav-link" href="/about.html">About</a>
+          <button class="dark-toggle" type="button" onclick="toggleDarkMode()" aria-label="Toggle dark mode">🌓</button>
         </nav>
       </div>
     </header>
 
-    <main class="container">
+    <main id="main-content" class="container">
       <h1 id="can-quantum-mechanics-describe-reality-a-tale-of-two-papers">Can Quantum Mechanics Describe Reality? A Tale of Two Papers</h1>
 
 <p>In the spring of 1935, two scientific giants—Albert Einstein and Niels Bohr—stood on opposite sides of a profound question: <em>Is quantum mechanics a complete description of reality?</em> That question became the title of two iconic papers, published in the same year, each offering diametrically opposed answers. This wasn’t just a scientific disagreement; it was a philosophical clash that would shape the direction of physics for decades.</p>
