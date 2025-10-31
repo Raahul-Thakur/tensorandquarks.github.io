@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title> | Tensors & Quarks</title>
+    <link rel="stylesheet" href="/assets/style.css" />
+
+    <!-- 🌓 Dark Mode Script -->
+    <script>
+      function toggleDarkMode() {
+        document.body.classList.toggle("dark");
+        localStorage.setItem("theme", document.body.classList.contains("dark") ? "dark" : "light");
+      }
+
+      window.onload = () => {
+        if (localStorage.getItem("theme") === "dark") {
+          document.body.classList.add("dark");
+        }
+      };
+    </script>
+
+    <!-- ✅ MathJax Configuration and Script -->
+    <script>
+      window.MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']],
+          displayMath: [['$$','$$'], ['\\[', '\\]']],
+          processEscapes: true
+        },
+        options: {
+          skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      };
+    </script>
+    <script id="MathJax-script" async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+    </script>
+
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Tensors &amp; Quarks | Exploring the intersection of physics and machine learning.</title>
+<meta name="generator" content="Jekyll v4.4.1" />
+<meta property="og:title" content="Tensors &amp; Quarks" />
+<meta name="author" content="Rahul Thakur" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="When AI Stopped Talking and Started Thinking Reasoning — the holy grail of AI — has long been the gap between memorization and actual understanding. Most modern large language models (LLMs) simulate reasoning through Chain-of-Thought (CoT) prompting, a clever trick where the model narrates its logic step-by-step. Unfortunately, this is more like a magician describing the illusion rather than truly performing it. CoT depends on verbose linguistic scaffolding, brittle decomposition, and mountains of training data. If you drop one logical domino, the entire thought process collapses." />
+<meta property="og:description" content="When AI Stopped Talking and Started Thinking Reasoning — the holy grail of AI — has long been the gap between memorization and actual understanding. Most modern large language models (LLMs) simulate reasoning through Chain-of-Thought (CoT) prompting, a clever trick where the model narrates its logic step-by-step. Unfortunately, this is more like a magician describing the illusion rather than truly performing it. CoT depends on verbose linguistic scaffolding, brittle decomposition, and mountains of training data. If you drop one logical domino, the entire thought process collapses." />
+<link rel="canonical" href="https://www.tensorsandquarks.space/2025/10/31/hierarchical.html" />
+<meta property="og:url" content="https://www.tensorsandquarks.space/2025/10/31/hierarchical.html" />
+<meta property="og:site_name" content="Tensors &amp; Quarks" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2025-10-31T00:00:00+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Tensors &amp; Quarks" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Rahul Thakur"},"dateModified":"2025-10-31T00:00:00+00:00","datePublished":"2025-10-31T00:00:00+00:00","description":"When AI Stopped Talking and Started Thinking Reasoning — the holy grail of AI — has long been the gap between memorization and actual understanding. Most modern large language models (LLMs) simulate reasoning through Chain-of-Thought (CoT) prompting, a clever trick where the model narrates its logic step-by-step. Unfortunately, this is more like a magician describing the illusion rather than truly performing it. CoT depends on verbose linguistic scaffolding, brittle decomposition, and mountains of training data. If you drop one logical domino, the entire thought process collapses.","headline":"Tensors &amp; Quarks","mainEntityOfPage":{"@type":"WebPage","@id":"https://www.tensorsandquarks.space/2025/10/31/hierarchical.html"},"url":"https://www.tensorsandquarks.space/2025/10/31/hierarchical.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+  </head>
+
+  <body>
+    <header class="site-header">
+      <div class="container header-flex">
+        <div class="branding">
+          <img src="/assets/images/bio-photo.jpeg" alt="Rahul" class="profile-pic">
+          <h1 class="site-title">
+            <a href="/"><span>Tensors & Quarks</span></a>
+          </h1>
+        </div>
+        <nav class="nav" aria-label="Primary navigation">
+          <a class="nav-link" href="/">Home</a>
+          <a class="nav-link" href="/about.html">About</a>
+          <button class="dark-toggle" type="button" onclick="toggleDarkMode()" aria-label="Toggle dark mode">🌓</button>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main-content" class="container">
+      <h1 id="when-ai-stopped-talking-and-started-thinking">When AI Stopped Talking and Started Thinking</h1>
+
+<p>Reasoning — the holy grail of AI — has long been the gap between memorization and actual understanding. Most modern large language models (LLMs) simulate reasoning through <strong>Chain-of-Thought (CoT)</strong> prompting, a clever trick where the model narrates its logic step-by-step. Unfortunately, this is more like a magician describing the illusion rather than truly performing it. CoT depends on verbose linguistic scaffolding, brittle decomposition, and mountains of training data. If you drop one logical domino, the entire thought process collapses.</p>
+
+<!--more-->
+
+<p>The <strong>Hierarchical Reasoning Model (HRM)</strong> proposes a brain-inspired alternative that performs reasoning <em>internally</em> rather than through words. It introduces two interacting recurrent modules: a <strong>high-level “think slowly” module</strong> that plans abstractly, and a <strong>low-level “act fast” module</strong> that performs detailed computation. They communicate like an executive and an intern — the executive decides “what” to do, the intern rapidly iterates on “how.” Once the intern stabilizes (reaches equilibrium), the executive updates its strategy and the process repeats. Voilà — hierarchy, temporal separation, and feedback loops, just like the human cortex.</p>
+
+<p>The magic lies in the architecture’s <strong>computational depth without instability</strong>. Traditional Transformers have a fixed number of layers; HRM gains virtual depth via cycles of interaction between its modules. With only 27 million parameters and 1,000 training samples, HRM achieves near-perfect performance on logic-heavy benchmarks such as Sudoku-Extreme and 30×30 Maze puzzles — tasks where even 175 M-parameter Transformers fail miserably. On the <strong>ARC-AGI benchmark</strong> (meant to test abstraction and reasoning), HRM outperforms Claude 3.7, DeepSeek R1, and o3-mini-high, all of which are vastly larger and pre-trained.</p>
+
+<p>HRM trains from scratch, without CoT supervision or gigantic datasets. It also avoids <strong>Backpropagation Through Time (BPTT)</strong> — the memory-hungry villain of recurrent models — using a one-step gradient approximation that keeps training efficient and biologically plausible.</p>
+
+<p>In short: HRM doesn’t “think out loud,” it <em>thinks in silence.</em> And somehow, this quiet thinker beats the loudest transformers at their own reasoning games.</p>
+
+<h2 id="introduction">Introduction</h2>
+
+<p>Deep learning’s story has always been: “add more layers, get smarter.” Yet LLMs — our crown jewels — are surprisingly <em>shallow</em> in computational terms. Their fixed-depth Transformers can only perform constant-time transformations; they can’t simulate algorithmic processes that require multiple dependent steps. In computational-complexity lingo, Transformers sit somewhere in the “AC⁰” club — fast but fundamentally shallow. If intelligence were an onion, LLMs are currently slicing only the outer layer.</p>
+
+<p>This depth problem explains why LLMs struggle with tasks requiring <strong>deliberate reasoning</strong> — Sudoku, path-finding, symbolic logic — even when scaled up. Increasing width (more neurons per layer) barely helps. Increasing depth (more layers) leads to vanishing gradients and unstable training.</p>
+
+<p>Enter <strong>Chain-of-Thought</strong> reasoning, the band-aid solution: get the model to <em>write down</em> its thinking. While it looks impressive (“let’s break this down step-by-step”), CoT relies on textual decomposition crafted by humans. One incorrect step derails everything. Worse, it’s inefficient: each reasoning token costs compute, and complex puzzles balloon into hundreds of tokens of self-talk.</p>
+
+<p>The authors propose <strong>latent reasoning</strong> — computation done inside hidden states rather than external language. The idea: thought doesn’t need to be narrated. The brain doesn’t spell out every neuron’s activity in Morse code; it computes silently in a high-dimensional latent space. However, building models that can do this has been hard. Deep recurrent networks suffer from early convergence (they stop updating after a few steps) and require backpropagation-through-time, which is biologically implausible and GPU-unfriendly.</p>
+
+<p>The <strong>Hierarchical Reasoning Model</strong> fixes these issues by taking cues from the brain’s architecture. The cortex operates in <strong>hierarchies and timescales</strong>: slow-changing regions (like the prefrontal cortex) manage goals and context, while fast ones (like sensory areas) perform quick computations. HRM mimics this with two recurrent modules — high-level and low-level — that alternate updates. The low-level computes multiple steps before the high-level intervenes, achieving “hierarchical convergence.” This generates <em>effective depth</em> far beyond the number of parameters.</p>
+
+<p>The model also introduces a <strong>one-step gradient approximation</strong>, removing the heavy memory burden of BPTT. Training becomes stable, scalable, and almost… zen-like. With these innovations, HRM learns algorithmic reasoning from scratch, solving tasks like Sudoku-Extreme and ARC puzzles with tiny data and zero pre-training. The message is simple but profound: <em>intelligence may not need more data; it needs better structure.</em></p>
+
+<h2 id="the-hierarchical-reasoning-model">The Hierarchical Reasoning Model</h2>
+
+<p>The HRM formalizes three neuroscience principles — hierarchy, temporal separation, and recurrence — into a computational framework. The system has four networks:</p>
+
+<ol>
+  <li><strong>Input encoder</strong> (f_I(x)) converts input (x) into a latent representation (\tilde{x}).</li>
+  <li><strong>Low-level recurrent module</strong> (f_L) processes fast dynamics.</li>
+  <li><strong>High-level recurrent module</strong> (f_H) governs slower abstract reasoning.</li>
+  <li><strong>Output head</strong> (f_O) produces predictions (\hat{y}).</li>
+</ol>
+
+<p>The model evolves through (N) high-level cycles, each containing (T) low-level steps. During a cycle, the low-level state (z_L) updates repeatedly using its previous state, the fixed high-level state (z_H), and the input. Only after those (T) micro-steps does (z_H) update using the final (z_L). After all cycles, the output is (f_O(z_H^{NT})).</p>
+
+<p>This structure creates <strong>hierarchical convergence.</strong> Regular RNNs quickly fall asleep — their hidden states converge too fast, leading to zero gradient flow. HRM keeps things lively: the low-level module converges locally, the high-level resets its context, and the low-level wakes up again for a new round of computation. This nested rhythm — think of it as “fast thoughts nested inside slower meta-thoughts” — sustains long reasoning chains without instability.</p>
+
+<p>Training such a model without BPTT requires mathematical sorcery. The authors borrow from <strong>Deep Equilibrium Models (DEQ)</strong>: if a recurrent system converges to a fixed point (z^*), gradients can be computed implicitly using the <strong>Implicit Function Theorem</strong>:</p>
+
+\[\frac{\partial z^*}{\partial \theta} = (I - J_F)^{-1} \frac{\partial F}{\partial \theta}\]
+
+<p>Since inverting ((I - J_F)) is expensive, HRM approximates it by keeping only the first term of the Neumann series — the famous “1-step gradient.” The result: constant-memory backpropagation that’s efficient and biologically plausible (because the brain doesn’t store gigabytes of past states either).</p>
+
+<p>HRM also includes two elegant add-ons:</p>
+<ul>
+  <li><strong>Deep Supervision:</strong> After each reasoning “segment,” the model makes an intermediate prediction, gets feedback, and detaches the hidden state (like taking notes but not overthinking the last step). This stabilizes training.</li>
+  <li><strong>Adaptive Computation Time (ACT):</strong> A mini Q-learning head decides when to halt reasoning. It learns a policy: keep thinking if uncertain, stop if confident. In practice, the model “thinks fast and slow” — short reasoning for easy problems, longer for hard ones. Average compute stays low, accuracy high.</li>
+</ul>
+
+<p>Architecturally, both modules are Transformer blocks (with RMSNorm, rotary embeddings, GLU activations), but the recurrent coupling turns them into something deeper than their layer count suggests. HRM essentially teaches a Transformer to loop intelligently, not endlessly.</p>
+
+<h2 id="results">Results</h2>
+
+<p>The authors evaluated HRM on three reasoning tests, each a different flavor of brain pain:</p>
+
+<ol>
+  <li><strong>ARC-AGI (Abstraction and Reasoning Corpus):</strong> IQ-test-style puzzles demanding rule induction and compositional reasoning.</li>
+  <li><strong>Sudoku-Extreme:</strong> Brutal 9×9 puzzles requiring multi-step logic and backtracking.</li>
+  <li><strong>Maze-Hard:</strong> Optimal path-finding on 30×30 grids — a search-heavy, algorithmic challenge.</li>
+</ol>
+
+<p>Despite being trained from scratch on ~1,000 samples, HRM annihilated baselines. On ARC-AGI-1, it scored 40.3%, beating o3-mini-high (34.5%) and Claude 3.7 8K (21.2%). On Sudoku-Extreme, where most models flatline at 0%, HRM achieved ~75% accuracy. On Maze-Hard, it hit 55% — again, zero for everyone else.</p>
+
+<p>To visualize reasoning, the authors examined intermediate outputs at each timestep. In mazes, HRM first explores multiple paths, prunes dead ends, and gradually sharpens the optimal route — a neural echo of breadth-first search. In Sudoku, it fills candidates, detects violations, and backtracks — like a symbolic solver. On ARC tasks, it performs incremental pixel transformations, climbing toward the goal rather than guessing blindly. The reasoning pattern adapts by domain, suggesting HRM learns <em>algorithms</em>, not just correlations.</p>
+
+<p>They also measured <strong>inference-time scaling</strong>: increasing the computation limit (letting the model “think longer”) improves accuracy without retraining — the model literally benefits from more time. A Transformer can’t do that; its layers are fixed. HRM, by contrast, scales gracefully, mirroring how humans take more seconds to solve tougher problems.</p>
+
+<h2 id="brain-correspondence">Brain Correspondence</h2>
+
+<p>Neuroscience suggests that higher brain areas (like the prefrontal cortex) maintain <strong>higher-dimensional representations</strong>, allowing flexible, context-rich cognition. This can be quantified via the <strong>Participation Ratio (PR):</strong></p>
+
+\[PR = \frac{(\sum_i \lambda_i)^2}{\sum_i \lambda_i^2}\]
+
+<p>where (\lambda_i) are eigenvalues of the neural activity’s covariance matrix. A higher PR means information is spread across more dimensions — more “mental workspace.”</p>
+
+<p>When computed on HRM’s hidden states (trained on Sudoku-Extreme), the results are striking:</p>
+<ul>
+  <li>Low-level module (z_L): PR ≈ 30</li>
+  <li>High-level module (z_H): PR ≈ 90</li>
+</ul>
+
+<p>That’s a 3× difference — almost identical to empirical ratios observed in the mouse cortex between sensory and associative areas. Furthermore, as task variety increases, (z_H)’s PR expands, while (z_L)’s stays steady — exactly like biological systems adapting representational capacity to cognitive demand.</p>
+
+<h2 id="discussion">Discussion</h2>
+
+<p>HRM edges closer to <strong>practical Turing-completeness.</strong> Like the Universal Transformer, given unlimited memory and time, HRM can emulate any algorithm. But the difference lies in <em>efficiency:</em> it achieves deep computation without the instability or memory explosion of previous recurrent architectures. Its adaptive compute lets it allocate effort dynamically — more cycles for harder problems, fewer for easy ones.</p>
+
+<p>It may also challenge the “bigger-is-better” dogma of AI. If a 27 M-parameter network trained on 1,000 examples can outperform billion-parameter models trained on terabytes, the future might not be about scaling data but <em>scaling thought</em>. This marks a conceptual pivot — from data-centric scaling laws to architecture-centric reasoning laws.</p>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>The Hierarchical Reasoning Model stands as a small network with a big statement: <strong>reasoning is architectural, not statistical.</strong> It proves that deep, adaptive computation can emerge from hierarchical feedback rather than gigantic parameter counts. With 27 M parameters and 1,000 examples, HRM solves puzzles that confound models a hundred times its size.</p>
+
+<p>The broader implication is revolutionary. HRM flips the narrative — intelligence may come from <em>structure</em> and <em>recurrence</em>, not size. If current LLMs are talented talkers, HRM is the quiet genius in the back of the room — smaller, humbler, but far deeper in thought.</p>
+
+<p><strong>📘 Reference:</strong><br />
+<a href="https://sapientintelligence.ai/research/hierarchical_reasoning_model.pdf">Original Paper – <em>The Hierarchical Reasoning Model (Sapient Intelligence, 2025)</em></a></p>
+
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <p>© 2025 Rahul Thakur • Powered by Jekyll</p>
+      </div>
+    </footer>
+  </body>
+</html>
