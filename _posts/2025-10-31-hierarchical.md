@@ -109,4 +109,4 @@ The Hierarchical Reasoning Model stands as a small network with a big statement:
 The broader implication is revolutionary. HRM flips the narrative — intelligence may come from *structure* and *recurrence*, not size. If current LLMs are talented talkers, HRM is the quiet genius in the back of the room — smaller, humbler, but far deeper in thought.
 
 **📘 Reference:**  
-[Original Paper – *The Hierarchical Reasoning Model (Sapient Intelligence, 2025)*](https://sapientintelligence.ai/research/hierarchical_reasoning_model.pdf)
+[Original Paper – *The Hierarchical Reasoning Model (Sapient Intelligence, 2025)*](https://arxiv.org/abs/2506.21734)
