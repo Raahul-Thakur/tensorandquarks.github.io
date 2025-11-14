@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title> | Tensors & Quarks</title>
+    <link rel="stylesheet" href="/assets/style.css" />
+
+    <!-- 🌓 Dark Mode Script -->
+    <script>
+      function toggleDarkMode() {
+        document.body.classList.toggle("dark");
+        localStorage.setItem("theme", document.body.classList.contains("dark") ? "dark" : "light");
+      }
+
+      window.onload = () => {
+        if (localStorage.getItem("theme") === "dark") {
+          document.body.classList.add("dark");
+        }
+      };
+    </script>
+
+    <!-- ✅ MathJax Configuration and Script -->
+    <script>
+      window.MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']],
+          displayMath: [['$$','$$'], ['\\[', '\\]']],
+          processEscapes: true
+        },
+        options: {
+          skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      };
+    </script>
+    <script id="MathJax-script" async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+    </script>
+
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Tensors &amp; Quarks | Exploring the intersection of physics and machine learning.</title>
+<meta name="generator" content="Jekyll v4.4.1" />
+<meta property="og:title" content="Tensors &amp; Quarks" />
+<meta name="author" content="Rahul Thakur" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Can AI Be Surprised by Its Own Move? Overview The paper addresses the challenge of generating truly creative chess puzzles using generative AI and reinforcement learning (RL). The authors note that while generative models (e.g., for text, images) are advancing rapidly, producing creative, unexpected, aesthetic outputs remains hard. They pick the domain of chess puzzles." />
+<meta property="og:description" content="Can AI Be Surprised by Its Own Move? Overview The paper addresses the challenge of generating truly creative chess puzzles using generative AI and reinforcement learning (RL). The authors note that while generative models (e.g., for text, images) are advancing rapidly, producing creative, unexpected, aesthetic outputs remains hard. They pick the domain of chess puzzles." />
+<link rel="canonical" href="https://www.tensorsandquarks.space/2025/11/14/chess.html" />
+<meta property="og:url" content="https://www.tensorsandquarks.space/2025/11/14/chess.html" />
+<meta property="og:site_name" content="Tensors &amp; Quarks" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2025-11-14T00:00:00+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Tensors &amp; Quarks" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Rahul Thakur"},"dateModified":"2025-11-14T00:00:00+00:00","datePublished":"2025-11-14T00:00:00+00:00","description":"Can AI Be Surprised by Its Own Move? Overview The paper addresses the challenge of generating truly creative chess puzzles using generative AI and reinforcement learning (RL). The authors note that while generative models (e.g., for text, images) are advancing rapidly, producing creative, unexpected, aesthetic outputs remains hard. They pick the domain of chess puzzles.","headline":"Tensors &amp; Quarks","mainEntityOfPage":{"@type":"WebPage","@id":"https://www.tensorsandquarks.space/2025/11/14/chess.html"},"url":"https://www.tensorsandquarks.space/2025/11/14/chess.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+  </head>
+
+  <body>
+    <header class="site-header">
+      <div class="container header-flex">
+        <div class="branding">
+          <img src="/assets/images/bio-photo.jpeg" alt="Rahul" class="profile-pic">
+          <h1 class="site-title">
+            <a href="/"><span>Tensors & Quarks</span></a>
+          </h1>
+        </div>
+        <nav class="nav" aria-label="Primary navigation">
+          <a class="nav-link" href="/">Home</a>
+          <a class="nav-link" href="/about.html">About</a>
+          <button class="dark-toggle" type="button" onclick="toggleDarkMode()" aria-label="Toggle dark mode">🌓</button>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main-content" class="container">
+      <h1 id="can-ai-be-surprised-by-its-own-move">Can AI Be Surprised by Its Own Move?</h1>
+
+<h2 id="overview">Overview</h2>
+<p>The paper addresses the challenge of generating truly creative chess puzzles using generative AI and reinforcement learning (RL). The authors note that while generative models (e.g., for text, images) are advancing rapidly, producing creative, unexpected, aesthetic outputs remains hard. They pick the domain of chess puzzles.</p>
+
+<!--more-->
+
+<p><strong>Key goals:</strong> produce legal chess positions which (a) have a unique solution, (b) are counter-intuitive (i.e., the seemingly “wrong” or unexpected move is correct), (c) are novel relative to existing puzzles, (d) preserve aesthetic appeal, and (e) are realistic (position could plausibly arise in an actual game).</p>
+
+<p>They train generative models on the large online dataset of puzzles from <strong>Lichess (4.4M samples)</strong> and then apply an RL framework with novel rewards based on chess engine search statistics to drive the generation of more creative puzzles. The result: their RL model produces puzzles with a ~10× higher proportion of counter-intuitive puzzles (2.5% vs 0.22%) than the purely supervised generative baseline. Expert human evaluation shows the generated puzzles are competitive and in some metrics surpass human‐composed puzzles.</p>
+
+<h2 id="defining-creative-chess-puzzles">Defining Creative Chess Puzzles</h2>
+
+<p>A central contribution of the paper lies in formalizing what “creativity” means in a structured, rule-bound environment like chess. Unlike open-ended artistic creativity, chess has objective constraints—rules of legality, win conditions, and engine-verifiable evaluations. The authors therefore decompose creativity into five measurable dimensions: <strong>uniqueness, novelty, counter-intuitiveness, aesthetics, and realism.</strong> Each dimension is paired with a computational proxy that allows a model to quantify what human players perceive intuitively.</p>
+
+<h3 id="1-uniqueness">1. Uniqueness</h3>
+<p>A puzzle is <em>unique</em> when it has a single best move or line leading to victory. In creative composition, this property ensures the puzzle is not ambiguous—every alternative move should be demonstrably inferior. To translate this human notion into a machine-readable criterion, the authors use <strong>engine evaluation differentials</strong>.</p>
+
+<p>Using Stockfish, they compare the evaluation score (expressed in pawns or centipawns) of the best move against the second-best move. If the difference in winning probability exceeds a predefined threshold ($\tau_{uni} = 0.5$), the position is marked as <em>unique</em>. This simple but effective rule means that the top move must clearly outperform all others by at least half a pawn equivalent. In practice, this measure filters out positions with multiple equally viable solutions, ensuring the resulting puzzles are crisp, deterministic, and suitable for automated solving.</p>
+
+<p>Uniqueness thus acts as the logical backbone of creativity: without it, even a clever idea may collapse into guesswork.</p>
+
+<h3 id="2-novelty">2. Novelty</h3>
+<p>Next, the puzzle must exhibit <strong>novelty</strong>—it should present a position or idea that differs from existing compositions. Since millions of puzzles already exist online, the authors introduce quantitative measures of <em>distance from known material.</em></p>
+
+<p>They calculate syntactic distance between FEN (Forsyth-Edwards Notation) strings using Levenshtein distance, capturing structural variation (piece arrangement, side to move, castling rights, etc.). They also measure semantic novelty through <em>principal variation (PV) distance</em>, comparing the best lines discovered by engine search. Finally, <strong>entropy</strong> of the generative model’s output distribution serves as a proxy for uncertainty: higher entropy suggests the model is venturing into less-seen configurations.</p>
+
+<p>Together, these metrics ensure that generated puzzles are not mere paraphrases of training data. Novelty is crucial in creative contexts—it signals exploration beyond learned templates while remaining within the rules of chess.</p>
+
+<h3 id="3-counter-intuitiveness">3. Counter-Intuitiveness</h3>
+<p>Perhaps the most compelling criterion is <strong>counter-intuitiveness</strong>, which captures surprise: the solution appears illogical to shallow analysis but proves correct on deeper reasoning. For example, a move that initially sacrifices material might, after longer calculation, lead to checkmate or decisive positional advantage.</p>
+
+<p>The authors model this quality by contrasting shallow versus deep engine searches, effectively simulating the gap between human intuition and rigorous calculation. They extract quantitative descriptors—such as the <em>search-depth evaluation gap</em>, the <em>area under the evaluation-depth curve (AUC)</em>, and the <em>critical point where evaluation stabilizes.</em> These features are combined into a single scalar via a linear formula:</p>
+
+\[r_{cnt} = \sum_i w_i v_i\]
+
+<p>where $v_i$ are the search-derived features and $w_i$ their learned weights. If $r_{cnt}$ surpasses a threshold ($\tau_{cnt}$), the puzzle qualifies as counter-intuitive.</p>
+
+<p>This metric effectively rewards puzzles that “flip evaluation sign” over deeper search—moves that initially seem losing but later emerge as winning. It’s a computational realization of human surprise, aligning the model’s sense of discovery with that of a player’s intuition being challenged and overturned.</p>
+
+<h3 id="4-aesthetics">4. Aesthetics</h3>
+<p>Quantifying <strong>aesthetics</strong>—the artistry of a chess idea—is far less straightforward. Traditional chess composition values themes such as sacrifice, interference, under-promotion, deflection, or zugzwang. The authors therefore adopt <strong>theme detectors</strong> from prior composition research to identify these motifs in generated puzzles.</p>
+
+<p>While aesthetic metrics are not directly included in the reward function (to avoid over-optimization toward stylistic clichés), they are used in post-hoc evaluation. The intent is to keep the training objective focused on logic and creativity while still measuring how “beautiful” the outcomes are according to classical standards. This layered approach acknowledges that aesthetics remain partly subjective but still measurable through recurring tactical motifs.</p>
+
+<h3 id="5-realism">5. Realism</h3>
+<p>Finally, the authors stress <strong>realism</strong>—the puzzle must look like a plausible game position rather than a random or impossible configuration. For instance, a board with four white bishops or two white pawns on the same file violates realism even if technically solvable.</p>
+
+<p>To enforce realism within their reinforcement-learning framework, they employ three <strong>regularization strategies:</strong></p>
+
+<ul>
+  <li>A <strong>KL-divergence penalty</strong> keeps the generative policy close to its supervised pre-training distribution, discouraging the model from drifting into unnatural token sequences.</li>
+  <li><strong>Experience replay with real puzzles:</strong> authentic positions from the Lichess dataset are periodically mixed into the RL buffer to anchor training in genuine game-like states.</li>
+  <li><strong>Piece-count regularization:</strong> any output violating legal piece counts receives zero reward.</li>
+</ul>
+
+<p>These constraints maintain a delicate balance: the model is encouraged to innovate but not at the expense of physical plausibility.</p>
+
+<h2 id="methodology">Methodology</h2>
+
+<p>The authors employ a two-stage pipeline that combines <strong>supervised generative modeling</strong> and <strong>reinforcement learning (RL)</strong> to create creative chess puzzles. The first stage focuses on learning the statistical structure of realistic positions, while the second explicitly optimizes for creativity metrics like uniqueness and counter-intuitiveness.</p>
+
+<h3 id="1-generative-model-training">1. Generative Model Training</h3>
+<p>The foundation of the system is a large-scale supervised learning phase. Chess positions are encoded in <strong>Forsyth-Edwards Notation (FEN)</strong>, a compact textual representation that describes the placement of pieces, turn, castling rights, and move counters. Each FEN string is tokenized using a <strong>custom 31-token vocabulary</strong> specifically designed for chess.</p>
+
+<p>The authors experiment with four generative paradigms:</p>
+
+<ul>
+  <li><strong>Auto-Regressive (AR) Transformer</strong> – predicts the next token sequentially given prior context, similar to GPT-style modeling.</li>
+  <li><strong>MaskGIT</strong> – a masked-token prediction model that iteratively fills in missing tokens, allowing for parallel sampling.</li>
+  <li><strong>Latent Diffusion Model</strong> – generates continuous latent representations which are then decoded back to discrete chess positions.</li>
+  <li><strong>Masked Discrete Diffusion Model</strong> – operates directly in discrete token space, applying gradual denoising steps to produce valid FEN strings.</li>
+</ul>
+
+<p>All models are trained solely on the <strong>Lichess Puzzler dataset</strong>—over 4.4 million human-curated puzzles. No handcrafted compositions are included, ensuring any creativity emerges from learned structure rather than memorization.</p>
+
+<p>After training, each model generates <strong>one million candidate puzzles</strong>, validated for legality and scored for uniqueness, novelty, and counter-intuitiveness. Although legality rates exceed 97%, fewer than 0.3% of puzzles meet all creative criteria—motivating the second stage, <strong>reinforcement learning</strong>, to explicitly optimize for creativity.</p>
+
+<h3 id="2-reinforcement-learning-from-puzzle-feedback">2. Reinforcement Learning from Puzzle Feedback</h3>
+<p>The authors fine-tune the AR transformer using <strong>Proximal Policy Optimization (PPO)</strong>, treating each token as an action and the final board position as a <strong>scalar reward</strong>:</p>
+
+<ul>
+  <li><strong>+1</strong> if the position is legal and meets both uniqueness and counter-intuitiveness thresholds.</li>
+  <li><strong>0</strong> if the position is legal but fails one or both.</li>
+  <li><strong>–2</strong> if the position is illegal.</li>
+</ul>
+
+<p>A token-level <strong>KL-divergence penalty</strong> constrains deviation from the supervised distribution, preserving realism.</p>
+
+<p>To prevent <strong>entropy collapse</strong>—the model repeatedly generating a single high-reward puzzle—the authors introduce <strong>diversity filtering</strong>. Each puzzle must exceed thresholds on:</p>
+
+<ul>
+  <li><strong>Board distance</strong> (FEN difference),</li>
+  <li><strong>Principal Variation (PV) distance</strong>, and</li>
+  <li><strong>Sequence entropy.</strong></li>
+</ul>
+
+<p>Only those passing all filters receive reward and enter the replay buffer. Additionally, 100,000 verified Lichess puzzles are mixed into the buffer to stabilize learning, while <strong>piece-count regularization</strong> prevents illegal piece configurations.</p>
+
+<p>Training begins from the supervised model (“warm start”), with both pure RL and hybrid RL + supervised variants tested. Over time, the <strong>qualified puzzle rate</strong> steadily rises—confirming that reward shaping and diversity constraints effectively drive the model toward creativity without losing realism.</p>
+
+<h2 id="experiments-and-results">Experiments and Results</h2>
+
+<p>The authors validate their approach through four major experimental stages—reward tuning, generative model benchmarking, RL performance, and human evaluation—to test whether the system produces puzzles that are not only solvable but <strong>genuinely creative</strong>.</p>
+
+<h3 id="1-tuning-the-counter-intuitiveness-reward">1. Tuning the Counter-Intuitiveness Reward</h3>
+<p>A <strong>Golden Set</strong> of 84 puzzles (39 counter-intuitive, 45 ordinary) is manually labeled by experts. Several <strong>search-derived features</strong>—evaluation gaps, AUC, and stabilization depth—are combined through grid search to maximize <strong>Average Precision (AP)</strong>. Only two non-zero weights emerge: the <strong>Stockfish critical point weight (0.8)</strong> and the <strong>negative capture material weight (0.1)</strong>, confirming that deeper evaluation flips and material sacrifices are key signals of surprise.</p>
+
+<h3 id="2-generative-model-benchmarks">2. Generative Model Benchmarks</h3>
+<p>Four architectures—AR Transformer, MaskGIT, Latent Diffusion, and Masked Discrete Diffusion—are compared. All achieve legality rates near 100%, but few produce puzzles meeting both uniqueness and counter-intuitiveness. The AR Transformer’s 0.22% success rate contrasts with 2.14% in the original Lichess data, showing that syntax alone doesn’t yield creativity.<br />
+MaskGIT achieves the greatest novelty and diversity, demonstrating that <strong>parallel masked generation fosters exploration</strong> over repetition.</p>
+
+<h3 id="3-creativity-and-aesthetic-analysis">3. Creativity and Aesthetic Analysis</h3>
+<p>Though aesthetics aren’t explicitly rewarded, generated puzzles naturally exhibit familiar artistic motifs—sacrifice, interference, under-promotion—mirroring distributions found in human datasets. This suggests that <strong>creativity and beauty co-evolve</strong> through structural learning.</p>
+
+<h3 id="4-reinforcement-learning-rl-results">4. Reinforcement Learning (RL) Results</h3>
+<p>After RL fine-tuning, the qualified puzzle rate <strong>surpasses that of the Lichess dataset</strong> itself. Uniqueness stays stable (~20%), but counter-intuitiveness increases dramatically, proving RL teaches the model to “think outside the box.”<br />
+Diversity metrics—board distance, PV distance, and entropy—also climb, confirming continued novelty and avoidance of collapse.</p>
+
+<h3 id="5-human-study-and-curated-booklet">5. Human Study and Curated Booklet</h3>
+<p>Eight chess experts (Elo 2000–2400) rate puzzles from four sources: Lichess, RL-generated, AI-curated booklet, and human-composed collections. Ratings (0–3) across realism, difficulty, creativity, fun, and counter-intuitiveness reveal:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Source</th>
+      <th>Creativity</th>
+      <th>Fun</th>
+      <th>Counter-Intuitiveness</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Booklet</strong></td>
+      <td>2.48</td>
+      <td>2.56</td>
+      <td>2.12</td>
+    </tr>
+    <tr>
+      <td><strong>Human Books</strong></td>
+      <td>2.39</td>
+      <td>2.22</td>
+      <td>2.05</td>
+    </tr>
+    <tr>
+      <td><strong>RL Model</strong></td>
+      <td>2.10</td>
+      <td>1.96</td>
+      <td>1.98</td>
+    </tr>
+    <tr>
+      <td><strong>Lichess</strong></td>
+      <td>1.70</td>
+      <td>1.49</td>
+      <td>1.70</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>The RL-generated puzzles rival human artistry, and the curated booklet even exceeds it in several categories.</p>
+
+<h3 id="6-expert-review">6. Expert Review</h3>
+<p>Three renowned composition experts—<strong>IM Amatzia Avni</strong>, <strong>GM Jonathan Levitt</strong>, and <strong>GM Matthew Sadler</strong>—praise the AI booklet as a “pioneering demonstration of human–AI co-creativity,” citing genuine surprise and aesthetic depth.</p>
+
+<h2 id="discussion-limitations--implications">Discussion, Limitations &amp; Implications</h2>
+
+<p>The authors present their work as a milestone in computational creativity, showing that a <strong>generative model + RL feedback loop</strong> with well-designed rewards can surpass its training data and approach human compositional quality. The <strong>counter-intuitiveness reward</strong>, comparing shallow vs. deep evaluations, is especially novel and generalizable to theorem proving, game design, or reasoning in LLMs.</p>
+
+<p>Yet, limitations remain. High reward doesn’t always mean human-perceived creativity—<strong>reward hacking</strong> occasionally yields unrealistic boards. Creativity is subjective, and no reward function fully encodes human aesthetics. The model’s modest size (~200M parameters) and chess’s bounded domain constrain scalability.</p>
+
+<p>Future work includes refining aesthetic modeling via human feedback, mitigating entropy collapse, and extending the <strong>surprise–novelty–diversity</strong> framework to other creative fields.</p>
+
+<p>For chess, this opens scalable, dynamic puzzle generation that surpasses human bottlenecks. For AI research, it showcases <strong>machine-based feedback loops</strong> as an alternative to costly human evaluation. Ultimately, it demonstrates genuine <strong>human–AI co-creation</strong>, where machine outputs evoke surprise, elegance, and intellectual engagement.</p>
+
+<h2 id="potential-questions--critiques">Potential Questions / Critiques</h2>
+
+<p>Several questions and critiques arise.<br />
+First, the <strong>parameter thresholds</strong> ($\tau_{uni}=0.5$, $\tau_{cnt}=0.1$) and grid step (0.1) for weight tuning seem somewhat ad-hoc; greater ablation could confirm robustness.<br />
+Second, while the authors measure aesthetics, they avoid optimizing for it. Explicit aesthetic rewards might enhance beauty—or cause overfitting to clichés.</p>
+
+<p>Third, <strong>domain generality</strong> is uncertain. Chess is tightly rule-bound; scaling to open-ended creative domains (storytelling, art) remains untested. The relatively small model (200M parameters) also raises the question of whether larger or simpler RL systems could achieve similar or better results.</p>
+
+<p>Fourth, <strong>human evaluation</strong> is limited—only eight raters and three experts—and relies on curated examples, which may inflate scores. Testing uncurated “wild” outputs would better gauge real-world robustness.<br />
+Lastly, <strong>reward hacking</strong> persists: models sometimes produce engine-exploiting but unrealistic positions. Aligning computational creativity with genuine human taste remains an open challenge.</p>
+
+<h2 id="reference">Reference</h2>
+<p>📄 <a href="https://arxiv.org/pdf/2510.23881"><em>Generating Creative Chess Puzzles</em> — Feng et al., 2025 (arXiv:2510.23881)</a></p>
+
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <p>© 2025 Rahul Thakur • Powered by Jekyll</p>
+      </div>
+    </footer>
+  </body>
+</html>
