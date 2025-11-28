@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title> | Tensors & Quarks</title>
+    <link rel="stylesheet" href="/assets/style.css" />
+
+    <!-- 🌓 Dark Mode Script -->
+    <script>
+      function toggleDarkMode() {
+        document.body.classList.toggle("dark");
+        localStorage.setItem("theme", document.body.classList.contains("dark") ? "dark" : "light");
+      }
+
+      window.onload = () => {
+        if (localStorage.getItem("theme") === "dark") {
+          document.body.classList.add("dark");
+        }
+      };
+    </script>
+
+    <!-- ✅ MathJax Configuration and Script -->
+    <script>
+      window.MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']],
+          displayMath: [['$$','$$'], ['\\[', '\\]']],
+          processEscapes: true
+        },
+        options: {
+          skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      };
+    </script>
+    <script id="MathJax-script" async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+    </script>
+
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Tensors &amp; Quarks | Exploring the intersection of physics and machine learning.</title>
+<meta name="generator" content="Jekyll v4.4.1" />
+<meta property="og:title" content="Tensors &amp; Quarks" />
+<meta name="author" content="Rahul Thakur" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Did We Just Find a Way to ‘Hear’ Dark Matter? The study investigates gravity-mode (g-mode) oscillations in dark-matter-admixed neutron stars (DM-NSs) to determine how dark matter affects stellar vibrations and what this reveals about the star’s interior. The authors employ a relativistic mean-field (RMF) model for hadronic matter, paired with a self-interacting fermionic dark-matter component inspired by the neutron-decay anomaly, which suggests that some neutrons may decay into dark fermions." />
+<meta property="og:description" content="Did We Just Find a Way to ‘Hear’ Dark Matter? The study investigates gravity-mode (g-mode) oscillations in dark-matter-admixed neutron stars (DM-NSs) to determine how dark matter affects stellar vibrations and what this reveals about the star’s interior. The authors employ a relativistic mean-field (RMF) model for hadronic matter, paired with a self-interacting fermionic dark-matter component inspired by the neutron-decay anomaly, which suggests that some neutrons may decay into dark fermions." />
+<link rel="canonical" href="https://www.tensorsandquarks.space/2025/11/28/gmode.html" />
+<meta property="og:url" content="https://www.tensorsandquarks.space/2025/11/28/gmode.html" />
+<meta property="og:site_name" content="Tensors &amp; Quarks" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2025-11-28T00:00:00+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Tensors &amp; Quarks" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Rahul Thakur"},"dateModified":"2025-11-28T00:00:00+00:00","datePublished":"2025-11-28T00:00:00+00:00","description":"Did We Just Find a Way to ‘Hear’ Dark Matter? The study investigates gravity-mode (g-mode) oscillations in dark-matter-admixed neutron stars (DM-NSs) to determine how dark matter affects stellar vibrations and what this reveals about the star’s interior. The authors employ a relativistic mean-field (RMF) model for hadronic matter, paired with a self-interacting fermionic dark-matter component inspired by the neutron-decay anomaly, which suggests that some neutrons may decay into dark fermions.","headline":"Tensors &amp; Quarks","mainEntityOfPage":{"@type":"WebPage","@id":"https://www.tensorsandquarks.space/2025/11/28/gmode.html"},"url":"https://www.tensorsandquarks.space/2025/11/28/gmode.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+  </head>
+
+  <body>
+    <header class="site-header">
+      <div class="container header-flex">
+        <div class="branding">
+          <img src="/assets/images/bio-photo.jpeg" alt="Rahul" class="profile-pic">
+          <h1 class="site-title">
+            <a href="/"><span>Tensors & Quarks</span></a>
+          </h1>
+        </div>
+        <nav class="nav" aria-label="Primary navigation">
+          <a class="nav-link" href="/">Home</a>
+          <a class="nav-link" href="/about.html">About</a>
+          <button class="dark-toggle" type="button" onclick="toggleDarkMode()" aria-label="Toggle dark mode">🌓</button>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main-content" class="container">
+      <h1 id="did-we-just-find-a-way-to-hear-dark-matter">Did We Just Find a Way to ‘Hear’ Dark Matter?</h1>
+
+<p>The study investigates <strong>gravity-mode (g-mode) oscillations</strong> in <strong>dark-matter-admixed neutron stars (DM-NSs)</strong> to determine how dark matter affects stellar vibrations and what this reveals about the star’s interior. The authors employ a <strong>relativistic mean-field (RMF)</strong> model for hadronic matter, paired with a <strong>self-interacting fermionic dark-matter component</strong> inspired by the <strong>neutron-decay anomaly</strong>, which suggests that some neutrons may decay into dark fermions.</p>
+
+<!--more-->
+
+<p>They construct equilibrium configurations of neutron stars containing both nuclear and dark matter by solving the <strong>Tolman–Oppenheimer–Volkoff (TOV)</strong> equations. Using these solutions, they derive both <strong>equilibrium</strong> and <strong>adiabatic sound speeds</strong>, whose difference governs the <strong>Brunt–Väisälä frequency (N)</strong> responsible for g-mode oscillations. The oscillation equations are solved under the <strong>Cowling approximation</strong>, which neglects perturbations in the gravitational potential but retains relativistic corrections.</p>
+
+<p>Results show that the <strong>fundamental (n = 1)</strong> and <strong>first overtone (n = 2)</strong> g-mode frequencies increase with the <strong>dark-matter fraction (f_DM)</strong>, while the dependence on the DM self-interaction parameter ( G ) or the underlying nuclear equation of state (EoS) is comparatively weak. The inclusion of dark matter enhances the buoyancy within the star by increasing the difference between adiabatic and equilibrium sound speeds.</p>
+
+<p>The authors identify an <strong>EoS-independent empirical relation</strong> linking the change in g-mode frequency to ( f_{DM} ). Because g-modes can couple to gravitational-wave (GW) tidal interactions during neutron-star mergers, these frequency shifts might be observable with future GW detectors. The work thus establishes g-modes as a promising <strong>asteroseismic diagnostic</strong> for probing dark matter inside neutron stars.</p>
+
+<h2 id="introduction"><strong>Introduction</strong></h2>
+
+<p>Understanding the <strong>nature of dark matter (DM)</strong> is among the greatest challenges in contemporary physics. Observational evidence—from galaxy rotation curves to the cosmic microwave background—demonstrates that DM constitutes most of the universe’s matter, yet its particle identity remains unknown. Compact stellar remnants such as <strong>neutron stars (NSs)</strong>, with central densities several times nuclear saturation, offer an extreme environment where DM effects may manifest observably.</p>
+
+<p>Dark matter can accumulate in neutron stars through <strong>gravitational capture</strong> or through <strong>neutron dark decay</strong>, motivated by the <strong>neutron-lifetime anomaly</strong>—the discrepancy between “bottle” and “beam” experimental results. If some neutrons decay to dark fermions (( \chi )) and light bosons (( \phi )), then NS cores may contain a stable dark-matter population, producing <strong>DM-admixed neutron stars</strong>.</p>
+
+<p>NSs exhibit distinct families of oscillation modes—<strong>f- (fundamental)</strong>, <strong>p- (pressure)</strong>, <strong>r- (rotational)</strong>, and <strong>g- (buoyancy)</strong> modes—each sensitive to different physical properties. While f- and r-modes have been studied extensively in the presence of DM, <strong>g-modes</strong>, which depend on internal composition gradients and chemical stratification, have not. A g-mode occurs when a displaced fluid element in a stable, stratified medium experiences a <strong>buoyant restoring force</strong>, characterized by the <strong>Brunt–Väisälä frequency (N)</strong>.</p>
+
+<p>Because g-modes couple to <strong>tidal forces during binary inspiral</strong>, they can affect the emitted gravitational-wave spectrum. Detecting such frequency shifts would directly reveal the interior composition of NSs. This paper therefore examines how DM admixture influences g-mode oscillations—particularly the quadrupolar (( \ell = 2 )) fundamental and first overtone—using a relativistic mean-field EoS and the Cowling approximation. The goal is to quantify how DM’s fraction and self-interaction alter g-mode spectra and to identify potential <strong>EoS-independent observables</strong> of dark matter in neutron stars.</p>
+
+<h2 id="formalism"><strong>Formalism</strong></h2>
+
+<p>The authors develop a detailed theoretical framework for calculating g-mode oscillations in <strong>dark-matter-admixed neutron stars (DM-NSs)</strong>, combining relativistic nuclear physics, dark-sector modeling, and perturbation theory.</p>
+
+<h3 id="hadronic-matter"><strong>Hadronic Matter</strong></h3>
+
+<p>The nuclear component is modeled using the <strong>Relativistic Mean-Field (RMF)</strong> approach, in which nucleons interact via <strong>scalar ((σ))</strong>, <strong>vector ((ω))</strong>, and <strong>isovector ((ρ))</strong> mesons. The <strong>energy density</strong> is expressed as:</p>
+
+\[ε_{nuc} = \sum_N \frac{1}{8π^2}\left[k_{FN}E_{FN}^{*3}+k_{FN}^3E_{FN}^*−m^{*4}\ln\left(\frac{k_{FN}+E_{FN}^*}{m^*}\right)\right] + \text{meson terms}\]
+
+<p>where ( m^* = m - g_σ σ ) is the <strong>effective nucleon mass</strong> and ( E_F^* = \sqrt{k_F^2 + m^{*2}} ) the effective Fermi energy. The system satisfies <strong>β-equilibrium and charge neutrality</strong>:</p>
+
+\[μ_n = μ_p + μ_e, \quad μ_μ = μ_e, \quad n_p = n_e + n_μ\]
+
+<h3 id="dark-matter-model"><strong>Dark Matter Model</strong></h3>
+
+<p>Dark matter is modeled as a <strong>fermion ( \chi )</strong> produced by <strong>neutron dark decay</strong>:</p>
+
+\[n \rightarrow \chi + \phi\]
+
+<p>where ( \phi ) is a light boson that escapes. The DM particle interacts via a <strong>vector self-interaction</strong> with strength ( G = (g_V/m_V)^2 ). Its <strong>energy density</strong> and <strong>pressure</strong> are:</p>
+
+\[ε_χ = \frac{1}{π^2}\int_0^{k_{Fχ}} k^2\sqrt{k^2+m_χ^2}\,dk + \frac{1}{2}G n_χ^2\]
+
+\[P_χ = \frac{1}{3π^2}\int_0^{k_{Fχ}} \frac{k^4}{\sqrt{k^2+m_χ^2}}\,dk + \frac{1}{2}G n_χ^2\]
+
+<p>The total pressure and energy density are:</p>
+
+\[P = \sum_N μ_N n_N + μ_χ n_χ - ε_{tot}\]
+
+<p>and the <strong>dark-matter fraction</strong>:</p>
+
+\[f_{DM} = \frac{\int_V ε_χ dV}{\int_V ε_{tot} dV}\]
+
+<h3 id="structure-and-metric"><strong>Structure and Metric</strong></h3>
+
+<p>A single-fluid approximation allows solving the <strong>Tolman–Oppenheimer–Volkoff (TOV)</strong> equations:</p>
+
+\[\frac{dm}{dr} = 4πr^2ε(r), \quad
+\frac{dP}{dr} = −(ε+P)\frac{m+4πr^3P}{r(r−2m)}\]
+
+<h3 id="g-mode-equations"><strong>g-mode Equations</strong></h3>
+
+<p>Within the <strong>Cowling approximation</strong>, perturbations satisfy:</p>
+
+\[\frac{dU}{dr}= \frac{g}{c_s^2}U + e^{λ/2}\left[\frac{ℓ(ℓ+1)e^{ν}}{ω^2r^2} - \frac{r^2}{c_s^2}\right]V\]
+
+\[\frac{dV}{dr}=e^{λ/2−ν}\left(\frac{ω^2−N^2}{r^2}\right)U + gΔ(c^{-2})V\]
+
+<p>where the <strong>Brunt–Väisälä frequency</strong> is:</p>
+
+\[N^2 = g^2Δ(c^{-2})e^{ν−λ}\]
+
+<h3 id="sound-speeds"><strong>Sound Speeds</strong></h3>
+
+<p>Equilibrium and adiabatic sound speeds are:</p>
+
+\[c_e^2 = \left(\frac{dP}{dε}\right)_β, \quad
+c_s^2 = \left(\frac{∂P}{∂ε}\right)_{x_i}\]
+
+<p>Their difference ( c_s^2 - c_e^2 ) drives buoyancy. DM adds a term proportional to ( G n_χ^2 ), enhancing buoyancy and raising g-mode frequencies.</p>
+
+<h2 id="results"><strong>Results</strong></h2>
+
+<h3 id="equation-of-state"><strong>Equation of State</strong></h3>
+
+<p>Adding DM <strong>softens the EoS</strong> and increases ( c_s^2 - c_e^2 ), strengthening stratification. The peak of this difference shifts to higher densities with DM fraction.</p>
+
+<h3 id="32-self-interaction-and-mass-dependence"><strong>3.2 Self-Interaction and Mass Dependence</strong></h3>
+
+<p>The <strong>fundamental (g₁)</strong> and <strong>first-overtone (g₂)</strong> frequencies increase with stellar mass and DM content. For instance, ( ν_{g1} ) rises from 200 Hz to nearly 800 Hz as mass approaches ( 2.5 M_\odot ).</p>
+
+<p>The frequency shift:</p>
+
+\[Δν_g(G,M) = ν_g(G,M) - ν_g(G→∞,M)\]
+
+<p>is positive and scales with both ( M ) and ( f_{DM} ).</p>
+
+<h3 id="universal-relation"><strong>Universal Relation</strong></h3>
+
+<p>Across all EoSs, the frequency enhancement follows:</p>
+
+\[Δν_g \propto f_{DM}^{1/2}\]
+
+<p>This near-universal scaling allows direct inference of dark-matter content from measured g-mode frequencies, largely independent of the nuclear EoS.</p>
+
+<h3 id="astrophysical-significance"><strong>Astrophysical Significance</strong></h3>
+
+<p>Since g-modes couple to <strong>gravitational-wave tidal forces</strong> during binary mergers, such frequency shifts may be observable by next-generation detectors like <strong>Einstein Telescope</strong> and <strong>Cosmic Explorer</strong>, enabling <strong>gravitational-wave asteroseismology</strong> of dark-matter-rich neutron stars.</p>
+
+<h2 id="conclusion"><strong>Conclusion</strong></h2>
+
+<p>Dark matter increases neutron-star buoyancy by enhancing ( c_s^2 - c_e^2 ), producing higher g-mode frequencies. This correlation, approximately ( Δν_g ∝ f_{DM}^{1/2} ), is largely EoS-independent and can serve as an <strong>observable seismic signature of dark matter</strong>.</p>
+
+<p>Future gravitational-wave detectors capable of resolving such modes could verify or constrain dark-matter presence in neutron stars. The work thus bridges <strong>nuclear astrophysics</strong> and <strong>dark-sector physics</strong>, establishing asteroseismology as a potential probe of invisible matter in the cosmos.</p>
+
+<p><strong>Source:</strong> <a href="https://arxiv.org/pdf/2506.18892">Download Paper (PDF)</a></p>
+
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <p>© 2025 Rahul Thakur • Powered by Jekyll</p>
+      </div>
+    </footer>
+  </body>
+</html>
