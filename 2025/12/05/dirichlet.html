@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title> | Tensors & Quarks</title>
+    <link rel="stylesheet" href="/assets/style.css" />
+
+    <!-- 🌓 Dark Mode Script -->
+    <script>
+      function toggleDarkMode() {
+        document.body.classList.toggle("dark");
+        localStorage.setItem("theme", document.body.classList.contains("dark") ? "dark" : "light");
+      }
+
+      window.onload = () => {
+        if (localStorage.getItem("theme") === "dark") {
+          document.body.classList.add("dark");
+        }
+      };
+    </script>
+
+    <!-- ✅ MathJax Configuration and Script -->
+    <script>
+      window.MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']],
+          displayMath: [['$$','$$'], ['\\[', '\\]']],
+          processEscapes: true
+        },
+        options: {
+          skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      };
+    </script>
+    <script id="MathJax-script" async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+    </script>
+
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Tensors &amp; Quarks | Exploring the intersection of physics and machine learning.</title>
+<meta name="generator" content="Jekyll v4.4.1" />
+<meta property="og:title" content="Tensors &amp; Quarks" />
+<meta name="author" content="Rahul Thakur" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="How Two Mathematicians Cracked a 50-Year Question About Large Values Inside Guth &amp; Maynard’s Breakthrough on Dirichlet Polynomials Mathematics has a habit of hiding deep mysteries inside objects that seem simple. One such object is the Dirichlet polynomial, a short finite sum that behaves like a miniature version of the Riemann zeta function. For over fifty years, mathematicians tried to understand how often such a polynomial can take very large values, and progress stalled. In 2024, Larry Guth and James Maynard finally broke the barrier. Their work gives dramatically improved estimates for the frequency of large values and does so using a completely new combination of tools — from additive combinatorics to matrix geometry to harmonic analysis. This post is meant to explain their ideas in a way that feels intuitive, visually guided, and mathematically honest." />
+<meta property="og:description" content="How Two Mathematicians Cracked a 50-Year Question About Large Values Inside Guth &amp; Maynard’s Breakthrough on Dirichlet Polynomials Mathematics has a habit of hiding deep mysteries inside objects that seem simple. One such object is the Dirichlet polynomial, a short finite sum that behaves like a miniature version of the Riemann zeta function. For over fifty years, mathematicians tried to understand how often such a polynomial can take very large values, and progress stalled. In 2024, Larry Guth and James Maynard finally broke the barrier. Their work gives dramatically improved estimates for the frequency of large values and does so using a completely new combination of tools — from additive combinatorics to matrix geometry to harmonic analysis. This post is meant to explain their ideas in a way that feels intuitive, visually guided, and mathematically honest." />
+<link rel="canonical" href="https://www.tensorsandquarks.space/2025/12/05/dirichlet.html" />
+<meta property="og:url" content="https://www.tensorsandquarks.space/2025/12/05/dirichlet.html" />
+<meta property="og:site_name" content="Tensors &amp; Quarks" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2025-12-05T00:00:00+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Tensors &amp; Quarks" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Rahul Thakur"},"dateModified":"2025-12-05T00:00:00+00:00","datePublished":"2025-12-05T00:00:00+00:00","description":"How Two Mathematicians Cracked a 50-Year Question About Large Values Inside Guth &amp; Maynard’s Breakthrough on Dirichlet Polynomials Mathematics has a habit of hiding deep mysteries inside objects that seem simple. One such object is the Dirichlet polynomial, a short finite sum that behaves like a miniature version of the Riemann zeta function. For over fifty years, mathematicians tried to understand how often such a polynomial can take very large values, and progress stalled. In 2024, Larry Guth and James Maynard finally broke the barrier. Their work gives dramatically improved estimates for the frequency of large values and does so using a completely new combination of tools — from additive combinatorics to matrix geometry to harmonic analysis. This post is meant to explain their ideas in a way that feels intuitive, visually guided, and mathematically honest.","headline":"Tensors &amp; Quarks","mainEntityOfPage":{"@type":"WebPage","@id":"https://www.tensorsandquarks.space/2025/12/05/dirichlet.html"},"url":"https://www.tensorsandquarks.space/2025/12/05/dirichlet.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+  </head>
+
+  <body>
+    <header class="site-header">
+      <div class="container header-flex">
+        <div class="branding">
+          <img src="/assets/images/bio-photo.jpeg" alt="Rahul" class="profile-pic">
+          <h1 class="site-title">
+            <a href="/"><span>Tensors & Quarks</span></a>
+          </h1>
+        </div>
+        <nav class="nav" aria-label="Primary navigation">
+          <a class="nav-link" href="/">Home</a>
+          <a class="nav-link" href="/about.html">About</a>
+          <button class="dark-toggle" type="button" onclick="toggleDarkMode()" aria-label="Toggle dark mode">🌓</button>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main-content" class="container">
+      <h1 id="how-two-mathematicians-cracked-a-50-year-question-about-large-values"><strong>How Two Mathematicians Cracked a 50-Year Question About Large Values</strong></h1>
+<h3 id="inside-guth--maynards-breakthrough-on-dirichlet-polynomials"><em>Inside Guth &amp; Maynard’s Breakthrough on Dirichlet Polynomials</em></h3>
+
+<p>Mathematics has a habit of hiding deep mysteries inside objects that seem simple. One such object is the <strong>Dirichlet polynomial</strong>, a short finite sum that behaves like a miniature version of the Riemann zeta function. For over fifty years, mathematicians tried to understand how often such a polynomial can take <strong>very large values</strong>, and progress stalled. In 2024, <strong>Larry Guth</strong> and <strong>James Maynard</strong> finally broke the barrier. Their work gives dramatically improved estimates for the frequency of large values and does so using a completely new combination of tools — from additive combinatorics to matrix geometry to harmonic analysis. This post is meant to explain their ideas in a way that feels intuitive, visually guided, and mathematically honest.</p>
+
+<!--more-->
+
+<p>To start, consider the Dirichlet polynomial</p>
+
+\[D(t) = \sum_{n\sim N} b_n\, n^{it}, \qquad |b_n| \le 1.\]
+
+<p>A good way to picture this is to imagine many arrows of equal length rotating in the plane. At time (t), the arrow corresponding to the term (n^{it}) points at an angle (\log(n)\, t). So the Dirichlet polynomial is the vector sum of these arrows. Most of the time these arrows point all over the place and cancel each other. For the polynomial to become “large,” most of the arrows need to <strong>momentarily point in almost the same direction</strong>. This alignment is extremely rare, and understanding <em>how rare</em> is exactly the question that nobody could answer sharply for half a century.</p>
+
+<p>Large values matter because Dirichlet polynomials appear as local models for the zeta function and other (L)-functions. The frequency of large spikes influences what we believe about prime gaps, moments of zeta, the distribution of zeros, and the randomness of multiplicative functions. A better bound ultimately tells us <strong>how chaotic primes can be</strong>. Yet for decades the known bounds — built from classical energy and analytic estimates — refused to improve. Many believed the plateau would remain until someone invented an entirely new insight.</p>
+
+<p>A key concept in Guth and Maynard’s work is <strong>additive energy</strong>. If a set (A) contains many pairs whose differences match, we say it has high additive energy. Formally,</p>
+
+\[E(A) = \#\{(a_1,a_2,a_3,a_4)\in A^4 : a_1 - a_2 = a_3 - a_4 \}.\]
+
+<p>Why does this matter? Because arrows aligning in the Dirichlet polynomial correspond to the logs of the integers having similar differences. If many logs satisfy<br />
+(\log(n_1) - \log(n_2) \approx \log(n_3) - \log(n_4)),<br />
+the arrows turn together, and the polynomial becomes large. Larger additive energy makes large values more likely. Guth and Maynard turn this purely combinatorial measure into analytic control over when spikes occur.</p>
+
+<p>Their next move involves <strong>matrix geometry</strong>. Think of collecting snapshots of the Dirichlet polynomial at moments when it is large. Each snapshot is like a high-dimensional vector capturing how all arrows contribute at that moment. Place these snapshots into a matrix (M). The strength of the alignment across all snapshots is encoded in the largest singular value of this matrix:</p>
+
+\[\sigma_1(M) = \max_{\|x\|=1} \|Mx\|.\]
+
+<p>If (\sigma_1(M)) is large, then the large-value times of the Dirichlet polynomial all point in roughly the same geometric direction — meaning many of the arrows keep aligning together across different moments. This geometric view makes analytic cancellation (or the lack of it) visible as a property of a matrix instead of a sum.</p>
+
+<p>To sharpen this picture further, Guth and Maynard use the <strong>Poisson Summation Formula</strong>. In this context, it acts like a lens that converts oscillations in the original sum into patterns among the logarithms of integers. It answers the question: <em>Do certain frequencies reinforce each other and cluster to support large values?</em> If not, then the transformed system decays quickly, meaning large values cannot cluster. Additive energy, matrix alignment, and frequency reinforcement are now tied to the same object.</p>
+
+<p>The final component — and the true innovation — is the use of <strong>non-stationary phase</strong>. Classical analytic number theory relies heavily on the method of <strong>stationary phase</strong>, which detects points where oscillations pause momentarily and constructive interference can occur. But in Dirichlet polynomials, the phases move too irregularly, and no true stationary point exists. The remarkable insight was that one can still extract very strong decay of oscillatory integrals even when the derivative of the phase never vanishes. In a schematic form, they show that an integral of the shape</p>
+
+\[I = \int e^{i\phi(x)}\, a(x)\, dx\]
+
+<p>still satisfies a strong decay estimate of the form</p>
+
+\[|I| \lesssim \frac{1}{|\phi'(x)|^k}\]
+
+<p>for appropriate (k). In plain terms, the waves cancel so aggressively when oscillation speeds vary that large values cannot persist unless the oscillations are tuned with extraordinary precision — something that almost never occurs.</p>
+
+<p>When all of these components are combined, Guth and Maynard arrive at a dramatically stronger bound on the number of large values. If (R) is the number of times (t_j) such that</p>
+
+\[|D(t_j)| \ge N^\sigma,\]
+
+<p>they prove that such large spikes cannot happen often unless the structure of the coefficients forces an extremely rare geometric alignment. The final conclusion is that the large-value phenomenon is <strong>much rarer than previously known</strong>, breaking a barrier that had resisted improvement since the 1970s.</p>
+
+<p>Why is the result so significant? Beyond the theorem itself, it introduces methods that feel destined to reshape analytic number theory: additive energy as a quantitative model of accidental alignment, singular values as a global measurement of correlation across spikes, Poisson summation as a frequency-space microscope, and non-stationary phase as a new replacement for stationary phase in contexts full of wild oscillation. Each technique is powerful individually; together, they form something genuinely new.</p>
+
+<p>What makes the breakthrough especially beautiful is how natural it feels in hindsight. Of course rotating arrows align only when their angle differences match. Of course that leaves a footprint in matrix singular values. Of course oscillatory decay eliminates clustering of large values. It now feels inevitable — yet it took the right pair of mathematicians to recognize that these ideas all belong to the same story.</p>
+
+<p>If you want to explore the original research in full detail, you can read the paper here:</p>
+
+<p><strong><a href="https://arxiv.org/pdf/2405.20552">Dirichlet polynomials.pdf</a></strong></p>
+
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <p>© 2025 Rahul Thakur • Powered by Jekyll</p>
+      </div>
+    </footer>
+  </body>
+</html>
