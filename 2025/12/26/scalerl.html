@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title> | Tensors & Quarks</title>
+    <link rel="stylesheet" href="/assets/style.css" />
+
+    <!-- 🌓 Dark Mode Script -->
+    <script>
+      function toggleDarkMode() {
+        document.body.classList.toggle("dark");
+        localStorage.setItem("theme", document.body.classList.contains("dark") ? "dark" : "light");
+      }
+
+      window.onload = () => {
+        if (localStorage.getItem("theme") === "dark") {
+          document.body.classList.add("dark");
+        }
+      };
+    </script>
+
+    <!-- ✅ MathJax Configuration and Script -->
+    <script>
+      window.MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']],
+          displayMath: [['$$','$$'], ['\\[', '\\]']],
+          processEscapes: true
+        },
+        options: {
+          skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      };
+    </script>
+    <script id="MathJax-script" async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+    </script>
+
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Tensors &amp; Quarks | Exploring the intersection of physics and machine learning.</title>
+<meta name="generator" content="Jekyll v4.4.1" />
+<meta property="og:title" content="Tensors &amp; Quarks" />
+<meta name="author" content="Rahul Thakur" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Teaching LLMs to Reason and Behave: Why Scaling RL Matters Introduction — The Growing Importance of RL in the Age of LLMs Large Language Models have rapidly evolved from autocomplete engines to tools capable of writing code, summarizing research, and engaging in complex reasoning. Yet one phase of their development still resists predictable engineering control: the reinforcement learning (RL) stage. While pre-training benefits from clear scaling laws — more compute reliably delivers better performance — RL has historically been unpredictable. Some RL runs dramatically improve a model’s abilities, others stagnate early, and others collapse despite large computational budgets. This tension forms the basis of the paper, which seeks to transform RL from a guess-and-check process into a mathematically predictable system." />
+<meta property="og:description" content="Teaching LLMs to Reason and Behave: Why Scaling RL Matters Introduction — The Growing Importance of RL in the Age of LLMs Large Language Models have rapidly evolved from autocomplete engines to tools capable of writing code, summarizing research, and engaging in complex reasoning. Yet one phase of their development still resists predictable engineering control: the reinforcement learning (RL) stage. While pre-training benefits from clear scaling laws — more compute reliably delivers better performance — RL has historically been unpredictable. Some RL runs dramatically improve a model’s abilities, others stagnate early, and others collapse despite large computational budgets. This tension forms the basis of the paper, which seeks to transform RL from a guess-and-check process into a mathematically predictable system." />
+<link rel="canonical" href="https://www.tensorsandquarks.space/2025/12/26/scalerl.html" />
+<meta property="og:url" content="https://www.tensorsandquarks.space/2025/12/26/scalerl.html" />
+<meta property="og:site_name" content="Tensors &amp; Quarks" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2025-12-26T00:00:00+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Tensors &amp; Quarks" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Rahul Thakur"},"dateModified":"2025-12-26T00:00:00+00:00","datePublished":"2025-12-26T00:00:00+00:00","description":"Teaching LLMs to Reason and Behave: Why Scaling RL Matters Introduction — The Growing Importance of RL in the Age of LLMs Large Language Models have rapidly evolved from autocomplete engines to tools capable of writing code, summarizing research, and engaging in complex reasoning. Yet one phase of their development still resists predictable engineering control: the reinforcement learning (RL) stage. While pre-training benefits from clear scaling laws — more compute reliably delivers better performance — RL has historically been unpredictable. Some RL runs dramatically improve a model’s abilities, others stagnate early, and others collapse despite large computational budgets. This tension forms the basis of the paper, which seeks to transform RL from a guess-and-check process into a mathematically predictable system.","headline":"Tensors &amp; Quarks","mainEntityOfPage":{"@type":"WebPage","@id":"https://www.tensorsandquarks.space/2025/12/26/scalerl.html"},"url":"https://www.tensorsandquarks.space/2025/12/26/scalerl.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+  </head>
+
+  <body>
+    <header class="site-header">
+      <div class="container header-flex">
+        <div class="branding">
+          <img src="/assets/images/bio-photo.jpeg" alt="Rahul" class="profile-pic">
+          <h1 class="site-title">
+            <a href="/"><span>Tensors & Quarks</span></a>
+          </h1>
+        </div>
+        <nav class="nav" aria-label="Primary navigation">
+          <a class="nav-link" href="/">Home</a>
+          <a class="nav-link" href="/about.html">About</a>
+          <button class="dark-toggle" type="button" onclick="toggleDarkMode()" aria-label="Toggle dark mode">🌓</button>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main-content" class="container">
+      <h1 id="teaching-llms-to-reason-and-behave-why-scaling-rl-matters"><strong>Teaching LLMs to Reason and Behave: Why Scaling RL Matters</strong></h1>
+
+<h2 id="introduction--the-growing-importance-of-rl-in-the-age-of-llms"><strong>Introduction — The Growing Importance of RL in the Age of LLMs</strong></h2>
+<p>Large Language Models have rapidly evolved from autocomplete engines to tools capable of writing code, summarizing research, and engaging in complex reasoning. Yet one phase of their development still resists predictable engineering control: the reinforcement learning (RL) stage. While pre-training benefits from clear scaling laws — more compute reliably delivers better performance — RL has historically been unpredictable. Some RL runs dramatically improve a model’s abilities, others stagnate early, and others collapse despite large computational budgets. This tension forms the basis of the paper, which seeks to transform RL from a guess-and-check process into a mathematically predictable system.</p>
+
+<!--more-->
+
+<h2 id="background--what-pre-training-and-sft-cannot-solve"><strong>Background — What Pre-Training and SFT Cannot Solve</strong></h2>
+<p>The paper first explains what LLMs gain from pre-training and what remains missing afterward. During pre-training, the model learns to predict tokens, which enables it to absorb grammar, factual knowledge, writing style, and reasoning patterns. However, this phase does <strong>not</strong> teach the model to behave optimally in real use. Pre-trained models can still hallucinate, break instructions, ramble, contradict themselves, or answer unsafe queries. Supervised fine-tuning (SFT) improves surface-level behavior by imitating high-quality examples, but imitation saturates quickly. The model looks correct rather than being reliably correct. This shortfall motivates RL: a mechanism not for learning language, but for shaping <strong>judgment</strong>.</p>
+
+<h2 id="the-motivation--why-scaling-rl-is-necessary"><strong>The Motivation — Why Scaling RL Is Necessary</strong></h2>
+<p>The paper argues that as we ask LLMs to take on harder tasks, the reward signals they must learn become increasingly complex. Simple rewards can teach politeness or formatting, but deep reasoning, code execution, safety constraints, and multi-objective trade-offs require long-horizon credit assignment — the model must optimize behavior across many dependent choices. For example, solving a coding task requires the model to understand the prompt, examine the code, identify the bug, apply a fix, and explain the reasoning, while avoiding hallucination. Each step depends on the previous one, and the reward arrives only at the end. With such tasks, <strong>RL must scale</strong> in order to produce stable, high-skill behavior.</p>
+
+<h2 id="the-problem--historically-unpredictable-rl-scaling"><strong>The Problem — Historically Unpredictable RL Scaling</strong></h2>
+<p>Traditionally, increasing RL compute did <strong>not</strong> ensure improvement. Researchers could not use small experiments to forecast large-scale results. Two RL configurations that looked similar during the first 5% of training could diverge radically at 50% or 90%. Some setups seemed promising early but hit low plateaus; others improved slowly but would have achieved higher ceilings if given enough compute. This inability to predict whether more compute would help — or how much — limited scientific progress and led to enormous wasted GPU resources. RL needed a mathematical framework for predictability just as pre-training has.</p>
+
+<h2 id="the-core-contribution--a-sigmoidal-scaling-law-for-rl"><strong>The Core Contribution — A Sigmoidal Scaling Law for RL</strong></h2>
+<p>The central finding of the paper is that <strong>RL performance is predictable — if the RL system is configured correctly</strong>. By running large-scale controlled experiments (~400,000 GPU-hours), the authors show that reward as a function of compute follows a <strong>sigmoidal scaling curve</strong>:</p>
+
+\[R(C) = A - (A - R_0) \cdot e^{-B \cdot (C - C_0)}\]
+
+<p>Where:</p>
+<ul>
+  <li>(R(C)): reward achieved after compute (C)</li>
+  <li>(R_0): reward before RL</li>
+  <li><strong>(A)</strong> — <strong>asymptotic rate</strong> (maximum achievable reward ceiling)</li>
+  <li><strong>(A - R_0)</strong> — <strong>reward gain</strong> (total possible improvement)</li>
+  <li><strong>(B)</strong> — <strong>scaling factor</strong> (efficiency of converting compute into performance)</li>
+  <li>(C_0): initial compute offset</li>
+</ul>
+
+<p>This formula reveals three key variables that determine the future of RL performance: how much gain is possible, how high the ultimate ceiling is, and how efficiently compute converts into progress. Crucially, these variables can be inferred early in training, enabling long-run prediction.</p>
+
+<h2 id="findings--which-rl-components-influence-which-scaling-behaviors"><strong>Findings — Which RL Components Influence Which Scaling Behaviors</strong></h2>
+<p>Using the sigmoidal scaling model, the paper evaluates how different RL design choices affect training. Some techniques increase <strong>efficiency</strong> (scaling factor (B)): for example, advantage normalization and curriculum sampling accelerate learning but do not raise the final performance ceiling. Other techniques improve <strong>asymptotic rate (A)</strong>: for example, FP32 logits, prompt-level loss aggregation, and careful KL control allow the model to reach higher ultimate reward even if progress is initially slow. The paper emphasizes that <strong>early learning speed is not a reliable indicator of eventual quality</strong> — a finding that challenges many prior RL evaluations.</p>
+
+<h2 id="scalerl--a-recipe-for-reliable-and-predictable-scaling"><strong>ScaleRL — A Recipe for Reliable and Predictable Scaling</strong></h2>
+<p>The authors propose <strong>ScaleRL</strong>, not as a new RL algorithm, but as a <strong>training recipe</strong> that consistently yields the smooth, predictable scaling behavior captured by the sigmoidal formula. It combines asynchronous rollout collection, truncated importance sampling (CISPO-style), dynamic KL penalties, advantage normalization, curriculum scheduling, prompt-level aggregation, and FP32 logits for stability. While none of these components are individually novel, their coordinated use produces RL that scales reliably — letting researchers forecast performance from small-compute runs and eliminating catastrophic failure modes seen in earlier RL pipelines.</p>
+
+<h2 id="implications--toward-responsible-and-capable-ai"><strong>Implications — Toward Responsible and Capable AI</strong></h2>
+<p>By making RL compute-predictable, the paper changes the economics and methodology of LLM development. Teams can estimate whether large-scale RL runs are worth their GPU budget before committing. Research labs can compare RL techniques not only by early progress but by long-horizon ceilings. More importantly, RL scaling makes it possible to shape models into <strong>reliable reasoners</strong> rather than <strong>eloquent imitators</strong>. Pre-training gives LLMs latent potential; scaled RL converts that potential into safe, logical, honest, and goal-directed behavior. If pre-training builds intelligence, scaled RL makes that intelligence <em>useful</em> and <em>trustworthy</em>.</p>
+
+<h2 id="conclusion--scaling-behavior-not-just-parameter-count"><strong>Conclusion — Scaling Behavior, Not Just Parameter Count</strong></h2>
+<p>The paper suggests that the future of AI progress may depend less on increasing the number of model parameters and more on increasing the <strong>quality and scale of reinforcement learning</strong>. Pre-training teaches LLMs to know. RL — when scaled correctly — teaches them to think, reason, plan, and behave. With ScaleRL and the sigmoidal scaling law, reinforcement learning finally gains the predictability required to shape AI systems that are not only powerful, but dependable.</p>
+
+<p><strong>Source:</strong> <a href="https://arxiv.org/pdf/2510.13786">Download Paper (PDF)</a></p>
+
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <p>© 2025 Rahul Thakur • Powered by Jekyll</p>
+      </div>
+    </footer>
+  </body>
+</html>
